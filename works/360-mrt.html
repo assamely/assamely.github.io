@@ -114,6 +114,17 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 .prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
 .prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
 .prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
 </style>
 </head>
 <body>
@@ -132,18 +143,20 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="main">
       <p class="eyebrow">360-DIGITAL · Кейс · медицина</p>
       <h1>Кейс агентства геомаркетинга: МРТ-клиника на Яндекс Картах</h1>
+      
       <dl class="meta"><div><dt>Заказчик</dt><dd>Агентство 360-DIGITAL</dd></div><div><dt>Ниша</dt><dd>Медицина, МРТ</dd></div><div><dt>Формат</dt><dd>Кейс с таблицами и скриншотами</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
       <div class="tdr">
         <section><h3>Задача</h3><p>Упаковать продвижение МРТ-клиники в Яндекс Картах в кейс, который продаёт услугу агентства.</p></section>
-        <section><h3>Сделала</h3><p>История «точка А → что сделали → точка Б»: аудит, упаковка карточки, отзывы, реклама, SERM. Цифры — в таблицы и списки, скриншоты — с подписями.</p></section>
+        <section><h3>Решение</h3><p>История «точка А → что сделали → точка Б»: аудит, упаковка карточки, отзывы, реклама, SERM. Цифры — в таблицы и списки, скриншоты — с подписями.</p></section>
         <section class="res"><h3>Итог</h3><p>Рейтинг 4,1 → 4,9, звонки 27 → 322 в месяц, заявка — 129 ₽.</p></section>
       </div>
+      
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для 360-DIGITAL</span><ul><li><a href="360-mrt.html" aria-current=page>Кейс МРТ-клиники</a></li><li><a href="360-crossfit.html">Кейс кроссфит-клуба</a></li><li><a href="360-horoshee-mesto.html">Статья «Хорошее место»</a></li></ul></nav>
     </div>
   </section>
 
   <section class="row">
-    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="margin"><span class="mark">¶</span>текст</div>
     <div class="main">
       <div class="prose">
         <h2 class="title">Как мы снизили стоимость заявки до 129 рублей для МРТ-клиники в Москве и вывели карточку в ТОП Яндекс.Карт</h2>
