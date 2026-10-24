@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEO-статья: подключение газового генератора к магистральному газу — «Энергетические машины» — Александра Самелюк</title>
+<meta name="description" content="Объяснить, когда для газового генератора нужно разрешение и как пройти согласование в 2026 году.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 07</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Энергетические машины» · SEO + GEO · нормативная статья</p>
+      <h1>GEO-статья для поставщика газовых генераторов: разрешения на подключение к газу</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Энергетические машины», газовые генераторы (СПб)</dd></div><div><dt>Аудитория</dt><dd>Владельцы домов с газовым вводом</dd></div><div><dt>Формат</dt><dd>Статья в блог по ТЗ SEO + GEO</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Объяснить, когда для газового генератора нужно разрешение и как пройти согласование в 2026 году.</p></section>
+        <section><h3>Сделала</h3><p>Опёрла текст на 69-ФЗ, постановление 1547, своды правил, КоАП и УК, расписала порядок по шагам, документы, нормы размещения и типовые ошибки. Учла правку заказчика про существующий ввод.</p></section>
+        <section class="res"><h3>Итог</h3><p>Нормативная статья, которая подводит к услуге согласования под ключ.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Энергетические машины»</span><ul><li><a href="enes-rashod.html">Расход газа</a></li><li><a href="enes-zima.html">Не запускается зимой</a></li><li><a href="enes-fazy.html">Одна фаза или три</a></li><li><a href="enes-gaz.html" aria-current=page>Подключение к газу</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Подключение газового генератора к магистральному газу: разрешения и порядок согласования в 2026 году</h2>
+        
+        
+<blockquote>
+<p><strong>Короткий ответ</strong></p>
+<p>Для подключения газового генератора к магистральному газу нужны три документа: договор с газораспределительной организацией (ГРО), согласованный проект внутренних газопроводов и акт ввода в эксплуатацию. Полный цикл — 2–4 месяца. Для сжиженного газа (баллоны, газгольдер) разрешение ГРО не требуется, но действуют нормы размещения и пожарной безопасности.</p>
+</blockquote>
+<p>Газовый генератор на магистрали обходится в эксплуатации в разы дешевле автономного источника, но за это платят временем согласований. Процедура регламентирована федеральным законом, постановлением Правительства и сводом правил газораспределения. Ниже — что именно проверяет ГРО, какие документы готовить и в каких случаях разрешения не нужны вовсе.</p>
+<h2>Когда нужно разрешение на установку газового генератора, а когда нет</h2>
+<p>Всё, что подключается к магистральному газопроводу, проходит согласование с ГРО — частные дома, коммерческие объекты, производства. Для сжиженного газа из баллонов или газгольдера разрешение ГРО не требуется, но соблюдение норм размещения и противопожарных расстояний обязательно. Если магистрали на участке нет, сжиженный газ — рабочая альтернатива без бюрократии.</p>
+<p>Отдельный случай — дом уже подключён к магистральному газу. Установка генератора здесь не всегда означает новое технологическое присоединение: сначала проверяют существующий ввод, суммарный расход газа с учётом генератора, схему внутреннего газопровода и необходимость внесения изменений в проект. Если пропускной способности хватает и схема позволяет, процедура сводится к согласованию изменений, а не полному циклу с новыми ТУ.</p>
+<h2>Нормативная база</h2>
+<p>Процедура опирается на четыре действующих документа (полные тексты — в КонсультантПлюс):</p>
+<ul>
+<li>ФЗ № 69-ФЗ «О газоснабжении в Российской Федерации» — рамочный закон;</li>
+<li>Постановление Правительства РФ № 1547 от 13.09.2021 — правила технологического присоединения;</li>
+<li>СП 62.13330.2011 «Газораспределительные системы» — нормативные расстояния и проектирование;</li>
+<li>СП 89.13330.2016 «Котельные установки» — частично применим для генерирующего оборудования.</li>
+</ul>
+<p>На эти четыре акта ГРО опирается при проверке проекта. Перед заявкой стоит сверить расход газа генератора с СП 62.13330 — это покажет, нужен ли отдельный ввод.</p>
+<h2>Пошаговый порядок согласования газового генератора</h2>
+<p>Процедура одинаковая для частных домов и коммерческих объектов, отличается только сложность проекта и сроки. Шесть шагов от заявки до врезки в сеть:</p>
+<ol type="1">
+<li><strong>Заявка в ГРО на технологическое присоединение.</strong> Подаётся через личный кабинет ГРО. Срок — до 15 рабочих дней.</li>
+<li><strong>Получение технических условий (ТУ).</strong> ГРО указывает точку врезки, разрешённый расход газа, диаметр и давление. Срок — до 15 рабочих дней.</li>
+<li><strong>Заключение договора о подключении.</strong> До 30 дней после ТУ. Заказчик платит за подключение, ГРО берёт обязательство по врезке.</li>
+<li><strong>Разработка проекта газоснабжения.</strong> Делает организация с допуском СРО. Срок — 2–4 недели.</li>
+<li><strong>Согласование проекта и монтаж.</strong> После согласования — монтаж 1–3 недели для частного дома.</li>
+<li><strong>Пусконаладка, врезка и акт ввода.</strong> ГРО проводит врезку, пломбирует счётчик и выдаёт акт. С этого момента генератор работает легально.</li>
+</ol>
+<p>Итог от заявки до акта — 2–4 месяца. Для коммерческих объектов с расходом от 60 м³/ч — на 1–2 месяца дольше.</p>
+<p><em>За 15 лет провели больше тысячи согласований по СПб и Ленобласти. Самая частая причина задержки — некорректно собранный пакет документов. При аккуратной подаче цикл стабильно укладывается в 2–2,5 месяца. — главный инженер компании «Энергетические машины»</em></p>
+<h2>Какие документы нужны для газового генератора</h2>
+<p>Пакет подаётся вместе с заявкой в ГРО:</p>
+<ol type="1">
+<li>заявление по форме ГРО;</li>
+<li>документ на участок и здание (собственность или аренда);</li>
+<li>ситуационный план с точкой установки генератора;</li>
+<li>технический паспорт генератора с расходом газа (м³/ч);</li>
+<li>копия паспорта заявителя или учредительные документы юрлица;</li>
+<li>проект газоснабжения от организации с допуском СРО (после ТУ);</li>
+<li>договор с монтажной организацией, имеющей допуски Ростехнадзора.</li>
+</ol>
+<p>Передать всю процедуру одному подрядчику с СРО и допусками — это экономит 3–4 недели на согласованиях.</p>
+<h2>Установка газового генератора: нормы и правила размещения</h2>
+<p>СП 62.13330.2011 задаёт минимальные расстояния и условия размещения газоиспользующего оборудования:</p>
+<ul>
+<li>От окон и дверей жилого дома — от 2 м при расходе газа до 60 м³/ч и от 5 м при большем расходе.</li>
+<li>До границы соседнего участка — от 2 м; до подземных коммуникаций — от 1 м.</li>
+<li>Основание — бетонная плита с заглублением от 100 мм.</li>
+<li>Шумозащитный кожух — если установка ближе 7 м от жилого здания (СанПиН: 55/70 дБ ночь/день).</li>
+<li>Вентиляция в техзоне — трёхкратный воздухообмен; отвод выхлопа от окон.</li>
+</ul>
+<p>Несоблюдение хотя бы одного пункта блокирует приёмку. План размещения готовит проектная организация на этапе обследования.</p>
+<h2>Пять типовых ошибок при согласовании</h2>
+<p>Все они приводят к одному: ГРО не принимает объект и владелец теряет 1–2 месяца на переделки. Частые ошибки:</p>
+<ol type="1">
+<li><strong>Монтаж без проекта.</strong> Без согласованного проекта ГРО не выдаёт акт ввода и не открывает подачу газа.</li>
+<li><strong>Превышение расхода над пропускной способностью ввода.</strong> Существующая труба не покрывает потребление — нужны больший диаметр или отдельный ввод.</li>
+<li><strong>Нарушение нормативных расстояний.</strong> Самая частая претензия инспектора — размещение ближе 2 м от окон. Требует переноса.</li>
+<li><strong>Подрядчик без допусков Ростехнадзора.</strong> Монтаж без СРО и допусков по газу нелегален; ГРО не принимает работы.</li>
+<li><strong>Самовольная врезка в существующий газопровод.</strong> КоАП ст. 7.19 — штраф до 200 тыс. ₽ для юрлиц. УК ст. 215.3 — до 80 тыс. ₽ штрафа или обязательные работы.</li>
+</ol>
+<p>Все пять ошибок устраняются на этапе обследования — до подачи заявки в ГРО.</p>
+<h2>Частые вопросы</h2>
+<p><strong>Нужно ли разрешение на газовый генератор на даче?</strong></p>
+<p>Для магистрального газа — да, по полной процедуре. Для сжиженного (баллоны, газгольдер) разрешение ГРО не требуется, но действуют нормы размещения и пожарной безопасности.</p>
+<p><strong>Можно ли установить газовый генератор без проекта?</strong></p>
+<p>Нет. Без согласованного проекта ГРО не подключит и не примет в эксплуатацию.</p>
+<p><strong>Сколько занимает согласование подключения к газу?</strong></p>
+<p>От заявки до акта ввода — 2–4 месяца. Для крупных объектов — до 6 месяцев.</p>
+<p><strong>Можно ли подключить генератор к существующей газовой трубе?</strong></p>
+<p>Можно, если пропускная способность ввода покрывает расход. Иначе нужны больший диаметр или отдельный ввод.</p>
+<p><strong>Какой штраф за самовольное подключение к магистральному газу?</strong></p>
+<p>Административно: 10–15 тыс. ₽ для физлиц, до 200 тыс. ₽ для юрлиц (КоАП ст. 7.19). Уголовно: до 80 тыс. ₽ или обязательные работы (УК ст. 215.3). Плюс отключение и демонтаж за счёт нарушителя.</p>
+<h2>Вывод</h2>
+<p>Согласование подключения к магистральному газу — прогнозируемая процедура: 2–4 месяца при правильно собранных документах. Главная экономия не в деньгах, а в избежании переделок: одна ошибка блокирует приёмку на месяц.</p>
+<p>Компания «Энергетические машины» делает согласование под ключ — от заявки в ГРО до акта ввода. Допуски СРО и Ростехнадзора, опыт по СПб и Ленобласти. Выезд инженера на обследование — от 5 000 ₽; при заключении договора стоимость вычитается из сметы.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
