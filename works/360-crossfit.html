@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейс премиум кроссфит-клуба — 360-DIGITAL — Александра Самелюк</title>
+<meta name="description" content="Показать, как агентство с нуля вывело новый клуб на Яндекс Карты и 2ГИС и дало ему поток заявок.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:400 14px/1.45 var(--body);color:var(--mute);margin-top:10px;padding-left:12px;border-left:2px solid var(--marker)}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 05</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">360-DIGITAL · Кейс · фитнес</p>
+      <h1>Кейс агентства геомаркетинга: запуск премиум кроссфит-клуба с нуля</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Агентство 360-DIGITAL</dd></div><div><dt>Ниша</dt><dd>Фитнес, премиум-сегмент</dd></div><div><dt>Формат</dt><dd>Пошаговый кейс со скриншотами</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Показать, как агентство с нуля вывело новый клуб на Яндекс Карты и 2ГИС и дало ему поток заявок.</p></section>
+        <section><h3>Сделала</h3><p>Разложила работу на шесть этапов, вынесла ключевые факты в плашки, свела статистику по месяцам в таблицу и объяснила, почему премиум-лид стоит дороже.</p></section>
+        <section class="res"><h3>Итог</h3><p>96 квалифицированных лидов за месяц и стабильный поток даже летом.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для 360-DIGITAL</span><ul><li><a href="360-mrt.html">Кейс МРТ-клиники</a></li><li><a href="360-crossfit.html" aria-current=page>Кейс кроссфит-клуба</a></li><li><a href="360-horoshee-mesto.html">Статья «Хорошее место»</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Как привлечь 96 квалифицированных лидов за месяц для премиум кроссфит-клуба с нуля</h2>
+        
+        
+<p><em><strong>Кейс 360-DIGITAL: продажа абонементов без сезонных просадок через геосервисы</strong></em></p>
+<p>К нам в агентство 360-DIGITAL обратился владелец успешного кроссфит-клуба с амбициозной задачей: открыть второй клуб в премиум-сегменте и с первых месяцев обеспечить стабильный поток платёжеспособных клиентов. Мы уже работали с этим предпринимателем — выстроили системный канал привлечения через геосервисы для его первого клуба. Результаты говорили сами за себя, поэтому маркетинг нового проекта он без раздумий доверил нашей команде.</p>
+<p>Главная особенность этого проекта — мы стартовали с абсолютного нуля. Ни старых карточек, ни накопленных отзывов, ни истории. Чистый лист и высокая планка. Именно поэтому этот кейс особенно показателен: здесь вы увидите весь комплекс работ — от создания присутствия на картах до десятков квалифицированных заявок каждый месяц.</p>
+<h2>Что мы сделали: пошаговая стратегия запуска</h2>
+<p>Работу над проектом мы разбили на шесть последовательных этапов. Каждый из них критически важен — пропустишь одно звено, и вся цепочка теряет эффективность.</p>
+<h3>Этап 1. Создание карточек организации</h3>
+<p>Первым делом мы зарегистрировали и верифицировали карточки компании на ключевых геосервисах — Яндекс Картах и 2ГИС. Это фундамент: без грамотно оформленных карточек бизнес попросту невидим для тех, кто ищет фитнес-услуги поблизости.</p>
+<p>При создании карточек мы:</p>
+<ul>
+<li>
+<p>Заполнили все доступные поля с максимальной детализацией</p>
+</li>
+<li>
+<p>Указали точные часы работы и актуальные контакты</p>
+</li>
+<li>
+<p>Добавили все релевантные категории и рубрики</p>
+</li>
+<li>
+<p>Привязали официальный сайт и социальные сети</p>
+</li>
+</ul>
+<aside class="note"><p><strong>💡 Почему это важно?</strong></p><p>Карточка на геосервисах — первое касание с потенциальным клиентом. По статистике Яндекса, 78% пользователей принимают решение о посещении, основываясь именно на информации из карточки.</p></aside>
+<figure><img alt="Обзор карточки кроссфит-клуба на Яндекс Картах" height="894" loading="lazy" src="img/360-crossfit/01.jpg" width="716"/><figcaption>Оформленная карточка премиум кроссфит-клуба на Яндекс Картах: истории, витрина услуг, рекламный баннер</figcaption></figure>
+
+<h3>Этап 2. Разработка фирменного стиля для геосервисов</h3>
+<p>Премиум-сегмент требует соответствующей подачи. Мы с нуля разработали единый визуальный стиль карточек: подобрали цветовую палитру (чёрный и жёлтый — фирменные цвета клуба), определили типографику, создали шаблоны для историй и товаров. Визуальная целостность формирует доверие и сразу выделяет клуб на фоне конкурентов.</p>
+<h3>Этап 3. Профессиональная фотосессия по нашему ТЗ</h3>
+<p>Качественный визуал — один из главных факторов конверсии. Мы составили детальное техническое задание для фотосессии, которое охватывало все ключевые категории:</p>
+<ul>
+<li>
+<p>Входная группа — первое впечатление о клубе</p>
+</li>
+<li>
+<p>Экстерьер — локация и окружение</p>
+</li>
+<li>
+<p>Интерьер — залы, оборудование, раздевалки</p>
+</li>
+<li>
+<p>Тренерский состав — профессионалы, которые работают с клиентами</p>
+</li>
+<li>
+<p>Процесс тренировок — атмосфера и энергетика занятий</p>
+</li>
+</ul>
+<p>После получения материалов мы провели их SEO-оптимизацию: добавили метатеги с ключевыми словами, нанесли фирменные водяные знаки, выполнили брендирование. Это повышает видимость изображений в поиске и защищает контент от копирования.</p>
+<aside class="note"><p><strong>💡 Профессиональные фото — это инвестиция</strong></p><p>Карточки с качественными фотографиями получают в 2,5 раза больше переходов, чем карточки с любительскими снимками или без фото вообще.</p></aside>
+<figure><img alt="Галерея фотографий кроссфит-клуба" height="833" loading="lazy" src="img/360-crossfit/02.jpg" width="715"/><figcaption>Сейчас в карточке клиента 90 профессиональных фотографий и видео: интерьер, тренировки, тренеры, оборудование</figcaption></figure>
+
+<h3>Этап 4. SEO-оптимизированный прайс-лист</h3>
+<p>Прайс-лист на геосервисах — это не просто перечень услуг и цен. Это мощный инструмент SEO-продвижения. Мы собрали семантическое ядро по нишам «кроссфит» и «фитнес премиум-класса», а затем органично интегрировали ключевые запросы в названия и описания услуг. Теперь каждая позиция прайса работает на повышение видимости карточки.</p>
+<figure><img alt="SEO-оптимизированный прайс-лист клуба" height="886" loading="lazy" src="img/360-crossfit/03.jpg" width="709"/><figcaption>SEO-оптимизированная витрина услуг: тренировки по направлениям с ключевыми запросами в описаниях</figcaption></figure>
+
+<h3>Этап 5. Система сбора отзывов</h3>
+<p>Отзывы — это валюта доверия в digital-пространстве. Для нового клуба критически важно быстро набрать базу реальных положительных откликов. Мы выстроили комплексную систему:</p>
+<ol type="1">
+<li>
+<p>Скрипты для администраторов — как мотивировать клиентов делиться впечатлениями</p>
+</li>
+<li>
+<p>Автоматические рассылки после тренировок с просьбой оставить отзыв</p>
+</li>
+<li>
+<p>QR-коды в клубе для мгновенного перехода на страницу отзывов</p>
+</li>
+</ol>
+<p>Со своей стороны мы обеспечиваем оперативную обработку каждого отзыва — как правило, в тот же день. Ответы формируем с SEO-ключами, что дополнительно усиливает позиции карточки в выдаче.</p>
+<aside class="note"><p><strong>💡 37 отзывов за 5 месяцев — отличный старт</strong></p><p>Для нового клуба это серьёзный показатель. Каждый реальный отзыв повышает доверие и улучшает ранжирование карточки в поисковой выдаче геосервисов.</p></aside>
+<h3>Этап 6. Запуск рекламной кампании в Яндекс Бизнес</h3>
+<p>После упаковки карточек мы запустили рекламное продвижение. Вот что входило в комплекс работ:</p>
+<ol type="1">
+<li>
+<p>Настройка товарной витрины с фокусом на конверсионные предложения</p>
+</li>
+<li>
+<p>Создание 20 уникальных рекламных объявлений с разными офферами</p>
+</li>
+<li>
+<p>Подключение подменного номера для точного отслеживания звонков</p>
+</li>
+<li>
+<p>Внедрение UTM-меток для сквозной аналитики вплоть до покупки абонемента</p>
+</li>
+</ol>
+<aside class="note"><p><strong>💡 Сквозная аналитика — ключ к оптимизации</strong></p><p>Благодаря UTM-меткам и подменному номеру мы видим полный путь клиента: от первого контакта с карточкой до покупки абонемента. Это позволяет точно считать ROI и масштабировать то, что работает.</p></aside>
+<figure><img alt="Панель управления карточкой в Яндекс Бизнес" height="896" loading="lazy" src="img/360-crossfit/04.jpg" width="991"/><figcaption>Настроенная карточка: акции, кнопка действия с UTM-метками, товарная витрина</figcaption></figure>
+
+<h2>Результаты: цифры за 5,5 месяцев работы</h2>
+<p>А теперь — самое интересное. Конкретные показатели эффективности. Статистика по месяцам наглядно демонстрирует стабильность канала даже в традиционно «мёртвый» для фитнеса летний сезон.</p>
+<figure><img alt="График источников переходов в профиль компании" height="556" loading="lazy" src="img/360-crossfit/05.jpg" width="1240"/><figcaption>Динамика переходов в профиль: 21 057 просмотров карточки за период. Рост с нуля до 2000+ в пиковые недели</figcaption></figure>
+
+<figure><img alt="График целевых действий пользователей" height="562" loading="lazy" src="img/360-crossfit/06.jpg" width="1238"/><figcaption>Целевые действия: 1 549 переходов на сайт, 913 построенных маршрутов, 284 звонка — всё с нуля за 5,5 месяцев</figcaption></figure>
+
+<h3>Детальная статистика по месяцам</h3>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th><strong>Период</strong></th>
+<th><strong>Целевые действия</strong></th>
+<th><strong>Стоимость ЦД</strong></th>
+<th><strong>Квал. лиды</strong></th>
+<th><strong>Стоимость лида</strong></th>
+<th><strong>Стоимость клиента</strong></th>
+</tr>
+
+
+
+
+</thead>
+<tbody>
+<tr class="odd">
+<td>Апрель</td>
+<td>579</td>
+<td>110 ₽</td>
+<td><strong>73</strong></td>
+<td>665 ₽</td>
+<td><strong>1 985 ₽</strong></td>
+</tr><tr class="header">
+<td>Май</td>
+<td>759</td>
+<td>83 ₽</td>
+<td><strong>96</strong></td>
+<td>505 ₽</td>
+<td><strong>1 476 ₽</strong></td>
+</tr><tr class="odd">
+<td>Июнь</td>
+<td>498</td>
+<td>127 ₽</td>
+<td><strong>74</strong></td>
+<td>655 ₽</td>
+<td><strong>1 867 ₽</strong></td>
+</tr><tr class="header">
+<td>Июль</td>
+<td>528</td>
+<td>120 ₽</td>
+<td><strong>53</strong></td>
+<td>915 ₽</td>
+<td><strong>1 924 ₽</strong></td>
+</tr></tbody>
+</table></div>
+<h3>О чём говорят эти цифры</h3>
+<p>На первый взгляд стоимость квалифицированного лида кажется высокой — от 505 до 915 рублей. Но здесь важен контекст: мы работаем с премиум-сегментом, где средний чек абонемента существенно выше рынка. Аудитория премиум-фитнеса объективно уже, чем у масс-маркета, — отсюда и стоимость привлечения.</p>
+<p>Главное достижение — стабильность. Обратите внимание: даже в июне и июле, когда большинство фитнес-клубов фиксируют обвал продаж (отпуска, переключение на уличные активности), наш канал продолжал приносить 53-74 квалифицированных лида ежемесячно. Это предсказуемая загрузка клуба и стабильный денежный поток.</p>
+<aside class="note"><p><strong>🎯 КЛЮЧЕВОЙ РЕЗУЛЬТАТ</strong></p><p>96 квалифицированных лидов в мае — рекордный показатель на третий месяц работы клуба</p></aside>
+<h2>Стратегия развития: что делаем дальше</h2>
+<p>Запуск и первичная упаковка — это только начало пути. Вместе с клиентом мы разработали долгосрочную стратегию развития. Ключевые направления на ближайшие месяцы:</p>
+<ul>
+<li>
+<p><strong>Управление репутацией.</strong> Поддержание высокого рейтинга, проработка негатива, наращивание базы положительных откликов.</p>
+</li>
+<li>
+<p><strong>Контент-маркетинг.</strong> Регулярные публикации новостей, акций, историй успеха клиентов клуба.</p>
+</li>
+<li>
+<p><strong>Оптимизация рекламы.</strong> Постоянное A/B-тестирование, корректировка ставок, масштабирование работающих связок.</p>
+</li>
+<li>
+<p><strong>Сезонные активности.</strong> Своевременное обновление акций и спецпредложений под сезон.</p>
+</li>
+<li>
+<p><strong>SEO-мониторинг.</strong> Отслеживание позиций по ключевым запросам, быстрая реакция на изменения в выдаче.</p>
+</li>
+<li>
+<p><strong>Расширение каналов.</strong> Подключение дополнительных площадок экосистемы Яндекса.</p>
+</li>
+<li>
+<p><strong>SERM-продвижение.</strong> Укрепление бренда, работа с упоминаниями на внешних площадках.</p>
+</li>
+<li>
+<p><strong>Масштабирование.</strong> Увеличение бюджетов на каналы с доказанной эффективностью.</p>
+</li>
+</ul>
+<p><strong>Геомаркетинг — это марафон, а не спринт</strong>. Первые месяцы — это фундамент. Настоящий потенциал канала раскрывается при системной работе: накопленные отзывы, отточенные объявления, растущий рейтинг — всё это со временем снижает стоимость привлечения и увеличивает поток клиентов.</p>
+<h2>Выводы</h2>
+<p>Этот кейс наглядно демонстрирует несколько важных <u>принципов</u>:</p>
+<ol type="1">
+<li>
+<p><strong>Геосервисы — полноценный канал продаж,</strong> а не просто онлайн-справочник. При системном подходе они генерируют стабильный поток горячих клиентов.</p>
+</li>
+<li>
+<p><strong>Комплексная работа даёт синергию.</strong> SEO, визуальный контент, отзывы и реклама усиливают друг друга.</p>
+</li>
+<li>
+<p><strong>Премиум-сегмент окупается.</strong> Да, стоимость лида выше — но и LTV клиента в разы больше.</p>
+</li>
+<li>
+<p><strong>Сезонность можно сгладить.</strong> Правильно настроенный канал работает стабильно круглый год.</p>
+</li>
+</ol>
+<p>Мы полностью выполнили KPI, согласованные с клиентом. План по продажам абонементов закрывается даже летом, и владелец клуба доволен результатами.</p>
+<h2>Хотите такие же результаты?</h2>
+<p>Команда 360-DIGITAL специализируется на продвижении бизнеса через геосервисы. Мы работаем с фитнес-клубами, ресторанами, медицинскими центрами, автосервисами и другими локальными бизнесами по всей России.</p>
+<p>Что вы получите, оставив заявку:</p>
+<ul>
+<li>
+<p>Бесплатный аудит вашего присутствия на геосервисах</p>
+</li>
+<li>
+<p>Анализ конкурентов и точек роста</p>
+</li>
+<li>
+<p>Прогноз по количеству потенциальных обращений</p>
+</li>
+<li>
+<p>Персональную стратегию продвижения под ваш бизнес</p>
+</li>
+</ul>
+<aside class="note"><p><strong>⏱ Аудит занимает 15 минут</strong></p><p>Мы проверим вашу видимость на картах, оценим конкурентов и покажем, сколько клиентов вы недополучаете прямо сейчас. Бесплатно и без обязательств.</p></aside>
+<aside class="note"><p><strong>ПОЛУЧИТЕ БЕСПЛАТНЫЙ АУДИТ</strong></p><p>Узнайте, сколько клиентов вы теряете прямо сейчас</p><p><strong>📞 +7 (951) 300-61-34</strong></p><p>🌐 360-digital.ru</p><p>💬 Telegram/WhatsApp: напишите «Аудит» для быстрой связи</p></aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

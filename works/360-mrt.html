@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейс МРТ-клиники — 360-DIGITAL — Александра Самелюк</title>
+<meta name="description" content="Упаковать продвижение МРТ-клиники в Яндекс Картах в кейс, который продаёт услугу агентства.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:400 14px/1.45 var(--body);color:var(--mute);margin-top:10px;padding-left:12px;border-left:2px solid var(--marker)}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 05</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">360-DIGITAL · Кейс · медицина</p>
+      <h1>Кейс агентства геомаркетинга: МРТ-клиника на Яндекс Картах</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Агентство 360-DIGITAL</dd></div><div><dt>Ниша</dt><dd>Медицина, МРТ</dd></div><div><dt>Формат</dt><dd>Кейс с таблицами и скриншотами</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Упаковать продвижение МРТ-клиники в Яндекс Картах в кейс, который продаёт услугу агентства.</p></section>
+        <section><h3>Сделала</h3><p>История «точка А → что сделали → точка Б»: аудит, упаковка карточки, отзывы, реклама, SERM. Цифры — в таблицы и списки, скриншоты — с подписями.</p></section>
+        <section class="res"><h3>Итог</h3><p>Рейтинг 4,1 → 4,9, звонки 27 → 322 в месяц, заявка — 129 ₽.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для 360-DIGITAL</span><ul><li><a href="360-mrt.html" aria-current=page>Кейс МРТ-клиники</a></li><li><a href="360-crossfit.html">Кейс кроссфит-клуба</a></li><li><a href="360-horoshee-mesto.html">Статья «Хорошее место»</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Как мы снизили стоимость заявки до 129 рублей для МРТ-клиники в Москве и вывели карточку в ТОП Яндекс.Карт</h2>
+        
+        
+<p><em><strong>Кейс</strong>: 500+ обращений в месяц с Яндекс.Карт, 2ГИС и Google Maps за 7 месяцев работы<br/>
+</em></p>
+<ul>
+<li>
+<p><strong>Ниша:</strong> Медицина / Диагностика (МРТ)</p>
+</li>
+<li>
+<p><strong>Гео:</strong> Москва</p>
+</li>
+<li>
+<p><strong>Период работы:</strong> март 2024 — октябрь 2024</p>
+</li>
+<li>
+<p><strong>Каналы:</strong> Яндекс.Карты, 2ГИС, Google Maps</p>
+</li>
+</ul>
+<h2>Проблема клиента</h2>
+<p>В марте 2024 года к нам обратилась московская МРТ-клиника с типичной для медицинского бизнеса проблемой: <strong>низкий поток клиентов с геосервисов и слабая узнаваемость бренда</strong>.</p>
+<p>Клиника понимала, что Яндекс.Карты — это мощный канал привлечения «тёплых» клиентов, которые уже ищут услугу в своём районе. Но как правильно работать с этим каналом — не знали.</p>
+<h2>Точка А: С чего начинали</h2>
+<p>Когда мы провели первичный аудит карточки клиники, картина была следующей:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th><strong>Показатель</strong></th>
+<th><strong>Значение на старте</strong></th>
+</tr>
+
+
+
+
+
+
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Рейтинг</strong></td>
+<td>4.1 ⭐</td>
+</tr><tr class="header">
+<td><strong>Звонки в месяц</strong></td>
+<td>27</td>
+</tr><tr class="odd">
+<td><strong>Построенные маршруты</strong></td>
+<td>22</td>
+</tr><tr class="header">
+<td><strong>Переходы на сайт</strong></td>
+<td>26</td>
+</tr><tr class="odd">
+<td><strong>Общее количество обращений</strong></td>
+<td>~75/мес</td>
+</tr><tr class="header">
+<td><strong>Стоимость заявки</strong></td>
+<td>Не отслеживалась</td>
+</tr></tbody>
+</table></div>
+<figure><img alt="" height="308" loading="lazy" src="img/360-mrt/01.jpg" width="215"/><figcaption>Статистика карточки до начала работы: всего 75 целевых действий в месяц – очень мало</figcaption></figure>
+
+<h2>Что мы выявили при аудите</h2>
+<p><strong>Главные <u>проблемы</u>:</strong></p>
+<ul>
+<li>
+<p><strong>Рейтинг 4.1 отпугивал потенциальных пациентов.</strong> При выборе медицинской клиники люди крайне внимательны к отзывам. Рейтинг ниже 4.5 не вызывает доверия — пользователи просто листают дальше.</p>
+</li>
+<li>
+<p><strong>Карточка не была оптимизирована под поисковые запросы.</strong> В описании отсутствовали ключевые слова, по которым пациенты ищут МРТ в Москве. Карточка просто не показывалась по важным запросам.</p>
+</li>
+<li>
+<p><strong>Отсутствовала системная работа с отзывами.</strong> Негативные комментарии висели без ответов, а довольные пациенты не получали напоминаний поделиться мнением.</p>
+</li>
+<li>
+<p><strong>Визуальное оформление не выделяло клинику среди конкурентов.</strong> Фотографии были случайными, обложка — стандартной, брендирование отсутствовало.</p>
+</li>
+<li>
+<p><strong>Не использовались все возможности платформы.</strong> Раздел «Новости» пустовал, акции не публиковались, товары и услуги не были добавлены.</p>
+</li>
+</ul>
+<figure><img alt="" height="758" loading="lazy" src="img/360-mrt/02.jpg" width="822"/><figcaption>Рейтинг 4.1 — серьёзный барьер для потенциальных клиентов</figcaption></figure>
+
+<h2>Наш подход: системная работа, а не «волшебные таблетки»</h2>
+<p>Мы не верим в быстрые хаки и накрутки. Наш метод — это выстраивание работающей системы, которая даёт стабильный результат месяц за месяцем. Ниже расскажем, что именно сделали.</p>
+<h3>Этап 1. Аудит и разработка стратегии</h3>
+<p>На старте выполнили качественный и глубокий анализ.</p>
+<h4>Провели аудит карточки</h4>
+<p>Проверили каждый элемент: от названия и категорий до фотографий и отзывов. Выписали все точки роста — получился список из 23 пунктов, которые требовали доработки.</p>
+<h4>Разработали дорожную карту</h4>
+<figure><img alt="" height="795" loading="lazy" src="img/360-mrt/03.jpg" width="1105"/></figure>
+<h4>Заполнили подробный бриф</h4>
+<p>Созвонились с клиентом и погрузились в специфику клиники: какие услуги приоритетные, чем отличаются от конкурентов, какие акции готовы запускать.</p>
+<h4>Проанализировали конкурентов</h4>
+<p>Изучили 12 ближайших конкурентов: их рейтинги, УТП, рекламные кампании, отзывы. Выяснили, какие запросы они закрывают, а какие — упускают. Нашли незанятые ниши, на которые можно сделать ставку.</p>
+<h3>Этап 2. Упаковка и SEO-оптимизация</h3>
+<p>В первый месяц сфокусировались на фундаментальных улучшениях — без них все остальные действия бессмысленны.</p>
+<h4>Профессиональный дизайн карточки</h4>
+<figure class="multi"><img alt="" height="702" loading="lazy" src="img/360-mrt/04.jpg" width="446"/><img alt="" height="724" loading="lazy" src="img/360-mrt/05.jpg" width="435"/></figure>
+<h4>SEO-оптимизация карточки</h4>
+<figure><img alt="" height="129" loading="lazy" src="img/360-mrt/06.jpg" width="402"/></figure>
+<h4>Устранение дублей</h4>
+<p>Обнаружили две устаревшие карточки с неверной информацией. Добились их удаления — они размывали рейтинг и путали пользователей.</p>
+<h4>Настройка аналитики</h4>
+<p>Подключили UTM-метки для отслеживания переходов. Настроили цели в Яндекс.Метрике. Теперь видим не просто клики, а реальные конверсии: звонки, заявки, записи на приём.</p>
+<p><strong>Результат первого месяца: рост обращений в 2 раза!</strong></p>
+<p>Клиент доволен — продолжаем работу.</p>
+<figure><img alt="" height="366" loading="lazy" src="img/360-mrt/07.jpg" width="735"/><figcaption>Динамика роста после базовой оптимизации: звонки, маршруты и переходы выросли в 2 раза</figcaption></figure>
+
+<h3>Этап 3. Масштабирование результата</h3>
+<p>После успешного старта мы развернули полномасштабную работу по всем направлениям.</p>
+<h4>Увеличение рейтинга: от 4.1 до 4.9</h4>
+<p>Рейтинг 4.1 — это почти приговор для медицинской клиники. При выборе между клиникой с рейтингом 4.1 и 4.8 пользователь даже не задумается. Мы поставили задачу поднять рейтинг до 4.8+ без накруток и ботов.</p>
+<p><strong>Что <u>сделали</u>:</strong></p>
+<ul>
+<li>
+<p><strong>Внедрили систему сбора отзывов.</strong> После каждого визита пациент получал SMS или сообщение в мессенджер с просьбой оценить приём. Простая механика, но работает: довольные пациенты охотно делятся впечатлениями, если их вовремя попросить.<br/>
+Кроме того, на месте администраторы собирали обратную связь у пациентов и просили оставить обратную связь по QR коду (сделали визитки, стилизованный баннер и пирамидку), вероятность прохождения такого отзыва кратно выше.</p>
+</li>
+<li>
+<p><strong>Отработали негативные отзывы.</strong> На каждый негативный отзыв подготовили развёрнутый ответ от лица клиники. Где возможно — решили проблему и попросили пациента обновить оценку. Часть откровенно ложных отзывов удалось обжаловать и удалить через модерацию Яндекса.</p>
+</li>
+<li>
+<p><strong>Настроили мониторинг.</strong> Теперь отслеживаем новые отзывы в реальном времени. Негатив получает ответ в течение 2 часов — это демонстрирует другим пользователям, что клиника заботится о пациентах.</p>
+</li>
+</ul>
+<figure><img alt="" height="420" loading="lazy" src="img/360-mrt/08.jpg" width="750"/><figcaption>Рейтинг вырос с 4.1 до 4.9 — теперь клиника в лидерах района</figcaption></figure>
+
+<h4>Контент-план и публикации</h4>
+<p>Раздел «Новости» в карточке Яндекс.Карт — недооценённый инструмент. Большинство компаний его игнорируют. А зря: публикации повышают активность карточки и улучшают позиции в выдаче.</p>
+<p><strong>Что <u>сделали</u>:</strong></p>
+<ul>
+<li>
+<p>Разработали контент-план на месяц вперёд: акции, полезные материалы про МРТ, новости клиники</p>
+</li>
+<li>
+<p>Публикуем 3-4 поста в месяц регулярно — алгоритм Яндекса любит активные карточки</p>
+</li>
+<li>
+<p>Каждый пост оптимизирован под поисковые запросы — это дополнительный трафик</p>
+</li>
+</ul>
+<h4>Запуск рекламной кампании</h4>
+<p>На третьем месяце, когда карточка была полностью упакована и рейтинг подрос, запустили платное продвижение в Яндекс.Бизнесе.</p>
+<p><strong><u>Особенности</u> нашего подхода к рекламе:</strong></p>
+<ol type="1">
+<li>
+<p><strong>Постоянная оптимизация.</strong> Не просто «запустили и забыли». Каждую неделю анализируем результаты, корректируем площадки показов, тестируем новые креативы.</p>
+</li>
+<li>
+<p><strong>Геотаргетинг.</strong> Настроили показы в радиусе 5 км от клиники — это оптимальная зона охвата для МРТ-центра.</p>
+</li>
+<li>
+<p><strong>Приоритетные услуги.</strong> Усилили рекламу по высокомаржинальным направлениям: МРТ головного мозга, МРТ позвоночника, МРТ с контрастом.</p>
+</li>
+</ol>
+<figure><img alt="" height="523" loading="lazy" src="img/360-mrt/09.jpg" width="899"/><figcaption>Сводная статистика рекламы: 12 735 целевых действий, стоимость действия — 53 рубля</figcaption></figure>
+
+<h4>Аналитика выдачи по ключевым словам</h4>
+<p>Мы не гадаем, показывается карточка в поиске или нет. Используем специальный чекер позиций, который ежедневно проверяет видимость по всем целевым запросам.</p>
+<p><strong>Если позиция по запросу ниже ТОП-3, принимаем <u>меры</u>:</strong></p>
+<ul>
+<li>
+<p>Добавляем товары и услуги с нужными ключевыми словами</p>
+</li>
+<li>
+<p>Публикуем новости по этой теме</p>
+</li>
+<li>
+<p>Зашиваем SEO-данные и геотеги в фотографии конкретной услуги</p>
+</li>
+<li>
+<p>Запрашиваем у клиентов отзывы именно по той услуге, по которой нужно подняться</p>
+</li>
+<li>
+<p>Корректируем описание и добавляем синонимы запросов</p>
+</li>
+</ul>
+<p>За счёт такой системной работы вышли на лидирующие позиции практически по всем целевым запросам. Львиная доля трафика теперь приходит именно из органического поиска — это бесплатные обращения.</p>
+<figure><img alt="" height="526" loading="lazy" src="img/360-mrt/10.jpg" width="826"/><figcaption>Позиции по ключевым запросам: ТОП-1-3 по большинству коммерческих запросов в радиусе 5 км</figcaption></figure>
+
+<h4>Расширение каналов трафика</h4>
+<p>Яндекс — это огромная экосистема. Помимо Яндекс.Карт, есть масса площадок, где можно получить дополнительный трафик.</p>
+<p><strong>Что <u>подключили</u>:</strong></p>
+<ul>
+<li>
+<p><strong>2ГИС</strong> — второй по популярности геосервис в России. Дублирует охват Яндекс.Карт и приводит дополнительные заявки.</p>
+</li>
+<li>
+<p><strong>Google Maps</strong> — да, им пользуются меньше, но это всё равно ощутимый поток. Особенно для тех, кто ищет с iPhone.</p>
+</li>
+<li>
+<p><strong>Медицинские агрегаторы</strong> — ПроДокторов, НаПоправку, СберЗдоровье, Zoon. Люди часто ищут МРТ именно там, сравнивая цены и отзывы.</p>
+</li>
+</ul>
+<figure><img alt="" height="622" loading="lazy" src="img/360-mrt/11.jpg" width="1178"/><figcaption>Грамотная работа с экосистемой сервисов Яндекс – источник дополнительного трафика</figcaption></figure>
+
+<h4>SERM: управление репутацией в интернете</h4>
+<p>SERM (Search Engine Reputation Management) — это работа с репутацией бренда во всём интернете, а не только на картах. Пациенты перед записью часто гуглят название клиники и читают отзывы на разных площадках.</p>
+<p><strong>Что <u>сделали</u>:</strong></p>
+<ul>
+<li>
+<p>Зарегистрировали клинику на всех значимых площадках с отзывами</p>
+</li>
+<li>
+<p>Настроили мониторинг упоминаний бренда</p>
+</li>
+<li>
+<p>Начали системно собирать отзывы на всех платформах, не только на Яндекс.Картах</p>
+</li>
+<li>
+<p>Подняли рейтинг на агрегаторах до 4.7+</p>
+</li>
+</ul>
+<h4>Масштабирование и аналитика</h4>
+<p><strong>Принцип простой:</strong> усиливаем то, что работает. Если рекламная связка приносит заявки по 100 рублей — увеличиваем бюджет. Если какой-то канал не окупается — перераспределяем средства.</p>
+<p>Отслеживанию мы уделяем огромное количество времени. Каждую неделю <u>анализируем</u>:</p>
+<ul>
+<li>
+<p>Количество обращений по каждому каналу</p>
+</li>
+<li>
+<p>Стоимость заявки и динамику изменений</p>
+</li>
+<li>
+<p>Позиции в выдаче по ключевым запросам</p>
+</li>
+<li>
+<p>Рейтинг и новые отзывы</p>
+</li>
+<li>
+<p>Данные Яндекс.Метрики: поведение пользователей на сайте</p>
+</li>
+</ul>
+<h2>Точка Б: результаты за 7 месяцев</h2>
+<p><strong>БЕЗ НАКРУТКИ. БЕЗ ПОВЕДЕНЧЕСКИХ ФАКТОРОВ. Только белые методы.</strong></p>
+<figure><img alt="" height="826" loading="lazy" src="img/360-mrt/12.jpg" width="780"/><figcaption>Полная статистика карточки: рост по всем показателям на сотни процентов</figcaption></figure>
+
+<h4>Итоговые показатели:</h4>
+<ul>
+<li>
+<p><strong>Рейтинг:</strong> с 4.1 до <strong>4.9</strong></p>
+</li>
+<li>
+<p><strong>Звонки в месяц:</strong> с 27 до <strong>322</strong> (рост в 12 раз)</p>
+</li>
+<li>
+<p><strong>Построенные маршруты:</strong> с 22 до <strong>234</strong> (рост в 10 раз)</p>
+</li>
+<li>
+<p><strong>Переходы на сайт:</strong> с 26 до <strong>326</strong> (рост в 12 раз)</p>
+</li>
+<li>
+<p><strong>Стоимость заявки: 129 рублей</strong></p>
+</li>
+</ul>
+<h2>Углубленная аналитика и впечатляющий результат</h2>
+<p>Мы не просто «ведём карточку» — мы глубоко погружаемся в аналитику и отслеживаем каждую заявку.</p>
+<p><strong>Конверсия 26,9% — покажите нам другой канал с таким результатом!</strong></p>
+<p>На текущий момент 26,9% уникальных посетителей карточки конвертируются в целевые действия (звонок, заявка, переход в мессенджер).</p>
+<p><strong><u>Для сравнения</u> средняя конверсия по другим каналам:</strong></p>
+<ul>
+<li>
+<p>Контекстная реклама: 3-7%</p>
+</li>
+<li>
+<p>Таргетированная реклама: 1-3%</p>
+</li>
+<li>
+<p>SEO-трафик: 2-5%</p>
+</li>
+</ul>
+<p><strong>Геосервисы дают в 4-10 раз более высокую конверсию!</strong></p>
+<figure><img alt="" height="480" loading="lazy" src="img/360-mrt/13.jpg" width="826"/><figcaption>Конверсия 26,9% — уникальный показатель для любого канала привлечения</figcaption></figure>
+
+<h4>Прозрачная отчётность</h4>
+<p>Каждый месяц клиент получает детальный отчёт с разбивкой по каналам. Видно, откуда пришли заявки: Яндекс.Карты, 2ГИС, Google Maps. Видна динамика: растём или нет. Видна стоимость каждого обращения.</p>
+<figure><img alt="" height="480" loading="lazy" src="img/360-mrt/14.jpg" width="826"/><figcaption>Декабрьский отчёт — видим стабильный рост (небольшой спад в декабре — сезонный фактор, Новый год)</figcaption></figure>
+
+<figure><img alt="" height="595" loading="lazy" src="img/360-mrt/15.jpg" width="1275"/><figcaption>Динамика целевых событий за год: стабильный рост с выходом на плато в 300+ тысяч событий</figcaption></figure>
+
+<h2>Почему геосервисы — это must-have для локального бизнеса</h2>
+<p><strong>Важно понимать:</strong> Яндекс.Карты — это история вдолгую. Это «клиенты завтра» (хотя часто мы получаем результат уже в первый месяц). Но когда карточка «раскачивается» — как SEO-сайт — клиент получает <strong>очень дешёвых и качественных клиентов</strong>. По сути, это трафик уровня «сарафанного радио» — приходят люди с высоким уровнем доверия.</p>
+<h3><u>Преимущества</u> геомаркетинга:</h3>
+<p>✅ <strong>Низкая стоимость заявки</strong> — в нашем кейсе 129 рублей<br/>
+✅ <strong>Высокая конверсия</strong> — до 27% посетителей становятся клиентами<br/>
+✅ <strong>«Тёплый» трафик</strong> — люди уже ищут вашу услугу в вашем районе<br/>
+✅ <strong>Накопительный эффект</strong> — результаты растут со временем<br/>
+✅ <strong>Независимость от блокировок</strong> — это не таргет в Instagram*</p>
+<h2>Хотите такие же результаты для своего бизнеса?</h2>
+<p>Мы проведем <strong>бесплатный аудит вашей карточки</strong> на Яндекс.Картах и покажем точки роста.</p>
+<p><strong>Что вы получите:</strong></p>
+<ul>
+<li>
+<p>Анализ текущего состояния карточки</p>
+</li>
+<li>
+<p>Сравнение с конкурентами в вашей нише</p>
+</li>
+<li>
+<p>Конкретные рекомендации по улучшению</p>
+</li>
+<li>
+<p>Прогноз потенциального роста обращений</p>
+</li>
+<li>
+<p>Персональный план продвижения</p>
+</li>
+</ul>
+<h2>📩 Оставьте заявку на бесплатный аудит</h2>
+<p><strong>Заполните форму ниже, и мы свяжемся с вами в течение 24 часов:</strong></p>
+<p>[ФОРМА ЗАЯВКИ]</p>
+<ul>
+<li>
+<p>Ваше имя: _______________</p>
+</li>
+<li>
+<p>Телефон: _______________</p>
+</li>
+<li>
+<p>Сфера бизнеса: _______________</p>
+</li>
+<li>
+<p>Ссылка на карточку (если есть): _______________</p>
+</li>
+</ul>
+<p><strong>Или напишите нам напрямую:</strong></p>
+<ul>
+<li>
+<p>Telegram: @360-digital</p>
+</li>
+<li>
+<p>WhatsApp: +7 (XXX) XXX-XX-XX</p>
+</li>
+</ul>
+<p><em>© 360-DIGITAL — Агентство геомаркетинга. Выводим локальный бизнес в ТОП Яндекс.Карт.</em></p>
+<p>*Instagram принадлежит компании Meta, признанной экстремистской организацией на территории РФ.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

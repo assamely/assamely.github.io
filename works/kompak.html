@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Интервью для «Бизнес-класса» — ГК «Компак» — Александра Самелюк</title>
+<meta name="description" content="Интервью с основателем холдинга Артуром Курылёвым для делового журнала: от торговли девяностых до беспилотных тракторов.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:400 14px/1.45 var(--body);color:var(--mute);margin-top:10px;padding-left:12px;border-left:2px solid var(--marker)}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 03</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">ГК «Компак» · Интервью</p>
+      <h1>Интервью с основателем агрохолдинга для делового журнала</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>ГК «Компак», Удмуртия</dd></div><div><dt>Издание</dt><dd>«Бизнес-класс»</dd></div><div><dt>Формат</dt><dd>Интервью, ~25 тыс. знаков</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Интервью с основателем холдинга Артуром Курылёвым для делового журнала: от торговли девяностых до беспилотных тракторов.</p></section>
+        <section><h3>Сделала</h3><p>Превратила запись беседы в цельный текст: лид, справка о компании, тематические блоки, выноски-цитаты. Сохранила интонацию героя, проверила цифры.</p></section>
+        <section class="res"><h3>Итог</h3><p>Живой разговор о бизнесе и о том, какой будет наша еда через двадцать лет.</p></section>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">ЗЕМЛЯ НЕ ТЕРПИТ РАВНОДУШНЫХ</h2>
+        <p class="sub">КАК МАТЕМАТИК СТАЛ ХОЗЯИНОМ ПОЛЕЙ</p>
+        
+
+<p><em>Жизнь — штука непредсказуемая: иногда, чтобы найти своё призвание, нужно сначала собрать компьютер, продать партию канцелярки и поработать в НИИ. Артур Курылёв, основатель группы компаний «Компак», прошёл именно такой путь — от ларёчной торговли девяностых до собственного маслозавода и тысяч гектаров посевных площадей. О том, зачем фермеру беспилотник, почему лён стал новым золотом Удмуртии и какой будет наша еда через двадцать лет, — в откровенном разговоре для «Бизнес-класса».</em></p>
+<aside class="note"><p class="note-h">ГРУППА «КОМПАК» | СПРАВКА</p><p><strong>Основана в 2000 году</strong> • <strong>160+ сотрудников</strong> • <strong>Удмуртия, Пермский край, экспорт в КНР</strong></p><p>Агропромышленный холдинг полного цикла: от поставки семян и средств защиты растений до собственного маслозавода. В 2019 году запущено производство рапсового и льняного масла методом холодного отжима (оборудование Florapower, Германия; мощность переработки — до 300 тонн семян в сутки). Продукция поставляется по России и экспортируется в Китай. Также в составе группы — сельхозтехника, строительство, земельные активы.</p><p><em>Призёр всероссийского конкурса «Экспортёр года» в сфере продукции АПК</em></p></aside>
+<h2 class="caps">ОТ КОМПЬЮТЕРОВ К КОМБАЙНАМ</h2>
+<p><em><strong>— Артур Васильевич, вы математик-программист по образованию. Как человек с таким бэкграундом оказался в сельском хозяйстве?</strong></em></p>
+<p>— Как и большинство предпринимателей моего поколения, я начинал с торговли в девяностые. Продавал всё подряд: компьютеры, комплектующие к ним — сам собирал и реализовывал. Потом канцелярские товары, спортивные товары, книги, даже нижнее бельё. Практически всё, на чём можно было заработать, в чём возникал спрос, — мы выходили с этим предложением. А в девяносто седьмом году меня пригласили в <em><strong>Удмуртский государственный НИИ сельского хозяйства</strong></em> на должность заместителя директора. Там я получил опыт и представление об отрасли, погрузился в её специфику. И в 2000 году организовал собственную компанию по продаже пестицидов и семян — так и начали работать самостоятельно в сельскохозяйственной отрасли.</p>
+<p><em><strong>— То есть математическое мышление в аграрном бизнесе пригодилось?</strong></em></p>
+<p>— Безусловно. Сельское хозяйство сегодня — это в значительной степени про цифры, аналитику, прогнозирование. <em><strong>Математический склад ума</strong></em> помогает видеть закономерности, просчитывать риски, принимать взвешенные решения. Без аналитического подхода в современном агробизнесе делать нечего.</p>
+<h2 class="caps">ЗЕРНО ПО ЦЕНЕ ПЕСКА</h2>
+<p><em><strong>— Какой главный барьер сегодня в агробизнесе?</strong></em></p>
+<p>— Первоочередная проблема — <em><strong>трудовые ресурсы</strong></em>. Квалифицированные кадры, а точнее, их отсутствие — основной сдерживающий фактор для эффективности всей отрасли. Причём мы сталкиваемся с дефицитом не только специалистов, но и простых работников: механизаторов, сотрудников молочных ферм. Это проблема номер один.</p>
+<p>Второй момент — волатильность рынка. Вы привыкли оценивать стоимость продуктов на полках в магазинах. А мы работаем в оптовых ценах, по которым у нас покупают товар. И вот что происходит: в двадцать втором году мы продавали зерно по восемнадцать рублей за килограмм. Сейчас — существенно дешевле. При том что инфляция растёт, энергоносители дорожают, зарплаты увеличиваются — <em><strong>закупочные цены на нашу продукцию падают</strong></em>. Это серьёзный экономический удар. Многие хозяйства уже сокращают посевные площади под зерновыми. Для ряда предприятий такая ценовая динамика стала настоящим испытанием.</p>
+<blockquote class="pull"><p>«В двадцать втором году мы продавали зерно по 18 рублей за килограмм. Сейчас — существенно дешевле. А инфляция, энергоносители, зарплаты — всё растёт»</p></blockquote>
+<p>Такая же ситуация по молоку: в первой половине прошлого года закупочные цены доходили до сорока пяти — пятидесяти рублей за литр. Сейчас — двадцать девять. Понимаете масштаб? Ты формируешь годовой бизнес-план, а <em><strong>прогнозировать закупочные цены невозможно</strong></em> даже в рамках одного года. Не говоря уже про трёхлетнее планирование.</p>
+<p><em><strong>— А процентные ставки?</strong></em></p>
+<p>— Они влияют, но не настолько критично, потому что государство так или иначе поддерживает отрасль — есть возможность получить льготный кредит. Раньше мы брали под два-три-пять процентов годовых. Сейчас ставки выше, но всё же это не главная боль.</p>
+<h2 class="caps">КОГДА КЛИМАТ ИГРАЕТ НА ТВОЕЙ СТОРОНЕ</h2>
+<p><em><strong>— Изменение климата — это угроза или возможность для вашего региона?</strong></em></p>
+<p>— Знаете, в нашей климатической зоне это скорее определённый плюс. Мы можем расширить перечень культур, которые раньше здесь было невозможно выращивать. Когда зерновые стали убыточными, вектор сместился в сторону масличных — рапса и льна масличного. Это гарантированно экономически оправданная история. Но мы идём дальше: <em><strong>активно экспериментируем с соей и подсолнечником</strong></em> — культурами, абсолютно нетрадиционными для нашего региона. Пробуем кукурузу на зерно — она востребована как кормовая составляющая для молочного животноводства, которым славятся наши края. Мы стараемся подобрать именно те сорта и гибриды, которым хватает нашего вегетационного периода и суммы активных температур для полного созревания.</p>
+<p><em><strong>— Какой продукт даёт самый быстрый возврат инвестиций?</strong></em></p>
+<p>— Лён масличный. Во-первых, технологически это <em><strong>наименее сложная для производства культура</strong></em>. Во-вторых, никаких специальных инвестиций не требуется: обычные зерновые комбайны, стандартные мелкосемянные сеялки — всё подходит. Да, есть волатильность цены: бывает и сорок рублей за килограмм, бывает и двадцать пять. Но даже при двадцати пяти это экономически выгодная культура. Самая быстрая история для входа в агробизнес.</p>
+<h2 class="caps">ОДИН ТРАКТОР ВМЕСТО ПЯТИ</h2>
+<p><em><strong>— Вы несколько раз упомянули кадровый голод. Как справляетесь?</strong></em></p>
+<p>— Стабильного состояния, что мы этот вопрос решили, у нас нет. Мы постоянно в поиске. По двум причинам. Первая — расширяемся по посевным площадям, нам нужно больше людей. Вторая — мы проводим, как я это называю, выбраковку. Не все работники готовы трудиться в нашем режиме. У нас в этом смысле <em><strong>абсолютная нетерпимость к нарушению дисциплины</strong></em>: появился на работе в нетрезвом виде хотя бы раз — расстаёмся без вариантов. Это дисциплинирует коллектив, но создаёт дополнительные сложности с набором. Я, честно говоря, жду, когда нас наконец обеспечат беспилотными тракторами и комбайнами.</p>
+<blockquote class="pull"><p>«У нас абсолютная нетерпимость к нарушению дисциплины: появился на работе в нетрезвом виде хотя бы раз — расстаёмся без вариантов»</p></blockquote>
+<p>При этом, знаете, у сельского хозяйства есть одно неоспоримое преимущество: <em><strong>спрос на продовольствие будет всегда</strong></em>. Произведённую продукцию неизбежно будут потреблять. Но без квалифицированных специалистов добиться результата не получится. Два ключевых человека в любом хозяйстве — это агроном и зоотехник. Без них производственный процесс выстроить невозможно. Все остальные — инженеры, экономисты, ветеринары — призваны помочь этим двум главным специалистам.</p>
+<p><em><strong>— Выход — автоматизация?</strong></em></p>
+<p>— Именно. Необходимо максимально автоматизировать все процессы. В растениеводстве это уход от слабых тракторов вроде МТЗ-82 и переход к <em><strong>энергонасыщенным машинам на четыреста лошадиных сил</strong></em> с широкозахватными орудиями. Один такой трактор заменяет пять маленьких. Да, он стоит дороже. Да, к нему нужны специализированные агрегаты. Но когда ты сделал эту инвестицию — она снимает головную боль с поиском механизаторов и оптимизирует весь производственный процесс.</p>
+<p>Второе направление — цифровизация. Оцифровка всех полей, подруливающие устройства, системы <em><strong>дифференцированного внесения удобрений и семян</strong></em>, умные опрыскиватели, которые сокращают пестицидную нагрузку и экономят деньги. Сегодня масса цифровых решений позволяет точнее работать с имеющимися ресурсами. Это не просто тренд — это необходимость для выживания сельхозпредприятий.</p>
+<p><em><strong>— У вас даже была идея посадить на тракторы девушек?</strong></em></p>
+<p>— Был такой период! Пока, к счастью, справляемся своими силами. Но если ситуация станет критической — почему нет? У нас энергонасыщенные тракторы с подруливающими устройствами, <em><strong>карта траектории задаётся автоматически</strong></em>. Если помогли навесить сельхозорудия — дисковую борону или посевной комплекс, — нужно только следить, чтобы ничего непредвиденного не произошло. Думаю, девушки с этим прекрасно справятся.</p>
+<h2 class="caps">ОФИС ВМЕСТО КАБИНЫ</h2>
+<p><em><strong>— Каким вы видите сельское хозяйство через десять-пятнадцать лет?</strong></em></p>
+<p>— Я очень рассчитываю на появление беспилотных тракторов и комбайнов. Управлять процессом будут <em><strong>операторы из офиса</strong></em> — так же, как сейчас управляют беспилотными летательными аппаратами. Через десять лет передовые хозяйства точно в эту историю зайдут. В животноводстве автоматизация идёт даже лучше: доильные роботы уже работают. Дальше — автоматическое составление рациона и кормление животных в полностью автоматическом режиме. Я вижу максимальную цифровизацию всех процессов. Мы сможем моделировать: какую культуру лучше посеять на конкретном участке, при каких условиях получить требуемую урожайность и качество. Такие технологии уже применяются в селекции.</p>
+<p><em><strong>— Государство в этом помогает?</strong></em></p>
+<p>— Государство подталкивает — мне нравится именно это слово. Все поля сейчас заводятся в <em><strong>единую цифровую систему</strong></em>. Хозяйства фиксируют всё: откуда семена, на каком поле посеяли, какими пестицидами работали, какой результат получили, какого качества урожай собрали. Действуют системы «Меркурий», «Цербер», федеральные реестры семеноводства. Есть субсидии, льготные кредиты, поддержка отечественной селекции. Государство заинтересовано прежде всего в прозрачности и в отсутствии теневых поставок.</p>
+<p>Но хотелось бы большего. Раньше государство использовало такой инструмент, как интервенции — закупало зерно для стратегических нужд по ценам чуть выше рыночных. Это поддерживало нас. В прошлом году интервенций уже не было, и хотелось бы, чтобы эту практику возобновили. К тому же мы в Кировской области и Удмуртии находимся далеко и от Черноморских портов, и от китайской границы — более двух тысяч километров.</p>
+<p><em><strong>Логистика не позволяет конкурировать с южными регионами</strong></em>. Для Дальнего Востока государство субсидирует логистику, а для нас — нет. Мы экспортируем масло, потому что это маржинальный продукт. Но зерно, жмых — стоимость логистики съедает всю маржу. А ещё: без субсидирования производства беспилотной техники массовое внедрение автоматизации невозможно. Отечественные тракторы пока отстают от иностранных аналогов. Хотелось бы, чтобы государство совместно с производителями больше инвестировало в передовые разработки и чтобы эта техника поступала к рядовым хозяйствам по приемлемым ценам.</p>
+<h2 class="caps">ЧТО МЫ БУДЕМ ЕСТЬ ЗАВТРА?</h2>
+<p><em><strong>— Вопрос, который волнует каждого: насколько безопасна еда будущего?</strong></em></p>
+<p>— Требования к безопасности сельскохозяйственной продукции ужесточаются — и это хорошо. В шестидесятые-восьмидесятые годы мы ели куда более вредную продукцию: пестициды того времени имели гораздо более сильное последействие. Сегодня электронные системы контролируют всё: нельзя использовать в поле незарегистрированный пестицид, <em><strong>нельзя превысить дозировку</strong></em> — система моментально это зафиксирует. С точки зрения выращенного сырья контроль будет только ужесточаться, и это качественный сдвиг.</p>
+<blockquote class="pull"><p>«Натуральные продукты могут стать дорогим эксклюзивом. Но это, по-моему мнению, история не нашего поколения»</p></blockquote>
+<p>Но вот что делают с этим сырьём переработчики — тут у меня уверенности нет. Они активно удешевляют свою продукцию, добавляя химические вкусовые добавки. И в долгосрочной перспективе, с ростом мирового населения, у меня есть предположение: <em><strong>натуральные продукты могут стать дорогим эксклюзивом</strong></em>, доступным определённому проценту населения. А остальные, возможно, перейдут на искусственную пищу — по сути, набор белков, жиров и углеводов, произведённых химическим путём. Но, слава богу, это скорее всего история не нашего поколения. Буду рад, если такой прогноз не осуществится.</p>
+<h2 class="caps">МОЁ КРЕДО: ЧЕСТНОСТЬ, ПОРЯДОЧНОСТЬ И ПУНКТУАЛЬНОСТЬ</h2>
+<p><em><strong>— Три ваших принципа в бизнесе?</strong></em></p>
+<p>— Честность, порядочность и пунктуальность. Причём <em><strong>пунктуальность для меня особенно значима</strong></em>. Время имеет огромную ценность, и я отношусь к этому предельно серьёзно.</p>
+<p><em><strong>— На что опираетесь, чтобы не опускать руки?</strong></em></p>
+<p>— Ты живёшь с постоянным пониманием, что отвечаешь не только за будущее своих детей, но и за сотрудников, за их семьи. Это <em><strong>ощущение ответственности</strong></em> — возможно, в какой-то степени гипертрофированное — заставляет всегда быть в тонусе. А когда становится совсем непросто — опираюсь на семью и друзей. Причём друзей я бы поставил наравне с семьёй. Друзья, с которыми общаешься сорок лет, — это дорогого стоит. Они всегда готовы поддержать. Даже если не могут помочь напрямую — выслушают. А когда проговариваешь проблему вслух, начинаешь видеть ситуацию иначе. Формулируешь — и уже находишь ответ.</p>
+<p><em><strong>— Какая ваша главная сила как руководителя?</strong></em></p>
+<p>— Мне сложно оценивать себя. Но я убеждён: в основе управления должна быть <em><strong>человечность</strong></em>. Неважно, личные это отношения, производственные или деловые. Когда умеешь слушать и слышать собеседника, понять его боли и проблемы, — тогда сможешь решить и свои задачи. Чтобы управлять людьми, нужно знать, какой у человека настрой, что его беспокоит, на что он ориентирован. Вот этот человеческий подход — он и позволяет организовывать весь бизнес-процесс. На мой взгляд, это фундамент.</p>
+<p>■</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      <div class="files"><a href="files/kompak-interview.docx" download>Скачать .docx</a></div>
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
