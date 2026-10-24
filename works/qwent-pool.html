@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Посадочная: вентиляция бассейна — Qwent — Александра Самелюк</title>
+<meta name="description" content="Написать посадочную страницу под узкую услугу так, чтобы она продавала и одновременно доказывала инженерную компетенцию компании.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 08</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">Qwent · Посадочная страница · B2B</p>
+      <h1>Посадочная страница инженерной компании: вентиляция бассейна</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Qwent, инженерная компания (Москва)</dd></div><div><dt>Аудитория</dt><dd>Владельцы бассейнов, спорткомплексов, коттеджей</dd></div><div><dt>Формат</dt><dd>Посадочная страница услуги</dd></div><div><dt>Год</dt><dd>2021</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Написать посадочную страницу под узкую услугу так, чтобы она продавала и одновременно доказывала инженерную компетенцию компании.</p></section>
+        <section><h3>Сделала</h3><p>Собрала нормы и расчётные параметры микроклимата, три схемы организации вентиляции, правила проектирования, оборудование, этапы монтажа, примеры работ и FAQ.</p></section>
+        <section class="res"><h3>Итог</h3><p>Страница, которая отвечает на вопросы заказчика раньше менеджера: от параметров воздуха до порядка работ.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для Qwent</span><ul><li><a href="qwent-pool.html" aria-current=page>Посадочная: вентиляция бассейна</a></li><li><a href="qwent-industrial.html">Экспертная статья: промышленная вентиляция</a></li><li><a href="qwent-sposoby.html">Лонгрид: 6 способов обмана</a></li><li><a href="qwent-dzen.html">Статья для Дзена</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Вентиляция бассейна</h2>
+        
+        
+<p>Правильно выполненная установка механической вентиляции продлит срок эксплуатации бассейна без вложений в ремонт и обслуживание. Свяжитесь с нами и мы согласуем визит инженера для осмотра помещения. Предложим оптимальное решение для <strong>вентиляции</strong> чаши <strong>бассейна</strong> и подготовим подробное коммерческое предложение с расчетом стоимости в течение 72 часов.</p>
+<p>Почему Qwent?</p>
+<ul>
+<li>Установили профессиональную вентсистему на 18 частных и общественных объектах.</li>
+<li>Бесплатно выезжаем по указанному адресу для осмотра и точных замеров.</li>
+<li>Предоставляем гарантию на монтаж и оборудование до 5 лет.</li>
+</ul>
+<h2>Вы получите производительное и долговечное решение</h2>
+<ul>
+<li>Проектируем вентсистемы для частных и общественных бассейнов.</li>
+<li>Для каждого объекта предлагаем оптимальную схему реализации, учитывающую характер эксплуатации здания.</li>
+<li>Все работы выполняются в строгом соответствии со строительными нормами и правилами (СНиП, СП) и санитарными требованиями.</li>
+</ul>
+<h2>Что дает система вентиляции в бассейне</h2>
+<p>Вентиляция бассейна поддерживает необходимый микроклимат в помещении, создает комфортные условия и защищает здание от коррозии.</p>
+<p>Качественное осушение удаляет излишки влаги. Циркуляция воздуха формирует комфортную атмосферу.</p>
+<p>Эффективный воздухообмен препятствует конденсации водяного пара, который приводит к образованию плесени и коррозии.</p>
+<p>Правильно спроектированная <strong>система вентиляции бассейна</strong> поддерживает оптимальный уровень давления в помещении и повышает срок службы здания.</p>
+<p>Вентиляция в бассейне — важный фактор комфорта посетителей. Оптимальная температура и свежий воздух без избытка влаги повышают эффективность тренировок и влияют на качество отдыха.</p>
+<h2>Организуем оптимальный микроклимат в вашем бассейне</h2>
+<p><strong>Проектирование вентиляции</strong></p>
+<p>При разработке проекта мы ориентируемся на базовые принципы проектирования. Предлагаем доступные и эффективные решения с минимальными эксплуатационными расходами. Разрабатываем проект, учитывая специфику объекта. Гарантируем, что вентсистема будет соответствовать нормативным требованиям.</p>
+<p><strong>Монтаж вентиляции</strong></p>
+<p>К монтажу вентсистем в бассейнах предъявляются серьезные требования. Устанавливаем оборудование в точном соответствии с проектом. Уделяем большое внимание выбору расходных материалов.Во избежание преждевременного износа закладываем в смету компоненты с антикоррозийной защитой.</p>
+<p><strong>Обслуживание и ремонт вентиляции</strong></p>
+<p>Выполняем регулярное обслуживание системы вентиляции бассейна. Обслуживание включает в себя очистку и дезинфекцию, проверку технического состояния устройства и его отдельных элементов. Перечень работ включает мелкий ремонт и профилактический осмотр.</p>
+<h2>Как рассчитать вентиляцию бассейна</h2>
+<p>Вентиляцию бассейна рассчитывают по шести параметрам микроклимата. Ниже — как определяют каждый из них.</p>
+<h3>Расчет температуры воздуха</h3>
+<p>Более высокая температура воздуха в зале плавательного бассейна по сравнению с температурой воды приводит к более низкому уровню испарения с поверхности. Согласно СНиП 2.08.02-89, температура воздуха в плавательном зале должна поддерживаться на уровне 28 °C – 30 °C, температура воды – в диапазоне от 26 °C до 28 °C. В бассейнах для водной терапии температура воды выше на 4-8 °C.</p>
+<h3>Расчет относительной влажности воздуха</h3>
+<p>Основой для расчета является стандарт СНиП 2.08.02-89. Согласно его положениям, относительная влажность в зале плавательного бассейна не должна превышать 65%.</p>
+<h3>Расчет влаговыделений бассейна</h3>
+<p>При составлении <strong>проекта вентиляции бассейна</strong> учитываются все факторы, которые способствуют выделению влаги. К ним относится вода в чаше бассейна, интенсивное потоотделение при занятиях спортом, работа водных аттракционов, влажный приточный воздух летом.</p>
+<h3>Расчет подвижности воздуха</h3>
+<p>Важно поддерживать скорость воздуха в пределах 0,1 м/с – 0,15 м/с. При недостаточной циркуляции могут появиться влажные пятна на поверхности потолка, деформация покрытий и образование плесени.</p>
+<h3>Расчет кратности воздухообмена</h3>
+<p>Воздух в зале плавательного бассейна следует заменять примерно 4 раза в течение 1 часа. Чтобы правильно рассчитать мощность устройства, умножьте полезную площадь на высоту помещения и количество циклов замены.</p>
+<h3>Расчет расхода наружного воздуха</h3>
+<p>Для ассимиляции (поглощения) влаги производится подсчет объема наружного воздуха. Этот показатель разнится в теплое и холодное время года. Согласно своду правил 31-113 – 2004, на одного пловца должно приходиться не менее 80 м³/ч, на наблюдателя — 20 м³/ч.</p>
+<h2>Особенности проектирования бассейнов</h2>
+<p><strong>Максимальный комфорт</strong></p>
+<p>Бассейн — важный элемент здорового образа жизни и отличное место для отдыха. При проектировании <strong>схемы вентиляции бассейна</strong> мы ориентируемся на требования стандартов и создаем оптимальные параметры микроклимата.</p>
+<p><strong>Конденсат и точка росы</strong></p>
+<p>Окна начинают запотевать, когда внутренняя температура достигнет точки росы. Это ухудшает техническое состояние здания, увеличивает затраты, снижает комфорт пользователей и интерес к объекту.</p>
+<p><strong>Осушение приточного воздуха</strong></p>
+<p>Cамая главная задача вентсистемы в бассейне — осушить воздух. Это можно сделать несколькими способами, в зависимости от типа объекта. Для самых маленьких помещений, таких как комнаты с джакузи, небольшие дворы или бассейны отелей, часто бывает достаточно установки настенного осушителя воздуха. Для больших объектов (школьные и большие частные бассейны) используют канальные осушители с возможностью распределения воздуха по воздуховодам.</p>
+<p><strong>Испарение влаги в бассейне</strong></p>
+<p>Основная проблема, с которой сталкиваются проектировщики вентиляции, — это испарение с водной поверхности основного бассейна и с поверхности тела пловцов. Только приняв во внимание приведенную выше информацию, можно будет рассчитать необходимое количество воздуха, обеспечивающее необходимый минимум гигиены и позволяющее поддерживать соответствующий уровень относительной влажности в бассейне.</p>
+<p><strong>Использование осушителей</strong></p>
+<p>Осушители устанавливаются на полу в техническом помещении, подвешиваются к потолку холла или монтируются снаружи. Осушители и вентиляторы обеспечивают свежий воздух и избавляют от лишней влаги. Для них характерен высокий класс прочности и коррозионной стойкости.</p>
+<h2>Способы организации вентилирования бассейна</h2>
+<p><strong>Приточно-вытяжная вентиляция</strong></p>
+<p>Оптимальное решение для аквапарков и крупных объектов, состоящих из нескольких бассейнов. Чаще всего устройство состоит из системы рекуперации тепла в виде теплообменника. Агрегат отличается достаточной эффективностью осушения, а также помогает снизить затраты, необходимые для обогрева зала плавательного бассейна. Для поддержки процесса сушки и вентиляции агрегаты этого типа оснащены смесительной камерой и системой заслонок, которые регулируют соотношение свежего и рециркулируемого воздуха.</p>
+<p><strong>Вентиляционная установка и осушитель</strong></p>
+<p>Этот вариант реализации подходит для небольших бассейнов. Осушители монтируются непосредственно в плавательном зале или за стеной в смежном помещении. Единственные видимые элементы — декоративные решетки. Выбор подходящего осушителя воздуха зависит от нескольких факторов, и поверхность воды является лишь одним из них. Температура воздуха и воды в бассейне, характер использования бассейна и применение жалюзи, закрывающих бассейн бассейна, также играют важную роль с точки зрения уровня осушения.</p>
+<p><strong>Вентиляция, кондиционирование и осушитель</strong></p>
+<p>Комбинация, закрывающая все потребности. Система вентиляции, кондиционирования и осушения позволяет создать оптимальные параметры микроклимата — комфортную температуру, необходимый уровень влажности и фильтрацию воздуха. Летом относительную влажность поддерживает система вентиляции, осушитель и кондиционер активируются в периоды пиковой нагрузки. Зимой влажность контролирует осушитель, вентсистема отвечает за циркуляцию воздуха.</p>
+<h2>Основные правила проектирования вентиляции бассейна</h2>
+<ul>
+<li>Эффективное удаление влаги и осушение</li>
+<li>Оптимальная скорость движения воздуха</li>
+<li>Использование материалов, устойчивых к воздействию влаги и химикатов</li>
+<li>Тщательный расчет мощности оборудования</li>
+<li>Реализация решения в зависимости от площади и посещаемости бассейна</li>
+<li>Подача свежего воздуха и удаление отработанного</li>
+</ul>
+<h2>Почему Qwent?</h2>
+<p><strong>Опыт.</strong> У нас более 12 лет опыта в проектировании и монтаже систем механической вентиляции бассейнов. Работаем с объектами любого уровня сложности.</p>
+<p><strong>Проект от эксперта.</strong> Благодаря многолетнему опыту наших специалистов в <strong>проектировании вентиляции бассейна</strong>, вы можете быть уверены, что система будет работать правильно.</p>
+<p><strong>Пунктуальность во всем.</strong> От составления сметы — до соблюдения сроков. Мы гарантируем оптимальный расход бюджет, не завышаем стоимость работ и всегда придерживаемся заранее оговоренных дат сдачи объекта.</p>
+<p><strong>Качественный сервис.</strong> Поддерживаем клиента на каждом этапе работ: от составления ТЗ до бесплатного обучения по использованию установки.</p>
+<h2>Используемое оборудование</h2>
+<p>Мы сотрудничаем с ведущими производителями вентиляционного и климатического оборудования и готовы предложить нашим клиентам цены на 20% ниже рыночных.</p>
+<ul>
+<li>Вентиляторы</li>
+<li>Приточные установка</li>
+<li>Воздуховоды</li>
+<li>Вентиляционные решетки и фильтры</li>
+<li>Вытяжные зонты</li>
+<li>Диффузоры</li>
+<li>Канальный нагреватели</li>
+<li>Системы автоматики</li>
+</ul>
+<h2>Хотите узнать стоимость?</h2>
+<p>Подготовьте информацию об объекте, отправьте данные нам на почту или свяжитесь с менеджером по телефону или в чате. Мы согласуем выезд инженера и в течение 72 часов вышлем коммерческое предложение с указанием <strong>цены вентиляции для бассейна</strong>.</p>
+<h2>Этапы монтажа</h2>
+<ol type="1">
+<li><p><strong>Осмотр помещения</strong></p></li>
+</ol>
+<ul>
+<li><p>Инженер-проектировщик выезжает на объект, предлагает оптимальную <strong>схему и устройство вентиляции в бассейне</strong>.</p></li>
+</ul>
+<ol start="2" type="1">
+<li><p><strong>Составление проекта</strong></p></li>
+</ol>
+<ul>
+<li><p>Выполняем тщательный <strong>расчет вентиляции бассейна</strong>, составляем чертежи с указанием ключевых и дополнительных элементов, формируем смету.</p></li>
+</ul>
+<ol start="3" type="1">
+<li><p><strong>Поставка оборудования</strong></p></li>
+</ol>
+<ul>
+<li><p>Осуществляем поставку агрегатов и комплектующих на особых условиях. Размер скидки составляет 20%.</p></li>
+</ul>
+<ol start="4" type="1">
+<li><p><strong>Установка оборудования</strong></p></li>
+</ol>
+<ul>
+<li><p>Выполняем монтаж вентиляторов, воздуховодов, решеток и других элементов.</p></li>
+</ul>
+<ol start="5" type="1">
+<li><p><strong>Установка автоматики</strong></p></li>
+</ol>
+<ul>
+<li><p>Подключить установку к сети, устанавливаем автоматические датчики для штатной и бесперебойной работы.</p></li>
+</ul>
+<ol start="6" type="1">
+<li><p><strong>Проверка систем</strong></p></li>
+</ol>
+<ul>
+<li><p>Тщательно тестируем систему и обучаем ответственных специалистов или владельцев пользоваться оборудованием.</p></li>
+</ul>
+<h2>Наши работы</h2>
+<p>Опыт Qwent не ограничивается бассейнами. Вот несколько объектов, где компания смонтировала системы вентиляции.</p>
+<h3>Монтаж системы вентиляции в Леруа Мерлен</h3>
+<p>Адрес: Москва, Варшавское шоссе, 21-й километр, 25Ю/5 Тип объекта: Гипермаркет Период работ: 2020 г. Общая площадь объекта: 2000 м²</p>
+<p><a href="https://ceds.ru/object/lerua-merlen/"><strong>детали</strong></a></p>
+<h3>Монтаж системы вентиляции на заводе фармацевтического оборудования</h3>
+<p>Адрес: Московская область, Раменский р-н, с. Ганусово, Луговая 1А Тип объекта: Завод Период работ: 2021 г. Общая площадь объекта: 1680 м²</p>
+<h3>Монтаж системы вентиляции на табачной фабрике DarkSide</h3>
+<p>Адрес: Москва, 43-й км Минского шоссе, вл.1, к.1 Тип объекта: Производство Период работ: 2019 г. Общая площадь объекта: 3000 м²</p>
+<p><a href="https://ceds.ru/object/proizvodstvo-tabaka-darkside/"><strong>детали</strong></a></p>
+<h2>Часто задаваемые вопросы</h2>
+<p><strong>По каким нормативным требованиям проектируется вентиляция бассейнов?</strong></p>
+<p>Основные правила изложены в двух документах — СП 31-113-2004 «Бассейны для плавания» и СНиП 2.08.02-89 «Проектирование бассейнов».</p>
+<p><strong>Есть ли рекомендации по установке вентиляции в бассейне?</strong></p>
+<p>Необходимо поддерживать температуру воздуха выше температуры воды, относительную влажность воздуха на уровне 40% – 64% и скорость воздуха в пределах 0,1 м / с – 0,15 м / с. Температура воздуха должна быть около 30 градусов, а температура воды — около 28 градусов.</p>
+<p><strong>Как контролировать влажность в бассейне?</strong></p>
+<p>Для частных небольших бассейнов достаточно осушителя. Прибор монтируются в помещении и эффективно удаляет влагу из воздуха. На больших объектах используют полноценную систему вентиляции с сетью воздуховодов и канальными осушителями.</p>
+<p><strong>Какие ориентировочные сроки и стоимость монтажных работ?</strong></p>
+<p>Сроки и цены без знания специфики объекта можно указать лишь приблизительно. Для частного объекта актуальны расценки от 10 000 до 20 000 рублей за 1 м2 площади поверхности воды. Сроки монтажа зависят от площади объекта и сложности работ. Установка вентсистемы в небольшом частном бассейне занимает от 2 до 5 недель. МЫ подготовили форму <strong>расчета вентиляции бассейна онлайн</strong>: введите требуемые параметры и получите более точные данные.</p>
+<p><strong>Как сделать заказ?</strong></p>
+<p>Хотите <strong>установить вентиляцию в бассейне</strong>? Свяжитесь в нами по телефону +7 (495) 055-72-55 или отправьте запрос на почту <a href="mailto:order@ceds.ru">order@ceds.ru</a>. Также на сайте предусмотрена форма «Обратный звонок» и чат, в котором можно пообщаться со специалистом.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

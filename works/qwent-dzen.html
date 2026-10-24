@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Статья для Дзена: вентиляция и кондиционирование коммерческих помещений — Qwent — Александра Самелюк</title>
+<meta name="description" content="Рассказать широкой аудитории Дзена о вентиляции и кондиционировании коммерческих помещений и привести читателя к заказу.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 08</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">Qwent · Статья для Дзена</p>
+      <h1>Статья для Яндекс Дзена: вентиляция и кондиционирование коммерческих помещений</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Qwent, инженерная компания (Москва)</dd></div><div><dt>Аудитория</dt><dd>Владельцы кафе, магазинов, офисов</dd></div><div><dt>Формат</dt><dd>Статья для Яндекс Дзена</dd></div><div><dt>Год</dt><dd>2022</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Рассказать широкой аудитории Дзена о вентиляции и кондиционировании коммерческих помещений и привести читателя к заказу.</p></section>
+        <section><h3>Сделала</h3><p>Построила статью на вопросах читателя, включая провокационный «Проект — это развод?», дала формулы расчёта и таблицы примерной стоимости, закончила критериями выбора подрядчика.</p></section>
+        <section class="res"><h3>Итог</h3><p>Текст под площадку: лёгкий вход для неспециалиста и достаточно цифр, чтобы прийти с конкретным запросом.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для Qwent</span><ul><li><a href="qwent-pool.html">Посадочная: вентиляция бассейна</a></li><li><a href="qwent-industrial.html">Экспертная статья: промышленная вентиляция</a></li><li><a href="qwent-sposoby.html">Лонгрид: 6 способов обмана</a></li><li><a href="qwent-dzen.html" aria-current=page>Статья для Дзена</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Системы вентиляции и кондиционирования для коммерческих помещений</h2>
+        
+        
+<p>Качественный воздух в домах влияет на наше здоровье и самочувствие. И если кондиционеры быстро перешли из разряда роскоши в категорию must have, то осознать роль вентиляции нам еще предстоит. Почему комбинация «вентиляция + кондиционирование» так важна и может ли одна система заменить другую? Как выбирать устройства и почему всегда нужен проект? Кому из подрядчиков можно доверять, а с кем работать точно не стоит? Ответы на эти вопросы — в статье.</p>
+<h2>Зачем устанавливаются системы вентиляции и кондиционирования?</h2>
+<p>На вопрос, зачем нужен кондиционер, ответит даже ребенок — чтобы летом не страдать от жары. С вентиляцией все не так однозначно. Владельцы коммерческих и производственных помещений склонны недооценивать ее важность. Однако от эффективности работы вентсистемы зависит продуктивность сотрудников и качество выполнения технологических процессов. Главное требование: обеспечить регулярное поступление свежего воздуха в помещение. И вот здесь заключается основная сложность. Летом наши окна распахнуты настежь, но все равно душно. Или закрыты, если работает кондиционер. Зимой не откроешь — холодно. Как итог: дискомфорт, снижение концентрации из-за недостатка кислорода и избытка СО2, общее недомогание, сквозняки и простуды.</p>
+<p>Почему мы страдаем от плохого качества воздуха в помещениях? Причины две: мы недооцениваем важность вентиляции и переоцениваем возможности кондиционера. Считаем, что одно может заменить другое. Не может. Разберемся, как функционируют эти системы:</p>
+<ol type="1">
+<li>Кондиционер не вентилирует помещение: устройство работает лишь с тем воздухом, который есть в комнате. Охлаждает, фильтрует, осушает. В моделях с тепловым насосом — подогревает. Но никак не влияет на качественные показатели воздуха и его свежесть.</li>
+<li>Вентиляция организует воздушный обмен: в этом ее основное назначение. Подает в комнату свежий воздух и удаляет отработанный. Механическая приточка предварительно (в зависимости от функционала устройства) может охлаждать, подогревать и очищать воздух.</li>
+</ol>
+<p>Вывод: <strong>оптимальный микроклимат возможен при эффективной работе и вентиляции, и кондиционирования</strong>. Системы не заменяют, но взаимно дополняют друг друга.</p>
+<h2>Проект — это развод?</h2>
+<p>Проект может быть и разводом, но только в том случае, если вам «продали» типовое решение «из интернета», не отвечающее задачам вашего объекта и недостойное того, чтоб за него платили. Как не попасть на эту удочку? — Сотрудничать с подрядчиками с хорошей репутацией, внушительным послужным списком и долгим сроком работы на рынке. У них можно заказать консультацию с выездом инженера на объект, выслушать предложения специалиста, получить коммерческое предложение, сопоставить со своим бюджетом.</p>
+<p>Что дает проект?</p>
+<ol type="1">
+<li>Точную стоимость работ, оборудования и расходников, которая не изменится, так как согласована с заказчиком и утверждена им.</li>
+<li>Визуализацию будущего решения: к каждому проекту составляется аксонометрическая схема — изображение того, как будут пролегать коммуникации на объекте, где будут расположены приборы.</li>
+<li>Расчет ресурса системы в соответствии с задачами объекта. Оборудование подберут по мощностным характеристикам.</li>
+<li>Оптимизацию эксплуатационных расходов: слишком ресурсоемкое потребляет много энергии и увеличивает счета за электричество. Недостаточно мощное устройство не справляется со своей задачей или работает на износ.</li>
+</ol>
+<p>Составление проекта избыточно лишь для типовых бытовых решений. Например, поставить кондиционер в двухкомнатную квартиру. Но и здесь нужно провести подготовительную работу: уточнить объем помещения, учесть количество людей, оргтехники и бытовых приборов, выделяющих тепло. И, исходя из этих данных, приобретать климатическую технику необходимой мощности.</p>
+<h2>Приточная вентиляция, вытяжная, приточно-вытяжная и противодымная вентиляция</h2>
+<p>Вентиляция, с точки зрения возложенного на нее функционала, делится на несколько видов:</p>
+<ul>
+<li>Приточная — отвечает за подачу свежего воздуха в помещение. Может быть канальной (воздух подается по вентканалам) и бесканальной (портативные приборы монтируются на окно или в стену).</li>
+<li>Вытяжная — удаляет загрязненный воздух. Пример: вентилятор в ванной, «всасывающий» и выводящий за пределы помещения влажный воздух.</li>
+<li>Приточно-вытяжная — совмещает в себе обе функции. Комплекс оборудования (воздуховоды, центральная приточно-вытяжная установка с мощным вентилятором, фильтры, воздухозаборные и вытяжные решетки, глушитель). Опции: канальные нагреватели, охладители, увлажнители, рекуператор.</li>
+<li>Противодымная — удаляет продукты горения и дым при возгорании, расчищает пути эвакуации, <strong>улучшает</strong> ориентацию в пространстве, снижает травматизм, <strong>уменьшает</strong> риски возникновения паники, отравления угарным газом и гибели людей.</li>
+</ul>
+<p>Также стоит отметить еще одно принципиальное деление вентсистем по принципу работы на естественную и механическую. В первом случае воздух движется за счет силы гравитации (холодный свежий вытесняет отработанный теплый). Во втором за принудительную подачу и отведение отвечают вентиляторы с электроприводом.</p>
+<h2>Как рассчитывается система вентиляции?</h2>
+<p>Прежде, чем приступать к покупке комплектующих для вентиляционной системы, важно произвести все необходимые расчеты. Это поможет не только сэкономить на дорогих материалах и технических устройствах, но и обеспечить полную работоспособность системы. Инженеры-проектировщики используют разные методики расчета. Приведем пример:</p>
+<ol type="1">
+<li>Основной параметр, который необходимо рассчитать для будущей системы вентиляции, — производительность по воздуху. На его основе рассчитываются две величины воздухообмена: по количеству людей, находящихся в помещениях, и по кратностям (количество циклов замены воздуха в час).</li>
+<li>Для расчета используют формулу <strong>L=n*S*H</strong>, где L – <strong>производительность</strong> вентиляционной системы, n – номинальный коэффициент воздухообмена, принятый для жилых помещений равным 1, S – площадь комнат , Н – высота.</li>
+<li>Расчет эффективности системы вентиляции по количеству человек производят по формуле: <strong>L = N*Lнорм</strong>, где N – количество человек в помещении, Lнорм – нормируемый расход воздуха на одного человека, для жилых помещений равный 20 м3/ч.</li>
+</ol>
+<p>На основании этих расчетов подбирают производительность будущей вентиляционной системы. При выборе вентилятора учитывают величину перепада давления воздуха в каналах из-за их длины. После расчета производительности системы вентиляции, приступают к проектированию сети электроснабжения. На завершающем этапе <strong>разработки решения</strong> составляют схему помещения, наносят на нее места расположения трубопровода и расположение решеток. Графическая визуализация <strong>позволяет рассчитать число поворотов магистрали, нанести точки установки агрегатов и подобрать нужное количество комплектующих</strong> (муфты, распределители, вращающиеся элементы, решетки или диффузоры).</p>
+<p>В таблице ниже приведены несколько вариантов реализации <strong>«под ключ», включая проектирование, поставку оборудования, монтаж и пусконаладочные работы</strong>, для разных объектов с указанием примерной стоимости:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Вид помещения</th>
+<th>Реализация</th>
+<th>Примерная стоимость</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Квартира (1 комн.), 40 м2</td>
+<td>Портативная приточка (бризер) + вытяжной вентилятор</td>
+<td>55 000 рублей</td>
+</tr>
+<tr class="even">
+<td>Частный дом, 100 м2</td>
+<td>Приточно-вытяжная установка</td>
+<td>750 000 рублей</td>
+</tr>
+<tr class="odd">
+<td>Офис, 200 м2</td>
+<td>Приточно-вытяжная установка</td>
+<td>1 250 000 рублей</td>
+</tr>
+</tbody>
+</table></div>
+<p>После утверждения проекта приступают к монтажу. Специалисты выполняют подготовку помещения, проводят общие строительные работы, монтируют крепежные опоры, силовые агрегаты, сеть воздуховодов. По завершении установки выполняют пуско-наладку и запуск в работу.</p>
+<h2>Популярные варианты систем кондиционирования</h2>
+<p>Всем известен кондиционер <strong>настенный</strong> — обитатель наших домов, офисов, магазинов. Представляет собой классический вариант сплит-системы с внутренним и внешним блоком. Однако, этой модификацией выбор климатической техники не ограничен. Перечислим основные (все указанные модели являются сплит-системами).:</p>
+<ul>
+<li><strong>Кассетный</strong> монтируется в потолочные панели и устанавливается в больших и высоких помещениях (опен спейсах, торговых залах).</li>
+<li><strong>Канальный</strong> можно встретить в гостиничных номерах. Его выдают декоративные решетки в подпотолочной зоне. Это все, что видит пользователь. Установка подготовки воздуха находится в отдельном помещении или вынесена за пределы здания. Охлажденный воздух распределяется по номерам по системе воздуховодов. Пока это лучший способ контролировать одинаковые параметры микроклимата в разных комнатах.</li>
+<li><strong>Напольно-потолочный</strong> — выглядит как плоская панель на потолке или напоминает радиатор, если устанавливается на полу. Востребован в помещениях, где настенные и кассетные модели поставить нельзя (недостаточная толщина стен или малая высота потолков).</li>
+</ul>
+<p>Моноблочные кондиционеры (не сплит-системы) устроены проще, стоят дешевле, но менее востребованы из-за неудобств эксплуатации. При установке моноблока важно предусмотреть систему слива конденсата: установить гибкий гофрированный шланг и сделать отверстие в окне. Мощность моноблоков, в сравнении со сплит-системами, невелика, они сильно шумят (конденсатор и компрессор расположены в одном корпусе), а дренажный шланг, выходящий в окно, нарушает общую эстетику.</p>
+<h2>Как рассчитывается система кондиционирования</h2>
+<p>Выполнить расчет холодопроизводительности кондиционера не сложно. Определите площадь помещения, затем умножьте это значение (в метрах) на 100. Результат дает нам необходимую холодопроизводительность кондиционера (в ваттах). Пример: площадь квартиры равна 50 м2. 50x100 = 5000 Вт. Из этого следует, что нам нужен кондиционер холодопроизводительностью около 5,0 кВт.</p>
+<p>Варианты климатической техники для разных объектов с указанием стоимости <strong>«под ключ» (проектирование, поставка оборудования, монтажные работы)</strong>:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Вид помещения</th>
+<th>Реализация</th>
+<th>Примерная стоимость</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Квартира (1 комн.), 40 м2</td>
+<td><strong>Сплит-система настенного типа</strong></td>
+<td>60 000 рублей</td>
+</tr>
+<tr class="even">
+<td>Частный дом, 100 м2</td>
+<td><strong>Мульти сплит-система настенного типа</strong></td>
+<td>185 000 рублей</td>
+</tr>
+<tr class="odd">
+<td>Офис, 200 м2</td>
+<td><strong>Мульти сплит-система кассетного типа</strong></td>
+<td>650 000 рублей</td>
+</tr>
+</tbody>
+</table></div>
+<p>Есть два способа монтажа кондиционеров:</p>
+<ul>
+<li><strong>Двухэтапный</strong> — устанавливается внешний блок на этапе чернового ремонта, штробятся стены, прокладываются коммуникации. После завершения отделки монтируется комнатный модуль. Двухэтапный монтаж предпочтительнее с эстетической точки зрения.</li>
+<li><strong>Одноэтапный</strong> — в этом случае все работы выполняются после ремонта. Порядок работ тот же. Единственный нюанс: спрятать фреоновые магистрали и электрокабель не получится, поэтому их маскируют декоративными коробами.</li>
+</ul>
+<p>Одноэтапный монтаж предпочтительнее с точки зрения будущего техобслуживания и доступности трубопровода. При двухэтапной установке коммуникации прячут в стены: обслужить их при нарушении герметичности и другой поломке будет сложнее.</p>
+<h2>На что обращать внимание при выборе подрядчика?</h2>
+<p>Недобросовестные компании будут существовать всегда. Что делать? Научиться их распознавать и обходить стороной. Выбирая подрядчика, обратите внимание на несколько моментов:</p>
+<ol type="1">
+<li>Как компания себя позиционирует? Солидный офис, внятные маркетинговые коммуникации, digital-след (хороший сайт, аккаунты в соцсетях, свой канал на Youtube с кейсами и видеопрезентациями выполненных работ), правдивые отзывы клиентов — все это свидетельствует о серьезном подходе.</li>
+<li>Компания ноу-нейм, на рынке появилась вчера, ноль информации в сети, а по адресу регистрации дверь с амбарным замком? — Стоит поостеречься.</li>
+</ol>
+<p>Мы заботимся о своих клиентах, поэтому составили <a href="https://ceds.ru/material/polnyj-gid-po-sistemam-konditsionirovaniya/">гайд</a> по системам кондиционирования, <a href="https://ceds.ru/material/montazh-sistem-ventilyatsii-ot-i-do/">монтажу</a> вентиляции и подробнее писали о правилах выбора подрядчика <a href="https://ceds.ru/kak-pravilno-vybirat-kompaniyu-dlya-montazha-inzhenernyh-sistem/">здесь</a>. Материалы можно скачать и изучить, чтобы вести переговоры с подрядчиком предметно и конструктивно.</p>
+<p>Остались вопросы? Вы всегда можете их задать по телефону +7 (495) 055-72-55, по e-mail <a href="mailto:order@ceds.ru">order@ceds.ru</a> или пообщаться с нашим менеджером в онлайн-чате на сайте!</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
