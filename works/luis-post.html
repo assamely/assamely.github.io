@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пост о кампании против кибербуллинга — LUIS+ — Александра Самелюк</title>
+<meta name="description" content="Рассказать подписчикам об участии компании в социальной кампании VK против травли в интернете.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:400 14px/1.45 var(--body);color:var(--mute);margin-top:10px;padding-left:12px;border-left:2px solid var(--marker)}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 06</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">LUIS+ · SMM · социальная кампания</p>
+      <h1>Пост для соцсетей: компания поддерживает кампанию VK против кибербуллинга</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>LUIS+</dd></div><div><dt>Площадки</dt><dd>Лента, сторис, Telegram</dd></div><div><dt>Формат</dt><dd>Пост в двух версиях</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Рассказать подписчикам об участии компании в социальной кампании VK против травли в интернете.</p></section>
+        <section><h3>Сделала</h3><p>Связала тему с делом компании, разложила материалы проекта и способы участия по шагам, подготовила полную версию для ленты и короткую для сторис и Telegram.</p></section>
+        <section class="res"><h3>Итог</h3><p>Пост, который объясняет, зачем компании эта тема, и даёт читателю простое действие.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для LUIS+</span><ul><li><a href="luis-server.html">Сервер или регистратор</a></li><li><a href="luis-antivandal.html">Антивандальные камеры</a></li><li><a href="luis-post.html" aria-current=page>Пост для соцсетей</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Месяц осведомленности о кибербуллинге: пост LUIS+</h2>
+        
+        <h2 class="label">Основной пост</h2>
+<p><strong>Мы присоединяемся к кампании «Месяц осведомленности о кибербуллинге» 🤍</strong></p>
+<p>С 1 по 30 ноября VK в восьмой раз проводит социальную акцию против травли в интернете. В 2019 году инициативу поддержали 20 партнеров, в 2025-м их стало 350. Мы в LUIS+ поддерживаем проект с 2019 года. Для компании, которая больше тридцати лет занимается системами безопасности, это естественное продолжение основного дела: защищенным должно быть не только здание или территория, но и пространство общения, где подростки и взрослые проводят по нескольку часов в день. В этом посте рассказываем, что будет происходить в ноябре и как присоединиться к кампании.</p>
+<p><strong>Кому адресована кампания в этом году</strong></p>
+<p>В 2026 году организаторы обращаются к самой массовой аудитории, наблюдателям: к тем, кто видит оскорбления в комментариях, чатах и сообществах, но не вмешивается. Чаще всего не из равнодушия, а потому что не знает, как поступить. Отсюда ключевое сообщение проекта: «Поддержи тех, кого травят — выйди из режима наблюдателя».</p>
+<p>Даже короткая реакция со стороны показывает человеку, что он не один. Вместе с психологом команда проекта составила памятку «Что делать, если ты стал свидетелем травли в интернете» с понятным алгоритмом действий. Ее можно скачать, опубликовать у себя или распечатать для подростков.</p>
+<p><strong>Что есть на сайте проекта <a href="http://kiberbulling.net"><u>kiberbulling.net</u></a></strong></p>
+<p>Лендинг задуман как образовательное ядро проекта. На нем размещены:</p>
+<ul>
+<li>
+<p><strong>Памятка «Что делать, если ты стал свидетелем травли в интернете».</strong> Рекомендации составлены вместе с психологами и подсказывают, как помочь пострадавшему, даже если вы с ним не знакомы и не хотите вступать в открытый конфликт.</p>
+</li>
+<li>
+<p><strong>Квиз «Какое действие ты выберешь, если увидишь травлю в интернете?».</strong> Участник пробует себя в трех ролях, видит последствия каждого решения и читает комментарии психолога.</p>
+</li>
+<li>
+<p><strong>Документальный фильм «Травля».</strong> Картина в жанре тру-крайм посвящена первому в России уголовному делу о кибербуллинге. Она показывает, как интернет-конфликт 16-летней девушки вырос в масштабную атаку, а ее семья вступила в борьбу с анонимным преследователем.</p>
+</li>
+<li>
+<p><strong>Личные истории блогеров и звезд.</strong> Известные люди рассказывают, как столкнулись с травлей, что им помогло и как они сами поддерживают других.</p>
+</li>
+</ul>
+<p>Материалы рассчитаны и на взрослых, и на школьников, поэтому ими удобно делиться с родителями, учителями и подростками.</p>
+<p><strong>Как поддержать кампанию</strong></p>
+<p>Участие не требует подготовки, а каждый шаг занимает несколько минут. Выберите любое из действий:</p>
+<ol type="1">
+<li>
+<p><strong>Оставить поддерживающий комментарий</strong> под постом, где кого-то травят. Можно написать не о конфликте, а о самой публикации, или поставить лайк тому, кто уже заступился.</p>
+</li>
+<li>
+<p><strong>Переслать памятку</strong> друзьям, в родительский чат или классному руководителю.</p>
+</li>
+<li>
+<p><strong>Добавить к своим постам о буллинге</strong> хештег #неткибербуллингу и белое сердце 🤍, символ проекта.</p>
+</li>
+<li>
+<p><strong>Пройти квиз</strong> и рассказать о результате в социальных сетях.</p>
+</li>
+</ol>
+<p>Старт кампании – 2 ноября. В этот день мы опубликуем памятку и ответим на вопросы в комментариях. Если вы сталкивались с травлей как свидетель и нашли способ помочь, поделитесь опытом под этим постом: такие истории часто полезнее любых инструкций. Присоединиться можно сразу. Если заметили травлю, поставьте лайк комментарию того, кто заступился, или напишите пострадавшему личное сообщение. Публикации в поддержку проекта отмечайте хэштегом #неткибербуллингу и символом кампании — белым сердцем 🤍. <strong>Выйди из режима наблюдателя.</strong></p>
+<p>#неткибербуллингу 🤍</p>
+<h2 class="label">Короткая версия (сторис, Telegram, анонс в ленте)</h2>
+<p><strong>С 1 по 30 ноября VK проводит Месяц осведомленности о кибербуллинге, и LUIS+ снова среди партнеров кампании 🤍</strong></p>
+<p>Мы поддерживаем проект с 2019 года: компания, которая занимается системами безопасности, не может оставаться в стороне, если речь идет о защите людей в интернете. В этом году кампания обращается к наблюдателям: к тем, кто видит травлю в сети и не знает, как поступить. На сайте <a href="http://kiberbulling.net"><u>kiberbulling.net</u></a> собраны истории блогеров, документальный фильм «Травля», квиз с комментариями психолога и памятка «Что делать, если ты стал свидетелем травли в интернете».</p>
+<p>Поддержать проект можно без подготовки: написать доброе слово под постом, где кого-то обижают, переслать памятку друзьям или добавить к публикации хештег и белое сердце.</p>
+<p>#неткибербуллингу 🤍</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
