@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейс: лабораторная мебель для ВНИМИ — Simple PRO — Александра Самелюк</title>
+<meta name="description" content="Показать на реальном проекте, как компания дорабатывает серийную мебель под методики конкретной лаборатории.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:400 14px/1.45 var(--body);color:var(--mute);margin-top:10px;padding-left:12px;border-left:2px solid var(--marker)}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 04</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">Simple PRO · Кейс · B2B</p>
+      <h1>Кейс производителя лабораторной мебели: лаборатория молочного НИИ</h1>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Simple PRO, производитель лабораторной мебели</dd></div><div><dt>Объект</dt><dd>ФГАНУ «ВНИМИ», Москва</dd></div><div><dt>Формат</dt><dd>Кейс для раздела «Проекты»</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Показать на реальном проекте, как компания дорабатывает серийную мебель под методики конкретной лаборатории.</p></section>
+        <section><h3>Сделала</h3><p>Объяснила, чем исследования молока нагружают мебель, разобрала три доработки по схеме «задача → решение» с размерами и материалами, показала сроки госконтракта и итог.</p></section>
+        <section class="res"><h3>Итог</h3><p>Кейс, в котором заказчик из похожей лаборатории узнаёт свои требования.</p></section>
+      </div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для Simple PRO</span><ul><li><a href="simplepro-vnimi.html" aria-current=page>Кейс ВНИМИ</a></li><li><a href="simplepro-gosniii.html">Кейс ГосНИИИ ВМ</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст — в том виде, в каком ушёл заказчику</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Лабораторная мебель для ФГАНУ «ВНИМИ»</h2>
+        
+        
+<p>Всероссийский научно-исследовательский институт молочной промышленности (ФГАНУ «ВНИМИ», Москва) ведёт фундаментальные и прикладные исследования в области производства и переработки молока. Его специалисты разрабатывают технологии новых продуктов и совершенствуют методы контроля качества сырья.</p>
+<p>С компанией Simple PRO институт сотрудничает много лет. Лаборатории ВНИМИ обновляются по мере выделения бюджетных средств, и <em><strong>каждый новый этап переоснащения</strong></em> начинается с запроса к нам. Весной 2026 года служба снабжения прислала заявку на мебель для очередного помещения.</p>
+<h2>Особенности лаборатории заказчика</h2>
+<p>Исследования молока объединяют несколько направлений анализа. Физико-химические методы определяют массовую долю жира и белка, титруемую кислотность, плотность сырья. Микробиологический контроль выявляет постороннюю микрофлору, а органолептическая оценка дополняет приборные измерения.</p>
+<p>Многие стандартные методики требуют агрессивных реактивов. Жир измеряют кислотным методом Гербера с концентрированной серной кислотой и изоамиловым спиртом. Содержание белка устанавливают по Кьельдалю, минерализуя пробу при кипячении в той же кислоте, а кислотность титруют раствором гидроксида натрия. Отсюда и требования к мебели в таком помещении:</p>
+<ul>
+<li>
+<p>устойчивость к концентрированным кислотам и щелочам;</p>
+</li>
+<li>
+<p>стойкость к частой влажной уборке и дезинфекции;</p>
+</li>
+<li>
+<p>безопасная работа с нагревательными приборами;</p>
+</li>
+<li>
+<p>раздельное хранение реактивов, посуды и проб.</p>
+</li>
+</ul>
+<p>Для микробиологии важна ещё и чистота воздуха. Пыль с открытых полок переносит посторонние микроорганизмы на посуду и питательные среды, искажая результаты посевов. Эти особенности и определили большую часть пожеланий заказчика.</p>
+<h2>С каким запросом пришёл заказчик</h2>
+<p>Служба снабжения ВНИМИ попросила прорисовать расстановку мебели в лаборатории, чтобы ещё до закупки понять, где встанет каждое изделие. Наглядный проект пригодился и при подготовке к конкурсу.</p>
+<p>Дизайнеры Simple PRO подготовили 3D-визуализацию, в которой отразили:</p>
+<ul>
+<li>
+<p><strong>Островные столы.</strong> Центральный ряд со стеллажами и электроблоками, за которым удобно работать с двух сторон.</p>
+</li>
+<li>
+<p><strong>Пристенные линии.</strong> Столы вдоль стен с навесными секциями и рабочие места у дверей.</p>
+</li>
+<li>
+<p><strong>Шкафы и мойки.</strong> Вытяжное и моечное оборудование, привязанное к точкам подключения воды и вентиляции.</p>
+</li>
+</ul>
+<p>Визуализация показала, как мебель впишется в помещение и какой ширины останутся проходы. По ней же стало видно, какие позиции стоит доработать.</p>
+<p>Часть изменений заказчик сформулировал заранее. Требовалось несколько нестандартных изделий на основе нашего конструктива, а вытяжные шкафы сотрудники попросили оснастить регулятором скорости вращения вентилятора. Он подстраивает силу тяги под вид работ: <em><strong>минерализация по Кьельдалю</strong></em> требует мощного отсоса паров, а для титрования хватает умеренного режима, на котором шкаф работает тише.</p>
+<h2>Задачи заказчика и решения Simple PRO</h2>
+<p>Три пожелания потребовали конструкторской доработки. Каждое мы разобрали с заказчиком отдельно и предложили решение на базе серийных изделий.</p>
+<h3>Угловой стол-мойка с полкой и стеллажом</h3>
+<p>В углу лаборатории требовался моечный пост, где вымытую посуду можно сразу оставить на просушку. Прямые мойки из каталога в такое место не встают, и <em><strong>полезная площадь</strong></em> пропала бы впустую.</p>
+<p>Конструкторы спроектировали угловой стол-мойку со сторонами по 954 мм и тумбами под столешницей. Над чашей разместили штыревую сушилку для колб и пробирок, сбоку добавили полку для принадлежностей. Рабочая поверхность осталась на привычной высоте 895 мм, общая высота изделия со стеллажом составила 1768 мм.</p>
+<h3>Тумбы из кислотостойкого материала</h3>
+<p>Под столами планировали хранить реактивы, в том числе кислоты, и заказчику нужны были химически стойкие корпуса.</p>
+<p>В стандартной линейке полипропиленовые тумбы предусмотрены только для вытяжных шкафов. Для ВНИМИ мы разработали аналогичные модули под лабораторные столы: блок размером 1505 × 600 × 900 мм с четырьмя дверцами.</p>
+<blockquote>
+<p><em>Полипропилен устойчив к концентрированным азотной, серной, соляной и плавиковой кислотам и их парам, не впитывает влагу. Слабое место у материала одно: при сильном локальном нагреве он размягчается.</em></p>
+</blockquote>
+<p>Новые тумбы позволили держать реактивы прямо у рабочего места, не загромождая проходы отдельными шкафами.</p>
+<h3>Навесные шкафы с глухими дверцами</h3>
+<p>Открытые полки собирают пыль, а в лаборатории с микробиологическим направлением это недопустимо. Заказчик попросил отказаться от открытого хранения.</p>
+<p>Мы доработали стандартные навесные шкафы шириной 1505 мм и глубиной 340 мм: теперь каждая секция закрывается сплошной дверцей. Посуда и расходные материалы остаются чистыми, а <em><strong>гладкие фасады</strong></em> легко протирать при ежедневной уборке.</p>
+<h2>Сроки и этапы проекта</h2>
+<p>Производство и монтаж после подписания контракта заняли около двух месяцев. Этапы шли в таком порядке:</p>
+<ol type="1">
+<li>
+<p><strong>Проектирование.</strong> Подготовили 3D-визуализацию помещений и согласовали нестандартные позиции.</p>
+</li>
+<li>
+<p><strong>Конкурс.</strong> Заказчик провёл закупку через систему госзакупок.</p>
+</li>
+<li>
+<p><strong>Договор.</strong> Контракт подписали в апреле 2026 года.</p>
+</li>
+<li>
+<p><strong>Производство.</strong> Серийные и доработанные изделия изготовили на собственном заводе.</p>
+</li>
+<li>
+<p><strong>Сборка и монтаж.</strong> Мебель установили по плану и в июне 2026 года сдали объект.</p>
+</li>
+</ol>
+<p>Сроки поставки по госконтракту жёстко зафиксированы, и для бюджетного учреждения их соблюдение не менее важно, чем качество. В этом проекте <em><strong>график выдержан</strong></em> на всех этапах.</p>
+<h2>Результаты работы</h2>
+<p>Все пожелания клиента удалось выполнить, а мебель встала в помещения без переделок по месту. Что изменилось по итогам проекта:</p>
+<ul>
+<li>
+<p>Рабочие места расположены в центре зала и вдоль стен, между рядами остались удобные проходы.</p>
+</li>
+<li>
+<p>Реактивы хранятся в кислотостойких тумбах рядом со столами.</p>
+</li>
+<li>
+<p>Скорость вентилятора в вытяжных шкафах подбирают под методику.</p>
+</li>
+<li>
+<p>Пустующий угол стал полноценным моечным постом.</p>
+</li>
+<li>
+<p>Навесные шкафы с дверцами защищают посуду от пыли.</p>
+</li>
+</ul>
+<p>Новое помещение оснастили той же линейкой, что и предыдущие лаборатории института. Единое исполнение упрощает обслуживание и позволяет при необходимости переставлять изделия.</p>
+<h2>Оснащение лаборатории под ваши задачи</h2>
+<p>Работа над заказом начинается с чертежа помещения: по нему наши дизайнеры бесплатно готовят 3D-проект с расстановкой мебели и точками подключения коммуникаций. Выбрать столы, мойки и <a href="https://simple-pro.com/catalog/vytyazhnye_shkafy/"><strong><u>вытяжные шкафы</u></strong></a> можно в каталоге, где для каждой модели указаны размеры и комплектация. Позвоните по номеру 8 (800) 222-32-97 или напишите нам, чтобы получить консультацию и расчёт стоимости.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
