@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Работа при банкротстве — статья для юридической компании — Александра Самелюк</title>
+<meta name="description" content="Написать информационную статью для сайта юристов по банкротству: можно ли официально работать во время процедуры, что будет с зарплатой и чем рискует работающий должник. Снять главный страх аудитории — потерять работу.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:46px 0 14px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:32px 0 10px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 11</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">Юридическая компания (банкротство физлиц) · Право и финансы · статья для юристов</p>
+      <h1>Статья для юристов по банкротству: можно ли работать во время процедуры</h1>
+      
+      <dl class="meta"><div><dt>Заказчик</dt><dd>Юридическая компания, банкротство физических лиц</dd></div><div><dt>Аудитория</dt><dd>Работающие граждане с долгами, которые думают о банкротстве</dd></div><div><dt>Формат</dt><dd>Информационная статья с таблицей и FAQ, ~8 тыс. знаков</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Написать информационную статью для сайта юристов по банкротству: можно ли официально работать во время процедуры, что будет с зарплатой и чем рискует работающий должник. Снять главный страх аудитории — потерять работу.</p></section>
+        <section><h3>Решение</h3><p>Ответила на страх сразу во вводке, дальше — ступенями от общего к частному: что говорит закон, суд или МФЦ, как проходит процедура, что происходит с зарплатой, смена работы, увольнение, ограничения для руководителей, последствия сокрытия дохода, FAQ. Нормы привязаны к статьям 127-ФЗ и Трудового кодекса, типовые ситуации собраны в таблицу. Без обещаний «списать всё» — с явным условием добросовестности.</p></section>
+        <section class="res"><h3>Результат</h3><p>Понятная юридическая статья для человека в долгах: каждое «можно» сопровождается условием, каждое «нельзя» — ссылкой на норму, а вывод подталкивает к консультации с юристом, а не к самостоятельным экспериментам.</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для Юридическая компания (банкротство физлиц)</span><ul><li><a href="ymyl-varikoz-plavanie.html">Плавание при варикозе</a></li><li><a href="ymyl-bronhoskopiya-kt.html">Бронхоскопия или КТ</a></li><li><a href="ymyl-bankrotstvo-rabota.html" aria-current=page>Работа при банкротстве</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Можно ли официально работать при банкротстве</h2>
+        
+        
+<p>Многие люди в сложной финансовой ситуации откладывают банкротство из-за одного страха: процедура лишит их работы и дохода. На деле всё наоборот — закон не мешает трудиться, а стабильная зарплата во многих случаях помогает пройти процедуру спокойнее.</p>
+<p>Разберёмся, как сочетаются <strong>банкротство при официальной работе</strong>, можно ли устроиться на новое место или сменить его, что происходит с зарплатой и какие ограничения действительно существуют.</p>
+<h2>Что говорит закон</h2>
+<p>Закон о банкротстве (127-ФЗ) не содержит запретов для работающих граждан, которые хотят списать долги. <strong>Официальный доход не мешает подать заявление</strong>, а при реструктуризации долгов становится основой плана платежей. Процедура задумана как способ восстановить платёжеспособность человека, а не загнать его в ещё большую финансовую яму.</p>
+<figure>
+<img alt="Что остаётся прежним и что меняется для работающего человека на время процедуры" height="1214" loading="lazy" src="img/ymyl-bankrotstvo-rabota/01.png" width="1600"/>
+<figcaption aria-hidden="true">Что остаётся прежним и что меняется для работающего человека на время процедуры</figcaption>
+</figure>
+<p>Ключевое значение имеет размер дохода. Суд сопоставляет регулярные поступления от работодателя с общей суммой обязательств. Если зарплаты явно не хватает, чтобы погасить долги в обозримом будущем, это весомое основание для введения процедуры.</p>
+<h3>Суд или МФЦ</h3>
+<p>Важно отличать право на банкротство от права на его упрощённую форму. Внесудебное банкротство через МФЦ доступно только при строгих условиях — в частности, если приставы окончили исполнительное производство из-за того, что взыскать с должника нечего.</p>
+<p>Когда у человека есть официальная зарплата, приставы обычно обращают взыскание на неё. Поэтому <strong>работающему гражданину с «белым» доходом чаще всего подходит судебная процедура</strong>.</p>
+<h2>Как проходит процедура, если вы работаете</h2>
+<p>Порядок действий для трудоустроенного заявителя почти не отличается от общего. Основные этапы выглядят так:</p>
+<ol type="1">
+<li><strong>Подготовка документов.</strong> Справки о доходах, трудовой договор, кредитные договоры, выписки по счетам.</li>
+<li><strong>Подача заявления в арбитражный суд</strong> с обоснованием неплатёжеспособности.</li>
+<li><strong>Оплата госпошлины и вознаграждения</strong> финансовому управляющему.</li>
+<li><strong>Участие в судебных заседаниях</strong>, где решается вопрос о реструктуризации долгов или реализации имущества.</li>
+<li><strong>Взаимодействие с финансовым управляющим</strong> на протяжении всей процедуры.</li>
+</ol>
+<p>Главное изменение касается денег. После введения процедуры зарплата поступает на счёт, которым распоряжается финансовый управляющий: так он контролирует денежные потоки и соблюдает права кредиторов.</p>
+<figure>
+<img alt="Куда уходит зарплата во время процедуры" height="1309" loading="lazy" src="img/ymyl-bankrotstvo-rabota/02.png" width="1600"/>
+<figcaption aria-hidden="true">Куда уходит зарплата во время процедуры</figcaption>
+</figure>
+<p><strong>Без средств к жизни человек не остаётся</strong>: ежемесячно ему выделяют сумму в размере прожиточного минимума на него самого и иждивенцев. Остальное направляется на погашение долгов, вознаграждение управляющего и судебные расходы.</p>
+<h2>Можно ли устроиться на работу или сменить её</h2>
+<p>Один из самых частых вопросов — <strong>можно ли устроиться на работу при банкротстве</strong>, если на момент подачи заявления человек был безработным. Да, можно. О новом месте работы нужно сразу сообщить финансовому управляющему: новый доход войдёт в конкурсную массу.</p>
+<p>Так же решается вопрос, <strong>можно ли менять работу при банкротстве</strong>. Закон этого не запрещает, а более высокая зарплата может даже ускорить расчёты по плану реструктуризации. Условие одно — сообщать управляющему о любых изменениях дохода. Основные ситуации собраны в таблице:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Ситуация</th>
+<th>Можно ли</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Устроиться на работу впервые за время процедуры</td>
+<td>Да</td>
+<td>Сразу сообщить финансовому управляющему</td>
+</tr>
+<tr class="even">
+<td>Сменить работу</td>
+<td>Да</td>
+<td>Передать управляющему данные о новом работодателе и зарплате</td>
+</tr>
+<tr class="odd">
+<td>Получить повышение</td>
+<td>Да</td>
+<td>Сообщить об изменении дохода</td>
+</tr>
+<tr class="even">
+<td>Уйти в отпуск или на больничный</td>
+<td>Да</td>
+<td>Ничего — отпускные и больничные тоже поступают на счёт под контролем управляющего</td>
+</tr>
+<tr class="odd">
+<td>Занять руководящую должность</td>
+<td>Ограничено</td>
+<td>Учесть запреты, которые действуют после завершения процедуры (см. ниже)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Как видно, почти всё упирается в прозрачность: работать и зарабатывать можно, скрывать доход — нельзя. Об ограничениях для руководителей — в отдельном разделе.</p>
+<h2>Могут ли уволить или не взять на работу</h2>
+<p>Один из самых распространённых страхов должника — потерять работу из-за своего статуса. <strong>Увольнение исключительно по причине банкротства незаконно.</strong> Работодатель не вправе расторгнуть трудовой договор, понизить сотрудника в должности или применить к нему санкции из-за финансовой несостоятельности. Трудовой договор продолжает действовать в полном объёме: отпуск, больничный и все предусмотренные законом выплаты сохраняются.</p>
+<p>Если увольнение всё же произошло, восстановиться на работе можно через суд. Иск подают в районный суд в течение месяца со дня получения копии приказа об увольнении (ст. 392 ТК РФ). Суд может обязать работодателя восстановить сотрудника и выплатить компенсацию за вынужденный прогул и моральный вред.</p>
+<blockquote>
+<p>Отказ в приёме на работу из-за банкротства тоже неправомерен. Работодатели редко называют настоящую причину, но если удастся доказать, что отказ связан именно со статусом банкрота, его можно оспорить в суде.</p>
+</blockquote>
+<p>На практике многие компании относятся к процедуре спокойно, особенно если должность не связана с деньгами. Осторожнее работодатели ведут себя при найме на позиции с материальной ответственностью.</p>
+<h2>Ограничения для руководителей и финансового сектора</h2>
+<p>Для рядового сотрудника правовые последствия банкротства минимальны. Иначе обстоит дело с руководящими постами: после завершения процедуры статья 213.30 Закона о банкротстве на несколько лет закрывает доступ к управлению компаниями.</p>
+<figure>
+<img alt="Сроки запретов на управленческие должности после завершения процедуры" height="1064" loading="lazy" src="img/ymyl-bankrotstvo-rabota/03.png" width="1600"/>
+<figcaption aria-hidden="true">Сроки запретов на управленческие должности после завершения процедуры</figcaption>
+</figure>
+<p>В течение трёх лет гражданин не может занимать должности в органах управления юридического лица и иным образом участвовать в управлении. Для кредитных организаций срок больше — <strong>десять лет</strong>. Если руководитель проходит процедуру, работодателю придётся перевести его на должность без управленческих функций или расторгнуть договор по пункту 13 части 1 статьи 83 ТК РФ.</p>
+<p>При этом работать в банке на рядовых позициях не запрещено: консультантом, операционистом, специалистом поддержки клиентов. Работодатель может отказать по иным формальным причинам, но прямого запрета на такие должности нет.</p>
+<h2>Что будет, если скрыть доход</h2>
+<p>Работать во время процедуры можно и нужно, но с одним жёстким правилом: финансовый управляющий должен знать обо всех изменениях в трудовом статусе. Это касается и нового места работы, и смены работодателя, и роста зарплаты.</p>
+<figure>
+<img alt="Что сообщать финансовому управляющему и чем грозит сокрытие дохода" height="1213" loading="lazy" src="img/ymyl-bankrotstvo-rabota/04.png" width="1600"/>
+<figcaption aria-hidden="true">Что сообщать финансовому управляющему и чем грозит сокрытие дохода</figcaption>
+</figure>
+<p>Сокрытие дохода — нарушение закона и признак недобросовестного поведения. В этом случае <strong>суд может отказать в списании долгов</strong>, а в серьёзных случаях должнику грозит и уголовная ответственность. Добросовестность — главное условие, при котором процедура заканчивается освобождением от обязательств.</p>
+<h2>Вопросы и ответы</h2>
+<p>Ниже — ответы на вопросы, которые работающие должники задают чаще всего.</p>
+<h3>Можно ли работать как индивидуальный предприниматель?</h3>
+<p>Да, но с оговорками. Доходы от предпринимательской деятельности включаются в конкурсную массу и контролируются финансовым управляющим. Если суд признаёт ИП банкротом и вводит реализацию имущества, его регистрация в качестве предпринимателя утрачивает силу, а зарегистрироваться снова можно только через пять лет.</p>
+<h3>Может ли финансовый управляющий потребовать уволиться?</h3>
+<p>Нет. Управляющий не вправе вмешиваться в трудовые отношения должника и требовать увольнения. Его полномочия ограничены контролем над доходами и их распределением в интересах кредиторов.</p>
+<h3>Может ли управляющий запретить работать в конкретной компании?</h3>
+<p>Нет, таких полномочий у него нет. Но он контролирует поступления, поэтому о любом новом месте работы и размере зарплаты ему нужно сообщить.</p>
+<h3>Влияет ли смена работы на утверждённый план реструктуризации?</h3>
+<p>Может повлиять. Существенное изменение дохода — повод пересмотреть план: если новая зарплата позволяет платить больше, управляющий или кредиторы могут инициировать изменение графика платежей.</p>
+<h3>Сохраняется ли право на отпуск и больничные?</h3>
+<p>Да, все трудовые и социальные права сохраняются полностью. Отпускные и выплаты по больничному также поступают на счёт под контролем управляющего и учитываются при расчёте ежемесячной суммы на жизнь.</p>
+<h2>Вывод</h2>
+<p>Банкротство физического лица не мешает официально работать, менять работу или устраиваться на новую. Закон защищает человека от увольнения и дискриминации, а стабильный доход нередко становится основой для реструктуризации долгов.</p>
+<p>Реальные последствия для работающего должника — временный контроль над зарплатой и запрет на руководящие должности после завершения дела. Всё остальное зависит от добросовестности: своевременно сообщайте управляющему об изменениях и сотрудничайте с судом и кредиторами — тогда процедура закончится списанием долгов и началом новой финансовой жизни.</p>
+<p><em>Материал носит информационный характер. Решение о банкротстве лучше принимать после консультации с юристом, который оценит вашу ситуацию.</em></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
