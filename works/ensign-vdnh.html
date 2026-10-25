@@ -42,8 +42,8 @@ a{color:inherit}
 
 h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
 .lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
-.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
-.client .who{padding:18px 22px 20px;min-width:0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:20px 36px 22px 0;min-width:0}
 .client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
 .client .site:hover{color:var(--ink)}
@@ -113,6 +113,8 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
   .margin .mark{margin:0;font-size:20px}
   .margin .backlink{display:flex;gap:12px;align-items:center}
   .client{grid-template-columns:1fr}
+  .client .who{padding-right:0}
+  .client+.lead{max-width:none}
   .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
   .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
@@ -137,6 +139,7 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
 .prose li{margin:6px 0}
 .prose a{overflow-wrap:anywhere}
 .prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+.client+.lead{margin-top:28px;max-width:none}
 </style>
 </head>
 <body>
@@ -155,8 +158,7 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
     <div class="main">
       <p class="eyebrow">«Энсайн» · Кейс для блога · IT</p>
       <h1>Кейс «Энсайна» об объединении 14 сайтов ВДНХ в единый портал</h1>
-      <p class="lead">В 2025 году писала для «Энсайна» — московского IT-интегратора, который с 2004 года делает порталы и highload-сервисы для госзаказчиков и бизнеса. Компании нужно было превратить хабровские статьи разработчиков в кейсы для своего блога. Подготовила два кейса: об объединении 14 сайтов ВДНХ в единый портал и о переезде портала ГИСП с «Битрикса» на Python.</p>
-      <div class="client">
+      <p class="lead">В 2025 году писала для «Энсайна» — московского IT-интегратора, который с 2004 года делает порталы и highload-сервисы для госзаказчиков и бизнеса. Компании нужно было превратить хабровские статьи разработчиков в кейсы для своего блога. Подготовила два кейса: об объединении 14 сайтов ВДНХ в единый портал и о переезде портала ГИСП с «Битрикса» на Python.</p><div class="client">
         <div class="who"><span class="eyebrow">О заказчике</span><p class="name">«Энсайн»<a class="site" href="https://nsign.ru" target="_blank" rel="noopener">nsign.ru <span aria-hidden="true">↗</span></a></p><p>«Энсайн» — московский IT-интегратор, работает с 2004 года. Разрабатывает сайты, корпоративные порталы и highload-сервисы на PHP и Python, ведёт сложные цифровые проекты как генподрядчик для органов власти, госкорпораций и бизнеса. В команде больше 50 штатных специалистов.</p></div>
         <dl><div><dt>Площадка</dt><dd>Блог nsign.ru</dd></div><div><dt>Формат</dt><dd>Рерайт хабровской статьи в кейс для блога компании</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
       </div>

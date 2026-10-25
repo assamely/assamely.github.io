@@ -42,8 +42,8 @@ a{color:inherit}
 
 h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
 .lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
-.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
-.client .who{padding:18px 22px 20px;min-width:0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:20px 36px 22px 0;min-width:0}
 .client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
 .client .site:hover{color:var(--ink)}
@@ -113,6 +113,8 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
   .margin .mark{margin:0;font-size:20px}
   .margin .backlink{display:flex;gap:12px;align-items:center}
   .client{grid-template-columns:1fr}
+  .client .who{padding-right:0}
+  .client+.lead{max-width:none}
   .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
   .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
@@ -137,6 +139,7 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
 .prose li{margin:6px 0}
 .prose a{overflow-wrap:anywhere}
 .prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+.client+.lead{margin-top:28px;max-width:none}
 </style>
 </head>
 <body>
@@ -155,15 +158,14 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
     <div class="main">
       <p class="eyebrow">БИТ.CLOUD · Экспертная статья · IT-инфраструктура</p>
       <h1>Экспертная статья БИТ.CLOUD о настройке сетевого хранилища NAS</h1>
-      <p class="lead">Уже 4,5 года пишу для блога БИТ.CLOUD — облачного сервиса «Первого Бита»: 1С в облаке, виртуальные серверы, ИТ-аутсорсинг и защита данных. Заказчику нужны трафик по коммерческим кластерам и заявки на услуги. За это время вышло около 160 статей: инструкции, экспертные разборы по ИБ, продуктовые обзоры и дописки к опубликованным материалам.</p>
-      <div class="client">
+      <p class="lead">Уже 4,5 года пишу для блога БИТ.CLOUD — облачного сервиса «Первого Бита»: 1С в облаке, виртуальные серверы, ИТ-аутсорсинг и защита данных. Заказчику нужны трафик по коммерческим кластерам и заявки на услуги. За это время вышло около 160 статей: инструкции, экспертные разборы по ИБ, продуктовые обзоры и дописки к опубликованным материалам.</p><div class="client">
         <div class="who"><span class="eyebrow">О заказчике</span><p class="name">БИТ.CLOUD<a class="site" href="https://1bitcloud.ru/" target="_blank" rel="noopener">1bitcloud.ru <span aria-hidden="true">↗</span></a></p><p>БИТ.CLOUD — облачный сервис компании «Первый Бит», партнёра 1С: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг 24/7, информационная безопасность и Яндекс 360. На рынке ИТ-услуг с 2006 года, более 16 000 пользователей, данные хранятся в российских ЦОД уровня Tier III.</p></div>
         <dl><div><dt>Площадка</dt><dd>Блог 1bitcloud.ru</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
       </div>
       <div class="tdr">
         <section><h3>Задача</h3><p>Собрать трафик по информационному запросу «что такое NAS и как его настроить» и перевести читателя из малого бизнеса от самостоятельной настройки к ИТ-аутсорсингу. Статья честно показывает, где заканчивается DIY и начинается работа инженера.</p></section>
         <section><h3>Решение</h3><p>Провела читателя от понятия к практике: таблица сценариев по типам компаний, пять шагов настройки с типовыми ошибками, правило 3-2-1, план миграции с расчётом времени. Блок о задачах для профессионалов подводит к странице ИТ-аутсорсинга.</p></section>
-        <section class="res"><h3>Результат</h3><p>Опубликована в блоге 1bitcloud.ru 30 июля 2025 года в разделе «ИТ-аутсорсинг». Для портфолио текст получил шесть инфографик, а за первые три месяца статья собрала 2,1 тыс. просмотров из поиска и вошла в топ-10 Яндекса.</p></section>
+        <section class="res"><h3>Результат</h3><p>Опубликована в блоге 1bitcloud.ru 30 июля 2025 года в разделе «ИТ-аутсорсинг». Текст дополнен шестью инфографиками, а за первые три месяца статья собрала 2,1 тыс. просмотров из поиска и вошла в топ-10 Яндекса.</p></section>
       </div>
       <div class="pubs"><span class="eyebrow">Опубликовано</span><a class="pub" href="https://1bitcloud.ru/blog/it-autsorsing/chto-takoe-setevoe-khranilishche-nas-i-kak-ego-nastroit/" target="_blank" rel="noopener"><b>1bitcloud.ru</b> · Блог — ИТ-аутсорсинг<span aria-hidden="true">↗</span></a></div>
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для БИТ.CLOUD</span><ul><li><a href="bitcloud-1.html">Что делать при DDoS-атаке</a></li><li><a href="bitcloud-2.html" aria-current=page>Сетевое хранилище NAS</a></li><li><a href="bitcloud-3.html">Как работает виртуальная АТС</a></li></ul></nav>

@@ -42,8 +42,8 @@ a{color:inherit}
 
 h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
 .lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
-.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
-.client .who{padding:18px 22px 20px;min-width:0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:20px 36px 22px 0;min-width:0}
 .client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
 .client .site:hover{color:var(--ink)}
@@ -113,6 +113,8 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
   .margin .mark{margin:0;font-size:20px}
   .margin .backlink{display:flex;gap:12px;align-items:center}
   .client{grid-template-columns:1fr}
+  .client .who{padding-right:0}
+  .client+.lead{max-width:none}
   .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
   .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
@@ -137,6 +139,7 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
 .prose li{margin:6px 0}
 .prose a{overflow-wrap:anywhere}
 .prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+.client+.lead{margin-top:28px;max-width:none}
 </style>
 </head>
 <body>
@@ -155,15 +158,14 @@ h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;mar
     <div class="main">
       <p class="eyebrow">БИТ.CLOUD · Экспертная статья · ИБ</p>
       <h1>Экспертная статья БИТ.CLOUD о защите компании от DDoS-атаки</h1>
-      <p class="lead">Уже 4,5 года пишу для блога БИТ.CLOUD — облачного сервиса «Первого Бита»: 1С в облаке, виртуальные серверы, ИТ-аутсорсинг и защита данных. Заказчику нужны трафик по коммерческим кластерам и заявки на услуги. За это время вышло около 160 статей: инструкции, экспертные разборы по ИБ, продуктовые обзоры и дописки к опубликованным материалам.</p>
-      <div class="client">
+      <p class="lead">Уже 4,5 года пишу для блога БИТ.CLOUD — облачного сервиса «Первого Бита»: 1С в облаке, виртуальные серверы, ИТ-аутсорсинг и защита данных. Заказчику нужны трафик по коммерческим кластерам и заявки на услуги. За это время вышло около 160 статей: инструкции, экспертные разборы по ИБ, продуктовые обзоры и дописки к опубликованным материалам.</p><div class="client">
         <div class="who"><span class="eyebrow">О заказчике</span><p class="name">БИТ.CLOUD<a class="site" href="https://1bitcloud.ru/" target="_blank" rel="noopener">1bitcloud.ru <span aria-hidden="true">↗</span></a></p><p>БИТ.CLOUD — облачный сервис компании «Первый Бит», партнёра 1С: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг 24/7, информационная безопасность и Яндекс 360. На рынке ИТ-услуг с 2006 года, более 16 000 пользователей, данные хранятся в российских ЦОД уровня Tier III.</p></div>
         <dl><div><dt>Площадка</dt><dd>Блог 1bitcloud.ru</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
       </div>
       <div class="tdr">
         <section><h3>Задача</h3><p>Встретить руководителя и ИТ-специалиста в момент инцидента или сразу после него, когда интент самый горячий. Статья даёт план на первые часы атаки, формирует доверие к экспертизе БИТ.CLOUD и ведёт к заявке на мониторинг и защиту.</p></section>
         <section><h3>Решение</h3><p>Выстроила текст по хронологии инцидента: распознать атаку по логам, четыре экстренных шага, три слоя долгосрочной защиты, выбор модели фильтрации и playbook. Термины L4/L7, SYN-флуд, Always-On и WAF объяснила на языке ЛПР, CTA привязала к анализу рисков.</p></section>
-        <section class="res"><h3>Результат</h3><p>Статья вошла в блог 1bitcloud.ru в раздел информационной безопасности и держится в топ-10 Яндекса по запросу «что делать при DDoS-атаке». Для портфолио к ней добавлены три инфографики: признаки атаки в логах, слои защиты и модели очистки трафика.</p></section>
+        <section class="res"><h3>Результат</h3><p>Статья вошла в блог 1bitcloud.ru в раздел информационной безопасности и входит в топ-10 Яндекса по запросу «что делать при DDoS-атаке». К статье сделаны три инфографики: признаки атаки в логах, слои защиты и модели очистки трафика.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для БИТ.CLOUD</span><ul><li><a href="bitcloud-1.html" aria-current=page>Что делать при DDoS-атаке</a></li><li><a href="bitcloud-2.html">Сетевое хранилище NAS</a></li><li><a href="bitcloud-3.html">Как работает виртуальная АТС</a></li></ul></nav>
