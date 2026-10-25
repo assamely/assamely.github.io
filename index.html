@@ -148,6 +148,7 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
   .call{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+a.dom{color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor}a.dom:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -324,12 +325,13 @@ const W=[
   l:[["Плавание при варикозе","works/ymyl-varikoz-plavanie.html"],["Бронхоскопия или КТ","works/ymyl-bronhoskopiya-kt.html"],["Работа при банкротстве","works/ymyl-bankrotstvo-rabota.html"]]}
 ];
 const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lk=s=>esc(s).replace(/(^|[^\w@\/.-])((?:[a-z0-9-]+\.)+(?:ru|by|com|io|net|org))(?![\w-])/g,(m,p,d)=>`${p}<a class="dom" href="https://${d}" target="_blank" rel="noopener">${d}</a>`);
 const pad=i=>String(i+1).padStart(2,"0");
 document.getElementById("toc").innerHTML=W.map((w,i)=>`
 <li data-f="${w.f}"><details id="w${pad(i)}"${i===0?" open":""}>
 <summary><span class="n">${pad(i)}</span><span class="brand">${esc(w.brand)}</span><span class="lead" aria-hidden="true"></span><span class="genre">${esc(w.genre)}</span><span class="tog" aria-hidden="true">+</span></summary>
 <div class="body"><span></span><div class="sphere">${esc(w.sphere)}</div>
-<span></span><section><h3>Задача</h3><p>${esc(w.t)}</p></section><section><h3>Решение</h3><p>${esc(w.d)}</p></section><section class="res"><h3>Результат</h3><p>${esc(w.r)}</p></section>
+<span></span><section><h3>Задача</h3><p>${lk(w.t)}</p></section><section><h3>Решение</h3><p>${lk(w.d)}</p></section><section class="res"><h3>Результат</h3><p>${lk(w.r)}</p></section>
 <span></span><div class="go">${w.l.map(([t,u])=>`<a href="${u}">${esc(t)} →</a>`).join("")}</div></div>
 </details></li>`).join("");
 
