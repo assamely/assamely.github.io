@@ -57,6 +57,11 @@ h1 .soft{font-weight:300;letter-spacing:-.03em}
 .thesis .from{color:var(--mute)}
 @keyframes sweep{from{background-size:0 .38em}to{background-size:100% .38em}}
 .lede{max-width:62ch;color:var(--ink);font-size:18px;margin:26px 0 0}
+.lede2{margin-top:14px}
+.edu{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 48px}
+.edu li{border-top:1px solid var(--rule);padding-top:14px;min-width:0}
+.edu b{display:block;font:600 19px/1.3 var(--display);letter-spacing:-.01em;margin-bottom:6px}
+.edu span{display:block;color:var(--ink);opacity:.78;font-size:16px;line-height:1.5}
 .lede mark{background:linear-gradient(transparent 55%,var(--marker) 55%);color:inherit;padding:0 2px}
 
 /* Выходные данные */
@@ -104,7 +109,7 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
 .index li{break-inside:avoid;display:flex;gap:8px;align-items:baseline;padding:7px 0;font-size:16px}
 .index li span:first-child{white-space:nowrap}
 .index .dots{flex:1;border-bottom:2px dotted var(--rule);transform:translateY(-4px);min-width:12px}
-.index .refs{font:400 13px/1 var(--mono);color:var(--pencil);white-space:nowrap}
+.index .refs{font:400 13px/1 var(--mono);color:var(--pencil);white-space:normal;text-align:right;line-height:1.7;flex:0 1 auto;min-width:0}
 .index .letter{font:700 14px/1 var(--mono);color:var(--mute);padding-top:14px;display:block}
 
 /* Связаться */
@@ -155,7 +160,8 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
       <h1>Александра<br><span class="soft">Самелюк</span></h1>
       <div class="role"><span><b>Редактор и автор экспертного контента</b></span><span>Филолог и журналист по образованию</span><span>SEO · GEO · контент-маркетинг</span></div>
       <p class="thesis">Превращаю <span class="from">сложное</span> в&nbsp;<span class="hl">понятное</span>, а&nbsp;<span class="from">разрозненное</span> —&nbsp;в&nbsp;<span class="hl two">систему</span></p>
-      <p class="lede">Пишу и редактирую статьи, гайды и лонгриды, SEO- и GEO-тексты для B2B и B2C. Помогаю продать через текст, привести трафик из поиска, <mark>попасть в нейровыдачу</mark> и показать экспертизу. Как технический автор пишу об IT, информационной безопасности и промышленности, работаю с YMYL-темами: медицина, финансы, право.</p>
+      <p class="lede">Пишу и редактирую статьи, гайды и лонгриды, SEO- и GEO-тексты для B2B и B2C — и делаю к ним визуал: инфографику, схемы, иллюстрации. Помогаю продавать через текст: создаю лендинги, коммерческие страницы и email-рассылки. Привожу трафик из поиска и помогаю <mark>попасть в нейровыдачу</mark>. Показываю экспертизу компании в кейсах, статьях для отраслевых медиа, интервью и пресс-релизах.</p>
+      <p class="lede lede2">Составляю контент-планы и стратегии, веду корпоративные блоги и базы знаний. Как технический автор пишу об IT, информационной безопасности и промышленности. Работаю с отраслевой аналитикой и YMYL-контентом: медицина, финансы, право.</p>
     </div>
   </div>
 
@@ -196,6 +202,17 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
     <div class="main">
       <h2>Умею</h2>
       <ul class="index" id="index"></ul>
+    </div>
+  </div>
+
+  <div class="row" id="uchilas">
+    <div class="margin"><span class="mark">§</span>сведения об авторе</div>
+    <div class="main">
+      <h2>Училась</h2>
+      <ul class="edu">
+        <li><b>УлГПУ им. И.Н. Ульянова</b><span>Филфак: русский язык и литература, практическая журналистика</span></li>
+        <li><b>УлГТУ</b><span>Менеджмент организации, маркетинг</span></li>
+      </ul>
     </div>
   </div>
 
@@ -314,7 +331,7 @@ document.getElementById("toc").innerHTML=W.map((w,i)=>`
 </details></li>`).join("");
 
 const IDX=[
-["Гайды и инструкции",[2,10,12]],["GEO и AEO",[9,10]],["Интервью",[6]],["Инфостиль",[1,9]],
+["Гайды и инструкции",[2,10,12]],["GEO и AEO",[9,10]],["Интервью",[6]],["Инфографика",[1,2,4,5,6,7,8,9,10,11,12,13,15,16]],["Инфостиль",[1,9]],
  ["Кейсы",[5,7,8]],["Коммерческие тексты",[2,11]],["Контент-планы",[14]],["Лонгриды",[5,11,15]],
  ["Редактура",[6]],["SEO-тексты",[2,11,12,15]],["Технический автор",[1,5,9,10,11,12,13]],["Фактчекинг",[4,6,10,13,16]],["Экспертные статьи",[1,3,4,9,12,13]],["YMYL-контент",[4,8,10,16]]
 ];
