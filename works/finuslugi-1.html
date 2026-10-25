@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Статья: как оценивать риски и доходность инвестиций — «Финуслуги» — Александра Самелюк</title>
-<meta name="description" content="Объяснить частному инвестору, по каким метрикам оценивать доходность и риск вложений, — так, чтобы формулы стали рабочим инструментом, а не теорией из учебника.">
+<title>«Финуслуги», риск и доходность — Александра Самелюк</title>
+<meta name="description" content="Привлечь частных инвесторов на этапе изучения с интентом «как оценить вложения» и укрепить доверие к маркетплейсу как к источнику финансовой грамотности. Формулы должны стать для читателя рабочим инструментом, а не теорией.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 04</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">«Финуслуги» · YMYL · финансы</p>
-      <h1>Статья для финансового маркетплейса: метрики риска и доходности инвестиций</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>«Финуслуги» — финансовая платформа, созданная Московской биржей в рамках проекта Банка России «Маркетплейс». На ней можно онлайн открыть вклад, оформить ОСАГО и другие страховки, купить народные облигации, паи фондов и подключиться к программе долгосрочных сбережений.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>«Финуслуги», финансовый маркетплейс Московской биржи</dd></div><div><dt>Аудитория</dt><dd>Частные инвесторы</dd></div><div><dt>Формат</dt><dd>Информационная статья в блог</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      <h1>Статья «Финуслуг» о метриках риска и доходности инвестиций</h1>
+      <p class="lead">В 2024 и 2025 годах писала для «Финуслуг» — финансового маркетплейса Московской биржи, где открывают вклады, покупают облигации и оформляют страховки. Площадке нужны были понятные и точные материалы для частных инвесторов и бизнеса. Подготовила 40 статей о вкладах, инвестициях, ПДС и налогах, а также FAQ-блоки для продуктовых страниц банков.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">«Финуслуги»<a class="site" href="https://finuslugi.ru" target="_blank" rel="noopener">finuslugi.ru <span aria-hidden="true">↗</span></a></p><p>«Финуслуги» — маркетплейс финансовых продуктов, который Московская биржа запустила в 2020 году в рамках проекта Банка России. На витрине больше 40 банков с депозитами и больше 20 с кредитами; за 11 месяцев 2025 года через площадку открыли более 1 млн вкладов.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Блог finuslugi.ru</dd></div><div><dt>Формат</dt><dd>Информационная статья</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Объяснить частному инвестору, по каким метрикам оценивать доходность и риск вложений, — так, чтобы формулы стали рабочим инструментом, а не теорией из учебника.</p></section>
-        <section><h3>Решение</h3><p>Выстроила статью от понятий к расчётам: что съедает доходность (инфляция, налоги, комиссии), пять видов риска с реальными примерами (кризис 2008 года, банкротство Enron), затем шесть метрик — абсолютная и среднегодовая доходность, коэффициент Шарпа, VaR, бета, стандартное отклонение — с формулой и разобранным примером для каждой. Финал — восемь практических рекомендаций. Все расчёты в тексте и инфографике пересчитала вручную.</p></section>
-        <section class="res"><h3>Результат</h3><p>Сложная инвестиционная тема изложена на языке частного инвестора: каждая формула сопровождается расчётом на понятных суммах, а шесть схем показывают реальную доходность как гонку денег и цен, концентрическую карту рисков, сложный процент на графике, VaR на кривой распределения, стандартное отклонение через квадраты отклонений и мини-дашборд из четырёх метрик.</p></section>
+        <section><h3>Задача</h3><p>Привлечь частных инвесторов на этапе изучения с интентом «как оценить вложения» и укрепить доверие к маркетплейсу как к источнику финансовой грамотности. Формулы должны стать для читателя рабочим инструментом, а не теорией.</p></section>
+        <section><h3>Решение</h3><p>Выстроила текст от понятий к расчётам: что съедает доходность, пять видов риска на примерах 2008 года и Enron, шесть метрик от CAGR до VaR и беты. Каждую формулу разобрала на понятных суммах, пересчитала все примеры и исправила ошибку исходника в σ.</p></section>
+        <section class="res"><h3>Результат</h3><p>Статья вошла в серию из 40 материалов для «Финуслуг» и прошла финансовую редактуру без замечаний к расчётам. В портфолио-версии шесть схем: от гонки денег и цен до VaR на кривой распределения и мини-дашборда из четырёх метрик.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Финуслуги»</span><ul><li><a href="finuslugi-1.html" aria-current=page>Метрики риска и доходности</a></li><li><a href="finuslugi-2.html">Программа долгосрочных сбережений</a></li><li><a href="finuslugi-3.html">Депозиты для бизнеса</a></li><li><a href="finuslugi-faq.html">FAQ для продуктовой страницы</a></li></ul></nav>
@@ -249,7 +262,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 </figure>
 <p>Чем выше стандартное отклонение, тем сильнее колеблется доходность и тем менее предсказуем результат. Этот же показатель стоит в знаменателе коэффициента Шарпа и входит в формулу VaR — поэтому волатильность влияет сразу на несколько метрик риска.</p>
 <h2>Баланс между доходностью и безопасностью</h2>
-<p>Метрики помогают найти баланс между прибылью и риском. Актив с высокой доходностью может не подойти консервативному инвестору, если у него слишком большие стандартное отклонение и VaR. Коэффициент Шарпа подскажет, у каких инструментов соотношение риска и доходности лучше, а бета — как, как портфель поведёт себя при резком движении рынка.</p>
+<p>Метрики помогают найти баланс между прибылью и риском. Актив с высокой доходностью может не подойти консервативному инвестору, если у него слишком большие стандартное отклонение и VaR. Коэффициент Шарпа подскажет, у каких инструментов соотношение риска и доходности лучше, а бета — как портфель поведёт себя при резком движении рынка.</p>
 <figure>
 <img alt="Четыре метрики на примерах из статьи: каждая отвечает на свой вопрос о портфеле" height="1277" loading="lazy" src="img/finuslugi-1/06.png" width="1600"/>
 <figcaption aria-hidden="true">Четыре метрики на примерах из статьи: каждая отвечает на свой вопрос о портфеле</figcaption>
@@ -276,7 +289,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -285,13 +298,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

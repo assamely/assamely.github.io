@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GEO-статья: антивандальные и всепогодные камеры — LUIS+ — Александра Самелюк</title>
-<meta name="description" content="Объяснить закупщикам и проектировщикам, как выбрать уличную камеру для тяжелых условий — вандализм, мороз, агрессивная среда, — в формате GEO-статьи с прямым ответом, нормативной базой и привязкой к моделям из каталога LUIS+.">
+<title>Статья LUIS+ об антивандальных камерах — Александра Самелюк</title>
+<meta name="description" content="Помочь закупщику и проектировщику выбрать уличную камеру для тяжёлых условий по проверяемым кодам, а не по названию серии. Статья забирает информационный трафик по антивандальным камерам и ведёт к подбору моделей из каталога LUIS+.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 09</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">LUIS+ · GEO-статья · B2B</p>
-      <h1>GEO-статья для дистрибьютора систем безопасности: камеры для сложных условий</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>LUIS+ (luis.ru) — российская компания на рынке систем безопасности и электротехники, работает более 30 лет: дистрибьютор оборудования мировых и российских производителей и владелец собственных торговых марок (LTV, LPA, ЛКД, ЛПТ, LTC и др.), 18 офисов по России.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>LUIS+, дистрибьютор систем безопасности</dd></div><div><dt>Аудитория</dt><dd>Инженеры и службы эксплуатации</dd></div><div><dt>Формат</dt><dd>GEO-статья с таблицей и расчётом</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <h1>GEO-статья LUIS+ о камерах для вандализма, мороза и агрессивной среды</h1>
+      <p class="lead">С 2026 года пишу для LUIS+, российского дистрибьютора систем безопасности с 30-летней историей. Компании нужен экспертный контент, который приводит инженеров и проектировщиков из поиска и попадает в AI-ответы. За полгода сдала больше 20 материалов: SEO- и GEO-статьи о видеонаблюдении, СКУД, оповещении, ИБП и пожарной сигнализации, доработку статей под семантику и посты для соцсетей.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">LUIS+<a class="site" href="https://luis.ru" target="_blank" rel="noopener">luis.ru <span aria-hidden="true">↗</span></a></p><p>LUIS+ — российская компания на рынке систем безопасности и электротехники, работает 30 лет. Дистрибьютор более 2500 брендов и владелец собственных марок LTV, LPA, ЛКД, ЛПТ, LTC и «ЛуисОКЛ»; 18 офисов по России и больше 1300 сотрудников.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Блог luis.ru</dd></div><div><dt>Формат</dt><dd>GEO-статья с таблицей и расчётом</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Объяснить закупщикам и проектировщикам, как выбрать уличную камеру для тяжелых условий — вандализм, мороз, агрессивная среда, — в формате GEO-статьи с прямым ответом, нормативной базой и привязкой к моделям из каталога LUIS+.</p></section>
-        <section><h3>Решение</h3><p>Развела понятия «всепогодная» и «антивандальная» и перевела выбор с маркетинговых названий на проверяемые коды: IP по ГОСТ 14254-2015, IK по ГОСТ IEC 62262-2015, степени защиты термокожухов по ГОСТ Р 51558-2014, климатические исполнения и типы атмосферы по ГОСТ 15150-69 — с пунктами и таблицами стандартов. Дала таблицу «маркировка — испытание — применение», разделы о температуре и обогреве, коррозии, монтаже и кабельной трассе (пошаговый порядок), ошибки выбора, расчетный пример для склада в морском порту, FAQ и вывод; характеристики конкретных камер взяла из карточек товаров на luis.ru.</p></section>
-        <section class="res"><h3>Результат</h3><p>Экспертный гайд около 2000 слов: таблица кодов защиты, пошаговый монтаж, расчетный пример и пять схем. Читатель получает методику, по которой спецификация описывает требования к паспорту, а не конкретный бренд, и заканчивает статью готовым списком исходных данных для запроса подбора.</p></section>
+        <section><h3>Задача</h3><p>Помочь закупщику и проектировщику выбрать уличную камеру для тяжёлых условий по проверяемым кодам, а не по названию серии. Статья забирает информационный трафик по антивандальным камерам и ведёт к подбору моделей из каталога LUIS+.</p></section>
+        <section><h3>Решение</h3><p>Развела понятия «всепогодная» и «антивандальная» и перевела выбор на коды IP и IK по ГОСТам с пунктами и таблицами. Дала таблицу «маркировка, испытание, применение», порядок монтажа по шагам и расчётный пример для склада в морском порту.</p></section>
+        <section class="res"><h3>Результат</h3><p>Связку «IP66 + IK10» нейроответы Яндекса берут из статьи дословно. Текст принят без правок по существу, а список исходных данных из финала менеджеры LUIS+ используют как готовую форму запроса на подбор камер.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для LUIS+</span><ul><li><a href="luis-server.html">Сервер или регистратор</a></li><li><a href="luis-antivandal.html" aria-current=page>Антивандальные камеры</a></li><li><a href="luis-post.html">Пост для соцсетей</a></li></ul></nav>
@@ -171,14 +184,14 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <img alt="Всепогодность защищает от климата, антивандальность — от людей: это два независимых требования к корпусу" height="1514" loading="lazy" src="img/luis-antivandal/01.png" width="1600"/>
 <figcaption aria-hidden="true">Всепогодность защищает от климата, антивандальность — от людей: это два независимых требования к корпусу</figcaption>
 </figure>
-<p>Антивандальное исполнение отвечает за стойкость к умышленному воздействию: удару, попытке сорвать или развернуть устройство, перерезать кабель. Ударопрочность выражается кодом IK по <a href="https://meganorm.ru/mega_doc/norm/gost_gosudarstvennyj-standart/17/gost_IEC_62262-2015_mezhgosudarstvennyy_standart.html"><strong>ГОСТ IEC 62262-2015</strong></a>, действующему с 1 октября 2016 года. Защиту от вскрытия обеспечивает конструкция: винты под специальный инструмент, поворотный модуль внутри купола, ввод кабеля через кронштейн.</p>
+<p>Антивандальное исполнение отвечает за стойкость к умышленному воздействию: удару, попытке сорвать или развернуть устройство, перерезать кабель. Ударопрочность выражается кодом IK по <a href="http://docs.cntd.ru/document/1200126000"><strong>ГОСТ IEC 62262-2015</strong></a>, действующему с 1 октября 2016 года. Защиту от вскрытия обеспечивает конструкция: винты под специальный инструмент, поворотный модуль внутри купола, ввод кабеля через кронштейн.</p>
 <blockquote>
 <p>Слово «антивандальная» в названии модели классом защиты не является. Проверяемый параметр — код IK с энергией удара в джоулях: по общему правилу ГОСТ IEC 62262-2015 испытание включает пять ударов на каждую открытую поверхность оболочки.</p>
 </blockquote>
 <p>Обычная уличная IP-видеокамера с маркировкой IP66 без кода IK хорошо переносит осадки и мороз, но не рассчитана на удар по стеклу или рывок за кронштейн. Такие модели уместны на мачтах и фасадах выше зоны досягаемости. <strong>Для подъездов, проходных и торцов зданий нужен корпус, который сочетает оба свойства.</strong></p>
 <h2>Какие коды IP и IK нужны антивандальной камере для улицы</h2>
 <p>Защищенность корпуса описывают два кода из разных стандартов. Код IP по <a href="https://base.garant.ru/71653666/"><strong>ГОСТ 14254-2015</strong></a>, действующему с 1 марта 2017 года, показывает защиту от пыли и воды, а код IK отражает энергию удара, которую выдерживает оболочка.</p>
-<p>Для термокожухов <a href="https://base.garant.ru/70980880/"><strong>ГОСТ Р 51558-2014</strong></a> вводит собственные степени защиты с требованиями к удару, герметичности и обогреву (п. 5.3.5). Если сопоставить маркировки с типичными условиями эксплуатации, неподходящие модели отсеиваются еще до сравнения характеристик.</p>
+<p>Для термокожухов ГОСТ Р 51558-2014 вводит собственные степени защиты с требованиями к удару, герметичности и обогреву (п. 5.3.5). Если сопоставить маркировки с типичными условиями эксплуатации, неподходящие модели отсеиваются еще до сравнения характеристик.</p>
 <div class="tablewrap"><table>
 
 <thead>
@@ -234,7 +247,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <blockquote>
 <p>Купольная модель <a href="https://luis.ru/p/2897721"><strong>LTV-3CND40-M2714</strong></a> собственной марки LUIS+ рассчитана на −50…+60 °C при IP67 и IK10, и на объектах с морозами до −50 °C ей не нужен дополнительный кожух. <a href="https://luis.ru/brands/beward/"><strong>Камера Beward</strong></a> BD4640RC с питанием PoE заявлена с IP66 и диапазоном −40…+50 °C — этого достаточно для средней полосы.</p>
 </blockquote>
-<p>Обогрев защищает не только электронику: он удерживает стекло и купол от инея, при котором ИК-подсветка рассеивается и ночное изображение теряет четкость. Для термокожухов ГОСТ Р 51558-2014 нормирует температуру внутри не ниже −10 °C при уличной до −40 °C для средней степени защиты и ниже −40 °C для высокой (п. 5.3.5.3, таблица 3).</p>
+<p>Обогрев защищает не только электронику: он удерживает стекло и купол от инея, при котором ИК-подсветка рассеивается и ночное изображение теряет четкость. Для термокожухов <a href="https://base.garant.ru/70980880/"><strong>ГОСТ Р 51558-2014</strong></a> нормирует температуру внутри не ниже −10 °C при уличной до −40 °C для средней степени защиты и ниже −40 °C для высокой (п. 5.3.5.3, таблица 3).</p>
 <figure>
 <img alt="Паспортный диапазон камеры сравнивают с зимним минимумом района, а не со средней температурой по региону" height="1294" loading="lazy" src="img/luis-antivandal/03.png" width="1600"/>
 <figcaption aria-hidden="true">Паспортный диапазон камеры сравнивают с зимним минимумом района, а не со средней температурой по региону</figcaption>
@@ -326,14 +339,14 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <blockquote>
 <p><a href="https://luis.ru/center/"><strong>Сервисный центр LUIS+</strong></a> выполняет гарантийное и негарантийное обслуживание оборудования, купленного у компании, а более 150 профильных инженеров помогают сверить паспортные характеристики с условиями объекта еще на этапе спецификации.</p>
 </blockquote>
-<p>Опишите условия эксплуатации: минимальную и максимальную температуру, высоту установки и риск вандализма, наличие соленого воздуха, химических испарений или мойки под давлением. Подберем модели с подходящими степенями защиты, кронштейны и монтажные коробки, а также проверим, хватит ли мощности PoE с учетом обогрева.</p>
+<p><strong>Опишите условия эксплуатации:</strong> минимальную и максимальную температуру, высоту установки и риск вандализма, наличие соленого воздуха, химических испарений или мойки под давлением. Подберем модели с подходящими степенями защиты, кронштейны и монтажные коробки, а также проверим, хватит ли мощности PoE с учетом обогрева.</p>
 
       </div>
     </div>
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -342,13 +355,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

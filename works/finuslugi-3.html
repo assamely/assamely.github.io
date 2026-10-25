@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Статья: депозиты для бизнеса и налоги с процентов — «Финуслуги» — Александра Самелюк</title>
-<meta name="description" content="Объяснить предпринимателям и финансовым директорам, какие депозиты бывают у бизнеса, как облагается процентный доход на разных налоговых режимах и на что смотреть при выборе банка.">
+<title>«Финуслуги», депозиты для бизнеса — Александра Самелюк</title>
+<meta name="description" content="Привлечь предпринимателей и финдиректоров, которые ищут, куда разместить свободные деньги компании, и подвести их к выбору депозита на маркетплейсе. B2B-читателю важны цифры: сколько останется после налога и что защищено.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 04</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">«Финуслуги» · YMYL · финансы</p>
-      <h1>Статья для финансового маркетплейса: депозиты для бизнеса и налог с процентов</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>«Финуслуги» — финансовая платформа, созданная Московской биржей в рамках проекта Банка России «Маркетплейс». На ней можно онлайн открыть вклад, оформить ОСАГО и другие страховки, купить народные облигации, паи фондов и подключиться к программе долгосрочных сбережений.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>«Финуслуги», финансовый маркетплейс Московской биржи</dd></div><div><dt>Аудитория</dt><dd>Предприниматели и финансовые директора</dd></div><div><dt>Формат</dt><dd>Информационная статья в блог</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      <h1>Статья «Финуслуг» о депозитах для бизнеса и налоге с процентов</h1>
+      <p class="lead">В 2024 и 2025 годах писала для «Финуслуг» — финансового маркетплейса Московской биржи, где открывают вклады, покупают облигации и оформляют страховки. Площадке нужны были понятные и точные материалы для частных инвесторов и бизнеса. Подготовила 40 статей о вкладах, инвестициях, ПДС и налогах, а также FAQ-блоки для продуктовых страниц банков.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">«Финуслуги»<a class="site" href="https://finuslugi.ru" target="_blank" rel="noopener">finuslugi.ru <span aria-hidden="true">↗</span></a></p><p>«Финуслуги» — маркетплейс финансовых продуктов, который Московская биржа запустила в 2020 году в рамках проекта Банка России. На витрине больше 40 банков с депозитами и больше 20 с кредитами; за 11 месяцев 2025 года через площадку открыли более 1 млн вкладов.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Блог finuslugi.ru</dd></div><div><dt>Формат</dt><dd>Информационная статья</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Объяснить предпринимателям и финансовым директорам, какие депозиты бывают у бизнеса, как облагается процентный доход на разных налоговых режимах и на что смотреть при выборе банка.</p></section>
-        <section><h3>Решение</h3><p>Описала пять видов депозитов через задачи бизнеса, преимущества размещения свободных средств, налогообложение на ОСНО и УСН с расчётом на одном примере, критерии выбора банка. При редактуре актуализировала ставку налога на прибыль (25% с 2025 года) и добавила проверенный блок о страховании средств ИП и МСП в АСВ.</p></section>
-        <section class="res"><h3>Результат</h3><p>B2B-тема без воды: читатель видит, сколько реально остаётся от процентного дохода на ОСНО и УСН, и понимает, какие деньги компании защищены страховкой, а какие — нет.</p></section>
+        <section><h3>Задача</h3><p>Привлечь предпринимателей и финдиректоров, которые ищут, куда разместить свободные деньги компании, и подвести их к выбору депозита на маркетплейсе. B2B-читателю важны цифры: сколько останется после налога и что защищено.</p></section>
+        <section><h3>Решение</h3><p>Описала пять видов депозитов через задачи бизнеса и посчитала налог на ОСНО и УСН на одном примере, чтобы разница была видна. При редактуре актуализировала ставку налога на прибыль 25% с 2025 года и добавила блок о страховании средств МСП в АСВ.</p></section>
+        <section class="res"><h3>Результат</h3><p>Читатель видит, что с 500 тыс. ₽ процентов на ОСНО остаётся на 95 тыс. ₽ меньше, чем на УСН «доходы», и знает, какие деньги компании защищает АСВ. Статья прошла проверку редакции с первого раза, к ней собраны четыре схемы.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Финуслуги»</span><ul><li><a href="finuslugi-1.html">Метрики риска и доходности</a></li><li><a href="finuslugi-2.html">Программа долгосрочных сбережений</a></li><li><a href="finuslugi-3.html" aria-current=page>Депозиты для бизнеса</a></li><li><a href="finuslugi-faq.html">FAQ для продуктовой страницы</a></li></ul></nav>
@@ -195,10 +208,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <p>Ставки налогов в разделе приведены на момент публикации (2025 год).</p>
 </blockquote>
 <h3>Налог на прибыль на ОСНО</h3>
-<p>На общей системе налогообложения проценты по депозиту признаются внереализационным доходом и включаются в базу по налогу на прибыль. <strong>С 1 января 2025 года основная ставка налога на прибыль — 25%</strong> (до этого — 20%).</p>
+<p>На общей системе налогообложения проценты по депозиту признаются внереализационным доходом и включаются в базу по налогу на прибыль. <strong>С 1 января 2025 года основная <a href="https://www.consultant.ru/document/cons_doc_LAW_28165/eb9180fc785448d58fe76ef323fb67d1832b9363/">ставка налога на прибыль</a> — 25%</strong> (до этого — 20%).</p>
 <p><strong>Пример.</strong> Организация разместила 10 млн рублей на год под 5% годовых и получила 500 000 рублей дохода. Налог на прибыль составит 125 000 рублей, после уплаты налога останется 375 000 рублей.</p>
 <h3>Налог на УСН</h3>
-<p>Компании на упрощённой системе тоже учитывают процентный доход. Ставка зависит от объекта налогообложения: базовая — 6% для объекта «доходы» и 15% для объекта «доходы минус расходы». Проценты по депозиту включаются в состав доходов.</p>
+<p>Компании на упрощённой системе тоже учитывают процентный доход. <a href="https://www.consultant.ru/document/cons_doc_LAW_28165/3908f157150b10882cccfbb7f359866338098767/"><strong>Ставка зависит от объекта налогообложения</strong></a>: базовая — 6% для объекта «доходы» и 15% для объекта «доходы минус расходы». Проценты по депозиту включаются в состав доходов.</p>
 <p>Если компания на УСН «доходы» получит те же 500 000 рублей процентов, налог составит 30 000 рублей. На УСН «доходы минус расходы» налог рассчитывается с учётом разрешённых расходов.</p>
 <figure>
 <img alt="Расчёт на одном примере: с 500 000 рублей процентов на ОСНО остаётся на 95 000 рублей меньше, чем на УСН «доходы»" height="1134" loading="lazy" src="img/finuslugi-3/03.png" width="1600"/>
@@ -211,7 +224,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <p>Чтобы деньги компании были в сохранности, а условия — выгодными, при выборе банка оцените несколько факторов:</p>
 <ul>
 <li><strong>Надёжность и репутация.</strong> Изучите финансовую устойчивость банка, кредитные рейтинги и отзывы клиентов. Лучше выбирать банки с долгой историей и хорошей репутацией.</li>
-<li><strong>Страхование.</strong> Средства индивидуальных предпринимателей, а также малых и средних предприятий из реестра МСП застрахованы АСВ в пределах 1,4 млн рублей. Деньги крупных компаний под систему страхования вкладов не подпадают, а у остальных под защитой только часть суммы, поэтому надёжность банка особенно важна.</li>
+<li><strong>Страхование.</strong> Средства индивидуальных предпринимателей, а также малых и средних предприятий из реестра МСП <a href="https://www.consultant.ru/document/cons_doc_LAW_45769/"><strong>застрахованы АСВ</strong></a> в пределах 1,4 млн рублей. Деньги крупных компаний под систему страхования вкладов не подпадают, а у остальных под защитой только часть суммы, поэтому надёжность банка особенно важна.</li>
 <li><strong>Условия обслуживания.</strong> Сравните тарифы на расчётно-кассовое обслуживание, комиссии за переводы и другие операции.</li>
 <li><strong>Цифровые сервисы.</strong> Оцените интернет-банк, мобильное приложение и качество поддержки: удобные сервисы экономят время на управлении счетами.</li>
 <li><strong>Дополнительные услуги.</strong> Посмотрите, что ещё банк предлагает бизнесу: кредиты, зарплатные проекты и другие продукты.</li>
@@ -231,7 +244,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -240,13 +253,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

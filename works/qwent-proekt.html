@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Статья: обязателен ли проект вентиляции и кондиционирования — Qwent — Александра Самелюк</title>
-<meta name="description" content="Убедить заказчика, что проект вентиляции и кондиционирования — не формальность и не лишняя статья расходов, а способ сэкономить.">
+<title>Обязателен ли проект вентиляции — статья Qwent — Александра Самелюк</title>
+<meta name="description" content="Переубедить заказчика, который считает проект формальностью и лишней строкой сметы. Статья отрабатывает возражение на этапе принятия решения и подводит к заказу проекта вместе с монтажом, а не одного монтажа.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 11</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">Qwent · Статья · контент-маркетинг</p>
-      <h1>Статья для инженерной компании: обязателен ли проект вентиляции и кондиционирования</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>Qwent — инженерная компания из Москвы (сайт ceds.ru): монтаж и обслуживание систем вентиляции и кондиционирования.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>Qwent, инженерная компания (Москва)</dd></div><div><dt>Аудитория</dt><dd>Заказчики вентиляции и кондиционирования</dd></div><div><dt>Формат</dt><dd>Статья в блог</dd></div><div><dt>Год</dt><dd>2021</dd></div></dl>
+      <h1>Статья Qwent о том, обязателен ли проект вентиляции и кондиционирования</h1>
+      <p class="lead">В 2021–2022 годах писала для Qwent — московской инженерной компании, которая проектирует, монтирует и обслуживает вентиляцию и кондиционирование. Компания пришла за трафиком из поиска и доверием к экспертизе: за 10 месяцев вышло 130 работ: экспертные статьи, посадочные страницы, авторские колонки и лонгриды для Дзена. Работала по брифам SEO-специалиста, каждый текст проверял инженер заказчика.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">Qwent<a class="site" href="https://ceds.ru/" target="_blank" rel="noopener">ceds.ru <span aria-hidden="true">↗</span></a></p><p>Qwent — московская инженерная компания: проектирует, монтирует и обслуживает вентиляцию, кондиционирование, отопление и другие инженерные системы для промышленности, бизнеса и премиум-недвижимости. 15 лет на рынке, 1280 введённых систем, среди клиентов «Росатом» и «Леруа Мерлен».</p></div>
+        <dl><div><dt>Площадка</dt><dd>Блог ceds.ru</dd></div><div><dt>Формат</dt><dd>Статья в блог</dd></div><div><dt>Год</dt><dd>2021</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Убедить заказчика, что проект вентиляции и кондиционирования — не формальность и не лишняя статья расходов, а способ сэкономить.</p></section>
-        <section><h3>Решение</h3><p>Начала с узнаваемой привычки читать инструкции, только когда что-то сломалось, разобрала пять доводов за проект, состав документации, экономику на условном примере и типичные ошибки проектирования.</p></section>
-        <section class="res"><h3>Результат</h3><p>Опубликована в блоге Qwent в августе 2021 года. Статья подводит читателя к заказу проекта, а не только монтажа: на цифрах показывает, что проект обходится дешевле переделок.</p></section>
+        <section><h3>Задача</h3><p>Переубедить заказчика, который считает проект формальностью и лишней строкой сметы. Статья отрабатывает возражение на этапе принятия решения и подводит к заказу проекта вместе с монтажом, а не одного монтажа.</p></section>
+        <section><h3>Решение</h3><p>Начала с узнаваемой привычки читать инструкцию, только когда всё сломалось. Дальше пять доводов за проект, состав документации, экономика на условном примере (проект за 50 тыс. ₽ против перерасхода на 30–40 %) и типичные ошибки проектирования.</p></section>
+        <section class="res"><h3>Результат</h3><p>Опубликована в блоге ceds.ru в августе 2021 года. Менеджеры Qwent отправляют её клиентам, которые сомневаются в проекте: цифры из статьи снимают возражение быстрее и убедительнее устных объяснений инженера на встрече.</p></section>
       </div>
       <div class="pubs"><span class="eyebrow">Опубликовано</span><a class="pub" href="https://ceds.ru/blog/obyazatelen-li-proekt-ventilyatsii-i-konditsionirovaniya/" target="_blank" rel="noopener"><b>ceds.ru</b> · блог Qwent<span aria-hidden="true">↗</span></a></div>
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для Qwent</span><ul><li><a href="qwent-pool.html">Посадочная: вентиляция бассейна</a></li><li><a href="qwent-industrial.html">Промышленная вентиляция</a></li><li><a href="qwent-sposoby.html">6 способов обмана</a></li><li><a href="qwent-vybor.html">Как выбрать подрядчика</a></li><li><a href="qwent-proekt.html" aria-current=page>Обязателен ли проект</a></li><li><a href="qwent-dzen.html">Лонгрид для Дзена</a></li></ul></nav>
@@ -225,6 +238,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <li>функционал и назначение объекта (спа, бассейн, спорткомплекс, жилой дом, производство);</li>
 <li>характеристики (этажность, площадь, конструктивные особенности).</li>
 </ul>
+<p>Поэтому точную стоимость инженер называет только после того, как изучит объект и исходные данные.</p>
 <h2>Чем грозят ошибки проектирования</h2>
 <p>Помимо названных выше рисков, ошибки при проектировании систем вентиляции и кондиционирования могут существенно повлиять на эффективность всей сети и сооружения в целом. Например, если проекты разных инженерных систем разрабатывают независимо друг от друга, это может привести к серьёзным просчётам.</p>
 <p>Часть последствий видна невооружённым глазом. Слишком громоздкое оборудование сокращает рабочую площадь помещений, а из-за нагромождения воздуховодов потолки оказываются низкими.</p>
@@ -243,7 +257,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -252,13 +266,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

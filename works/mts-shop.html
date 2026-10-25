@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Продающие тексты для интернет-магазина shop.mts.by — МТС Беларусь — Александра Самелюк</title>
-<meta name="description" content="Написать продающие SEO-тексты для страниц интернет-магазина shop.mts.by — брендов, моделей и разделов аксессуаров: объяснить, чем хорош товар и как выбрать подходящий вариант, и привести покупателя к заказу в МТС с рассрочкой, гарантией и доставкой по Беларуси.">
+<title>Тексты МТС для каталога shop.mts.by — Александра Самелюк</title>
+<meta name="description" content="Привести покупателя из поиска к заказу в МТС. ЦА выбирает часы, смартфон или чехол и сравнивает магазины, интент коммерческий: текст отвечает на вопрос «какую модель взять» и снимает возражения рассрочкой, гарантией и доставкой.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 02</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">МТС Беларусь · E-commerce · продающие тексты</p>
-      <h1>Продающие тексты для интернет-магазина мобильного оператора: бренд, модель и категория аксессуаров</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>МТС Беларусь (СООО «Мобильные ТелеСистемы») — оператор мобильной связи в Беларуси. Продаёт смартфоны, гаджеты и аксессуары через интернет-магазин shop.mts.by и развивает цифровые сервисы, в том числе мобильную ЭЦП МТС ID.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>МТС Беларусь, интернет-магазин shop.mts.by</dd></div><div><dt>Аудитория</dt><dd>Покупатели смартфонов, гаджетов и аксессуаров в Беларуси</dd></div><div><dt>Формат</dt><dd>SEO-тексты для страниц каталога по ТЗ</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <h1>Продающие тексты МТС Беларусь для каталога shop.mts.by</h1>
+      <p class="lead">В феврале 2026 года писала для МТС Беларусь, крупнейшего мобильного оператора страны. Компании нужны были SEO-тексты сразу для двух сайтов: интернет-магазина shop.mts.by и корпоративного mts.by. За месяц подготовила 22 текста для каталога (умные часы Apple, Huawei, Garmin, смартфоны, зарядки, чехлы, защитные стёкла, колонки) и 4 инфостатьи о мобильной ЭЦП, геолокации и TWIN-карте.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">МТС Беларусь<a class="site" href="https://www.mts.by" target="_blank" rel="noopener">mts.by <span aria-hidden="true">↗</span></a></p><p>МТС Беларусь (СООО «Мобильные ТелеСистемы») работает с 2002 года и остаётся крупнейшим оператором страны по числу абонентов: 5,7 млн человек. По итогам 2025 года занял первое место по качеству мобильной связи в измерениях БелГИЭ.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Интернет-магазин shop.mts.by</dd></div><div><dt>Формат</dt><dd>SEO-тексты для страниц каталога по ТЗ</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Написать продающие SEO-тексты для страниц интернет-магазина shop.mts.by — брендов, моделей и разделов аксессуаров: объяснить, чем хорош товар и как выбрать подходящий вариант, и привести покупателя к заказу в МТС с рассрочкой, гарантией и доставкой по Беларуси.</p></section>
-        <section><h3>Решение</h3><p>Каждую страницу строила по одной схеме, но с разной подачей: для бренда — обзор линеек и разница между моделями, для карточки товара — главная особенность модели и сценарии использования, для категории аксессуаров — виды, материалы и чек-лист выбора. Ключевые запросы встроены в живой текст, блок «Преимущества покупки в МТС» собран из условий магазина: рассрочки, кредита, «Мобильной защиты», доставки и самовывоза.</p></section>
-        <section class="res"><h3>Результат</h3><p>22 текста для каталога за февраль 2026 года — умные часы Apple, Huawei, Xiaomi, HONOR, Garmin, смартфоны, зарядные устройства, чехлы, защитные стёкла, колонки. В подборке — три страницы разного типа; характеристики без подтверждения смягчены, инфографика визуализирует линейку, устройство часов и выбор чехла.</p></section>
+        <section><h3>Задача</h3><p>Привести покупателя из поиска к заказу в МТС. ЦА выбирает часы, смартфон или чехол и сравнивает магазины, интент коммерческий: текст отвечает на вопрос «какую модель взять» и снимает возражения рассрочкой, гарантией и доставкой.</p></section>
+        <section><h3>Решение</h3><p>Под каждый тип страницы выстроила свою структуру: для бренда обзор линеек Fenix и Forerunner, для модели главная особенность Watch D2, для аксессуаров таблица материалов и чек-лист выбора. Ключи вписала в живой текст, CTA собрала из условий магазина.</p></section>
+        <section class="res"><h3>Результат</h3><p>Три страницы из 22, сданных за февраль 2026 года. Тексты приняты без доработок, характеристики сверены с данными производителей, а в портфолио-версию добавлены четыре инфографики: линейка Forerunner, устройство часов, виды чехлов, проверка перед покупкой.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для МТС Беларусь</span><ul><li><a href="mts-shop.html" aria-current=page>Продающие тексты для магазина</a></li><li><a href="mts-info.html">Статья: ЭЦП на телефоне</a></li></ul></nav>
@@ -198,7 +211,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <li>консультанты, которые помогут установить приложение и разобраться с настройками;</li>
 <li>круглосуточная поддержка по телефону и онлайн.</li>
 </ul>
-<p>Выбирайте Garmin, если для вас важны точность данных, автономность и проверенное качество спортивной электроники. Оформить заказ можно на сайте или в любом салоне МТС — с самовывозом или доставкой на дом. Модели в наличии удобно отобрать фильтром каталога, а уточнить, есть ли нужные часы, можно по номеру 210.</p>
+<p>Выбирайте Garmin, если для вас важны точность данных, автономность и проверенное качество спортивной электроники. <strong>Оформить заказ</strong> можно на сайте или в любом салоне МТС — с самовывозом или доставкой на дом. Модели в наличии удобно отобрать фильтром каталога, а уточнить, есть ли нужные часы, можно по номеру <strong>210</strong>.</p>
 <h2>Huawei Watch D2</h2>
 <p><em>Карточка модели: shop.mts.by/gadgets/smart-watch/huawei/watch-d2/</em></p>
 <p>Huawei Watch D2 — смарт-часы с функцией суточного мониторирования артериального давления прямо на запястье. Модель получила тонкий корпус, яркий AMOLED-экран диагональю 1,82 дюйма с пиковой яркостью 1500 нит и встроенную ультраузкую механическую манжету шириной 26,5 мм. Циферблаты, виджеты и собственные заставки настраиваются под вкус владельца.</p>
@@ -278,14 +291,14 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <li><strong>Возврат</strong> — удобная процедура для покупателей.</li>
 <li><strong>Салоны</strong> — в крупных городах Беларуси чехол можно примерить к своему телефону.</li>
 </ol>
-<p>Закажите чехол онлайн и заберите в салоне — так вы сэкономите время и получите покупку в тот же день.</p>
+<p><strong>Закажите чехол онлайн</strong> и заберите в салоне — так вы сэкономите время и получите покупку в тот же день.</p>
 
       </div>
     </div>
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -294,13 +307,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

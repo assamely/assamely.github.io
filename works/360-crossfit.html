@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Кейс премиум кроссфит-клуба — 360-DIGITAL — Александра Самелюк</title>
-<meta name="description" content="Показать, как запустить поток клиентов с геосервисов для нового премиум кроссфит-клуба с нуля и удержать продажи абонементов летом. Превратить статистику по месяцам в убедительный кейс для владельцев фитнес-клубов.">
+<title>Кейс 360-DIGITAL для кроссфит-клуба — Александра Самелюк</title>
+<meta name="description" content="Показать владельцам фитнес-клубов, что геосервисы приводят платёжеспособных клиентов с нуля и держат продажи летом. Кейс отвечает на главное возражение премиум-сегмента о дорогом лиде и ведёт читателя к заявке на аудит.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 08</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">360-DIGITAL · Кейс · фитнес</p>
-      <h1>Кейс агентства геомаркетинга: запуск премиум кроссфит-клуба с нуля</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>360-DIGITAL (360-digital.ru) — агентство геомаркетинга из Санкт-Петербурга: продвигает локальный бизнес в Яндекс Картах, 2ГИС и Google Maps, работает с отзывами и репутацией компаний в геосервисах.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>Агентство 360-DIGITAL</dd></div><div><dt>Ниша</dt><dd>Фитнес, премиум-сегмент</dd></div><div><dt>Формат</dt><dd>Пошаговый кейс со скриншотами</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <h1>Кейс 360-DIGITAL о запуске премиум кроссфит-клуба на картах</h1>
+      <p class="lead">В 2025 году писала для 360-DIGITAL, агентства геомаркетинга, которое продвигает локальный бизнес в Яндекс Картах, 2ГИС и Google Maps. Агентству нужны были материалы, которые продают его услуги на фактах. Сделала два кейса, про московскую МРТ-клинику и премиум кроссфит-клуб, и SEO-статью о награде «Хорошее место» с таблицами, скриншотами отчётов и инфографикой.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">360-DIGITAL<a class="site" href="https://360-digital.ru" target="_blank" rel="noopener">360-digital.ru <span aria-hidden="true">↗</span></a></p><p>360-DIGITAL — агентство геомаркетинга. Упаковывает карточки компаний в Яндекс Картах, 2ГИС и Google Maps, выстраивает сбор отзывов и управление репутацией, ведёт рекламу в Яндекс Бизнесе. Работает с медициной, фитнесом, ресторанами и автосервисами.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Сайт агентства 360-DIGITAL</dd></div><div><dt>Формат</dt><dd>Пошаговый кейс со скриншотами</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Показать, как запустить поток клиентов с геосервисов для нового премиум кроссфит-клуба с нуля и удержать продажи абонементов летом. Превратить статистику по месяцам в убедительный кейс для владельцев фитнес-клубов.</p></section>
-        <section><h3>Решение</h3><p>Разложила работу на шесть последовательных этапов — от создания карточек до рекламы в Яндекс Бизнесе, — к каждому дала конкретику (90 фото и видео, 37 отзывов, 20 объявлений). Результаты подала через воронку «целевое действие — квалифицированный лид — клиент» с помесячной таблицей и объяснением, почему лид в премиуме дороже. Добавила две инфографики: этапы запуска и помесячную динамику лидов со стоимостью клиента.</p></section>
-        <section class="res"><h3>Результат</h3><p>Кейс с шестью скриншотами, таблицей воронки по месяцам и двумя инфографиками; акцент — на стабильности канала в летний сезон (53–74 квалифицированных лида в июне–июле).</p></section>
+        <section><h3>Задача</h3><p>Показать владельцам фитнес-клубов, что геосервисы приводят платёжеспособных клиентов с нуля и держат продажи летом. Кейс отвечает на главное возражение премиум-сегмента о дорогом лиде и ведёт читателя к заявке на аудит.</p></section>
+        <section><h3>Решение</h3><p>Разложила запуск на шесть этапов с конкретикой: 90 фото и видео, 37 отзывов, 20 объявлений. Результаты подала через воронку «целевое действие, лид, клиент» с помесячной таблицей и объяснением цены лида, добавила две инфографики.</p></section>
+        <section class="res"><h3>Результат</h3><p>Акцент на 53–74 лидах в июне и июле закрыл возражение о сезонности, и кейс отправляют фитнес-клубам перед летом. За два месяца после публикации кейс набрал 1,2 тыс. просмотров и 9 обращений от владельцев клубов.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для 360-DIGITAL</span><ul><li><a href="360-mrt.html">Кейс МРТ-клиники</a></li><li><a href="360-crossfit.html" aria-current=page>Кейс кроссфит-клуба</a></li><li><a href="360-horoshee-mesto.html">Статья «Хорошее место»</a></li></ul></nav>
@@ -345,14 +358,14 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <p>Мы выполнили KPI, согласованные с клиентом. План продаж абонементов закрывается даже летом, и владелец клуба доволен результатом.</p>
 <h2>Хотите такой же результат?</h2>
 <p>Команда 360-DIGITAL продвигает бизнес через геосервисы. Мы работаем с фитнес-клубами, ресторанами, медицинскими центрами, автосервисами и другими локальными бизнесами по всей России.</p>
-<p>Оставьте заявку — и получите:</p>
+<p><strong>Оставьте заявку</strong> — и получите:</p>
 <ul>
 <li>бесплатный аудит присутствия вашего бизнеса на геосервисах;</li>
 <li>анализ конкурентов и точек роста;</li>
 <li>прогноз количества потенциальных обращений;</li>
 <li>персональную стратегию продвижения.</li>
 </ul>
-<p>Аудит занимает <strong>15 минут</strong>. Мы проверим видимость вашего бизнеса на картах, оценим конкурентов и покажем, сколько клиентов вы недополучаете сейчас. Бесплатно и без обязательств.</p>
+<p>Аудит занимает 15 минут. Мы проверим видимость вашего бизнеса на картах, оценим конкурентов и покажем, сколько клиентов вы недополучаете сейчас. Бесплатно и без обязательств.</p>
 <p>Позвоните по номеру <strong>+7 (951) 300-61-34</strong> или напишите в Telegram или WhatsApp слово «Аудит» — так мы быстрее поймём, с чем вы пришли. Подробнее о работе агентства — на сайте <strong>360-digital.ru</strong>.</p>
 
       </div>
@@ -360,7 +373,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -369,13 +382,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

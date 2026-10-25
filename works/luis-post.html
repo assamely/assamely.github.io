@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Пост о кампании против кибербуллинга — LUIS+ — Александра Самелюк</title>
-<meta name="description" content="Написать пост для соцсетей LUIS+ об участии компании в кампании VK «Месяц осведомленности о кибербуллинге» по партнерскому тулкиту: объяснить, к кому обращается кампания в этом году, что есть на сайте проекта, и дать читателю простые способы присоединиться.">
+<title>Пост LUIS+ против кибербуллинга — Александра Самелюк</title>
+<meta name="description" content="Рассказать подписчикам LUIS+ об участии в кампании VK «Месяц осведомленности о кибербуллинге» и связать акцию с профилем компании. Пост работает на имидж и вовлечение: читателю нужно не одобрить, а сделать простой шаг.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 09</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">LUIS+ · SMM · социальная кампания</p>
-      <h1>Пост для соцсетей: компания поддерживает кампанию VK против кибербуллинга</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>LUIS+ (luis.ru) — российская компания на рынке систем безопасности и электротехники, работает более 30 лет: дистрибьютор оборудования мировых и российских производителей и владелец собственных торговых марок (LTV, LPA, ЛКД, ЛПТ, LTC и др.), 18 офисов по России.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>LUIS+</dd></div><div><dt>Площадки</dt><dd>Лента, сторис, Telegram</dd></div><div><dt>Формат</dt><dd>Пост в двух версиях</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <h1>Пост LUIS+ о кампании VK против кибербуллинга</h1>
+      <p class="lead">С 2026 года пишу для LUIS+, российского дистрибьютора систем безопасности с 30-летней историей. Компании нужен экспертный контент, который приводит инженеров и проектировщиков из поиска и попадает в AI-ответы. За полгода сдала больше 20 материалов: SEO- и GEO-статьи о видеонаблюдении, СКУД, оповещении, ИБП и пожарной сигнализации, доработку статей под семантику и посты для соцсетей.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">LUIS+<a class="site" href="https://luis.ru" target="_blank" rel="noopener">luis.ru <span aria-hidden="true">↗</span></a></p><p>LUIS+ — российская компания на рынке систем безопасности и электротехники, работает 30 лет. Дистрибьютор более 2500 брендов и владелец собственных марок LTV, LPA, ЛКД, ЛПТ, LTC и «ЛуисОКЛ»; 18 офисов по России и больше 1300 сотрудников.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Соцсети LUIS+: лента, сторис, Telegram</dd></div><div><dt>Формат</dt><dd>Пост в двух версиях</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Написать пост для соцсетей LUIS+ об участии компании в кампании VK «Месяц осведомленности о кибербуллинге» по партнерскому тулкиту: объяснить, к кому обращается кампания в этом году, что есть на сайте проекта, и дать читателю простые способы присоединиться.</p></section>
-        <section><h3>Решение</h3><p>Написала пост по тулкиту кампании, который прислал заказчик: взяла из него сроки, историю проекта, ключевое сообщение VK «Поддержи тех, кого травят — выйди из режима наблюдателя», описание материалов сайта kiberbulling.net и сценарий участия для партнеров. Связала акцию с профилем компании (безопасность не только объектов, но и пространства общения) без пафоса и самопохвалы. Структурировала пост подзаголовками: адресат кампании, материалы сайта, четыре конкретных действия; подготовила короткую версию для сторис, Telegram и анонса по схеме конструктора поста из тулкита (баннер, текст со ссылкой, хештег, белое сердце).</p></section>
-        <section class="res"><h3>Результат</h3><p>Две версии поста — развернутая для ленты и короткая для анонса — с единым призывом «выйди из режима наблюдателя», конкретными действиями для читателя и хештегом кампании.</p></section>
+        <section><h3>Задача</h3><p>Рассказать подписчикам LUIS+ об участии в кампании VK «Месяц осведомленности о кибербуллинге» и связать акцию с профилем компании. Пост работает на имидж и вовлечение: читателю нужно не одобрить, а сделать простой шаг.</p></section>
+        <section><h3>Решение</h3><p>Собрала пост по партнёрскому тулкиту: сроки, история проекта, ключевое сообщение VK и материалы kiberbulling.net. Выстроила подзаголовки и четыре конкретных действия, держала тон без пафоса и сделала короткую версию для сторис и Telegram.</p></section>
+        <section class="res"><h3>Результат</h3><p>Пост согласован после одной правки в комментариях и стоит в контент-плане на старт кампании 2 ноября. Короткая версия собрана по конструктору тулкита, поэтому её можно публиковать в любом канале без доработки.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для LUIS+</span><ul><li><a href="luis-server.html">Сервер или регистратор</a></li><li><a href="luis-antivandal.html">Антивандальные камеры</a></li><li><a href="luis-post.html" aria-current=page>Пост для соцсетей</a></li></ul></nav>
@@ -220,7 +233,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -229,13 +242,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>

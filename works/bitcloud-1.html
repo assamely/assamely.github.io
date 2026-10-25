@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Экспертная статья: что делать при DDoS-атаке на компанию — БИТ.CLOUD — Александра Самелюк</title>
-<meta name="description" content="Подготовить для блога ИТ-аутсорсера статью о том, как компании действовать при DDoS-атаке: как отличить атаку от сбоя, что сделать в первые часы и как выстроить защиту на будущее, — и подвести читателя к услугам мониторинга и защиты БИТ.CLOUD.">
+<title>Что делать при DDoS-атаке — статья БИТ.CLOUD — Александра Самелюк</title>
+<meta name="description" content="Встретить руководителя и ИТ-специалиста в момент инцидента или сразу после него, когда интент самый горячий. Статья даёт план на первые часы атаки, формирует доверие к экспертизе БИТ.CLOUD и ведёт к заявке на мониторинг и защиту.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -40,16 +40,26 @@ a{color:inherit}
 .home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
 .home:hover{color:var(--pencil)}
 
-h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
-.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
-.meta div:first-child{border-left:0}
-.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
-.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
-.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
-.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
-.tdr p{margin:0;font-size:16px;line-height:1.5}
+h1{font:800 clamp(30px,4.4vw,56px)/1.04 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.lead{font:400 18px/1.6 var(--body);max-width:64ch;margin:22px 0 0}
+.client{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border:1px solid var(--rule);margin:30px 0 0}
+.client .who{padding:18px 22px 20px;min-width:0}
+.client .name{margin:8px 0 0;font:700 19px/1.3 var(--display);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.client .site{font:400 13px/1.3 var(--mono);color:var(--pencil);text-decoration:none;border-bottom:1px solid currentColor;letter-spacing:0}
+.client .site:hover{color:var(--ink)}
+.client .who p:not(.name){margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.client dl{margin:0;padding:18px 22px 20px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;background:var(--tint)}
+.client dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.client dd{margin:3px 0 0;font:600 15px/1.35 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px}
+.tdr section{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 10px}
+.tdr p{margin:0;font-size:16px;line-height:1.55}
 .tdr .res p{font-weight:600}
+.backlink{display:inline-block;text-decoration:none;color:var(--pencil)}
+.margin .backlink{border-bottom:0}
+.backlink .u{border-bottom:1px solid currentColor}
+.backlink:hover{color:var(--ink)}
 .sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
 .sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
 .sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
@@ -101,10 +111,10 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   .row{grid-template-columns:1fr}
   .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
   .margin .mark{margin:0;font-size:20px}
-  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .meta div{border-left:0;border-top:1px solid var(--rule)}
-  .meta div:nth-child(-n+2){border-top:0}
-  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .margin .backlink{display:flex;gap:12px;align-items:center}
+  .client{grid-template-columns:1fr}
+  .client dl{border-left:0;border-top:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .lead{font-size:17px}
   .tdr{grid-template-columns:1fr}
   .end{grid-template-columns:1fr}
   .prose .pull{font-size:19px}
@@ -133,7 +143,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
 <div class="wrap">
 <article class="sheet">
   <header class="row">
-    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="margin"><a class="backlink" href="../#raboty"><span class="mark">←</span><span class="u">все работы</span></a></div>
     <div class="main top">
       <a class="home" href="../">Александра Самелюк</a>
       <span class="eyebrow">Портфолио · 12</span>
@@ -144,13 +154,16 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
     <div class="margin"><span class="mark">§</span>паспорт работы</div>
     <div class="main">
       <p class="eyebrow">БИТ.CLOUD · Экспертная статья · ИБ</p>
-      <h1>Экспертная статья для ИТ-аутсорсера: что делать при DDoS-атаке на компанию</h1>
-      <p class="about"><span class="eyebrow">О заказчике</span>БИТ.CLOUD (1bitcloud.ru) — облачный сервис компании «Первый Бит»: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг с поддержкой 24/7, информационная безопасность (аудит, аудит по 152-ФЗ, сканер уязвимостей) и Яндекс 360 для бизнеса. На рынке ИТ-услуг с 2006 года, данные хранит в российских дата-центрах уровня TIER III.</p>
-      <dl class="meta"><div><dt>Заказчик</dt><dd>БИТ.CLOUD (1bitcloud.ru), облачные и ИТ-услуги «Первого Бита»</dd></div><div><dt>Аудитория</dt><dd>Руководители и ИТ-специалисты компаний с онлайн-сервисами</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <h1>Экспертная статья БИТ.CLOUD о защите компании от DDoS-атаки</h1>
+      <p class="lead">Уже 4,5 года пишу для блога БИТ.CLOUD — облачного сервиса «Первого Бита»: 1С в облаке, виртуальные серверы, ИТ-аутсорсинг и защита данных. Заказчику нужны трафик по коммерческим кластерам и заявки на услуги. За это время вышло около 160 статей: инструкции, экспертные разборы по ИБ, продуктовые обзоры и дописки к опубликованным материалам.</p>
+      <div class="client">
+        <div class="who"><span class="eyebrow">О заказчике</span><p class="name">БИТ.CLOUD<a class="site" href="https://1bitcloud.ru/" target="_blank" rel="noopener">1bitcloud.ru <span aria-hidden="true">↗</span></a></p><p>БИТ.CLOUD — облачный сервис компании «Первый Бит», партнёра 1С: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг 24/7, информационная безопасность и Яндекс 360. На рынке ИТ-услуг с 2006 года, более 16 000 пользователей, данные хранятся в российских ЦОД уровня Tier III.</p></div>
+        <dl><div><dt>Площадка</dt><dd>Блог 1bitcloud.ru</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      </div>
       <div class="tdr">
-        <section><h3>Задача</h3><p>Подготовить для блога ИТ-аутсорсера статью о том, как компании действовать при DDoS-атаке: как отличить атаку от сбоя, что сделать в первые часы и как выстроить защиту на будущее, — и подвести читателя к услугам мониторинга и защиты БИТ.CLOUD.</p></section>
-        <section><h3>Решение</h3><p>Построила текст как инструкцию по хронологии инцидента: распознавание по логам (однотипные запросы к одному URL, соединения с одних IP, рост upstream_response_time), четыре экстренных шага, три слоя долгосрочной защиты (избыточность, мониторинг, «закаливание» систем), выбор между облачной, аппаратной и гибридной фильтрацией и профилактика с playbook. Технические детали — L4/L7, SYN-флуд, Always-On, WAF, CDN — объяснены на языке руководителя.</p></section>
-        <section class="res"><h3>Результат</h3><p>Практическая статья-план для бизнеса с тремя инфографиками: сбой или атака по логам, многослойная защита против многовекторной атаки, три модели очистки трафика. Текст ведёт к заявке на анализ рисков и стратегию защиты.</p></section>
+        <section><h3>Задача</h3><p>Встретить руководителя и ИТ-специалиста в момент инцидента или сразу после него, когда интент самый горячий. Статья даёт план на первые часы атаки, формирует доверие к экспертизе БИТ.CLOUD и ведёт к заявке на мониторинг и защиту.</p></section>
+        <section><h3>Решение</h3><p>Выстроила текст по хронологии инцидента: распознать атаку по логам, четыре экстренных шага, три слоя долгосрочной защиты, выбор модели фильтрации и playbook. Термины L4/L7, SYN-флуд, Always-On и WAF объяснила на языке ЛПР, CTA привязала к анализу рисков.</p></section>
+        <section class="res"><h3>Результат</h3><p>Статья вошла в блог 1bitcloud.ru в раздел информационной безопасности и держится в топ-10 Яндекса по запросу «что делать при DDoS-атаке». Для портфолио к ней добавлены три инфографики: признаки атаки в логах, слои защиты и модели очистки трафика.</p></section>
       </div>
       
       <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для БИТ.CLOUD</span><ul><li><a href="bitcloud-1.html" aria-current=page>Что делать при DDoS-атаке</a></li><li><a href="bitcloud-2.html">Сетевое хранилище NAS</a></li><li><a href="bitcloud-3.html">Как работает виртуальная АТС</a></li></ul></nav>
@@ -230,7 +243,7 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
   </section>
 
   <footer class="row">
-    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="margin"><span class="mark">✓</span>контакты</div>
     <div class="main end">
       <div>
         <p class="eyebrow">Нужен такой текст?</p>
@@ -239,13 +252,13 @@ h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin
       <div class="contacts">
         <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
         <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
-        <a class="back" href="../#works">← Все работы</a>
+        <a class="back" href="../#raboty">← Все работы</a>
       </div>
       
     </div>
   </footer>
 </article>
-<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+<p class="colophon wrap"><span>© Александра Самелюк, 2026</span><span>assamely.github.io</span></p>
 </div>
 </body>
 </html>
