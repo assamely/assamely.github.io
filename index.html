@@ -51,7 +51,8 @@ h1 .soft{font-weight:300;letter-spacing:-.03em}
 .role b{font-weight:600}
 
 /* Тезис с правкой */
-.thesis{font:500 clamp(26px,3.6vw,44px)/1.5 var(--display);letter-spacing:-.02em;margin:46px 0 10px;max-width:22ch;text-wrap:balance}
+.thesis{font:500 clamp(24px,3.4vw,42px)/1.35 var(--display);letter-spacing:-.02em;margin:46px 0 10px;max-width:none;text-wrap:balance}
+@media (max-width:700px){.thesis .tbr{display:none}.thesis{text-wrap:wrap}}
 .hl{background:linear-gradient(var(--marker),var(--marker)) no-repeat 0 88%/100% .38em;padding:0 .06em;animation:sweep .7s .5s both cubic-bezier(.6,0,.2,1)}
 .hl.two{animation-delay:1.1s}
 .thesis .from{color:var(--mute)}
@@ -121,7 +122,9 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
 .contacts a,.contacts .mail{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--ink);text-decoration:none;font:600 17px/1.2 var(--body)}
 .contacts a:first-child{background:var(--ink);color:var(--sheet)}
 .contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
-.mail span{user-select:all}
+.mail span{user-select:all;min-width:0;overflow-wrap:anywhere}
+.call>div{min-width:0}
+@media (max-width:400px){.contacts a,.contacts .mail{font-size:15px;padding:14px 14px;gap:10px}}
 .mail button{font:500 13px/1 var(--mono);border:1px solid var(--rule);background:transparent;color:var(--ink);padding:8px 10px;cursor:pointer}
 .mail button:focus-visible{outline:2px solid var(--pencil)}
 .colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px}
@@ -159,7 +162,7 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
       </div>
       <h1>Александра<br><span class="soft">Самелюк</span></h1>
       <div class="role"><span><b>Редактор и автор экспертного контента</b></span><span>Филолог и журналист</span><span>SEO · GEO · контент-маркетинг</span></div>
-      <p class="thesis">Превращаю <span class="from">сложное</span> в&nbsp;<span class="hl">понятное</span>, а&nbsp;<span class="from">разрозненное</span> —&nbsp;в&nbsp;<span class="hl two">систему</span></p>
+      <p class="thesis">Превращаю <span class="from">сложное</span> в&nbsp;<span class="hl">понятное</span>,<br class="tbr"> а&nbsp;<span class="from">разрозненное</span>&nbsp;— в&nbsp;<span class="hl two">систему</span></p>
       <p class="lede">Пишу и редактирую статьи, гайды и лонгриды, SEO- и GEO-тексты для B2B и B2C — и делаю к ним визуал: инфографику, схемы, иллюстрации. Помогаю продать через текст, привести трафик из поиска, <mark>попасть в нейровыдачу</mark> и показать экспертизу.</p>
       <p class="lede lede2">Составляю контент-планы и стратегии, веду корпоративные блоги и базы знаний. Как технический автор пишу об IT, информационной безопасности и промышленности. Работаю с отраслевой аналитикой и YMYL-контентом: медицина, финансы, право.</p>
     </div>
