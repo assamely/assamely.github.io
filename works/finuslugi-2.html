@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Статья: программа долгосрочных сбережений (ПДС) — «Финуслуги» — Александра Самелюк</title>
+<meta name="description" content="Объяснить, как устроена программа долгосрочных сбережений: из чего складывается капитал, сколько добавит государство, когда можно забрать деньги и кому программа выгодна.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 04</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Финуслуги» · YMYL · финансы</p>
+      <h1>Статья для финансового маркетплейса: как работает программа долгосрочных сбережений</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>«Финуслуги» — финансовая платформа, созданная Московской биржей в рамках проекта Банка России «Маркетплейс». На ней можно онлайн открыть вклад, оформить ОСАГО и другие страховки, купить народные облигации, паи фондов и подключиться к программе долгосрочных сбережений.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Финуслуги», финансовый маркетплейс Московской биржи</dd></div><div><dt>Аудитория</dt><dd>Граждане, которые копят на пенсию и крупные цели</dd></div><div><dt>Формат</dt><dd>Информационная статья в блог</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Объяснить, как устроена программа долгосрочных сбережений: из чего складывается капитал, сколько добавит государство, когда можно забрать деньги и кому программа выгодна.</p></section>
+        <section><h3>Решение</h3><p>Разложила ПДС на три источника роста (взносы, софинансирование, налоговый вычет) и страховку до 2,8 млн ₽, дала пошаговое оформление, правила досрочного выхода, перевод пенсионных накоплений, таблицу софинансирования по уровням дохода (1:1, 1:2, 1:4), плюсы и минусы и сценарии для четырёх групп участников. Цифры сверила с официальными материалами о ПДС.</p></section>
+        <section class="res"><h3>Результат</h3><p>Государственная программа с десятком условий читается как понятная инструкция: таблица и схемы сразу отвечают на вопросы «сколько внести» и «когда можно забрать», а все суммы помечены датой (2025 год), чтобы читатель сверил их с актуальными условиями.</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Финуслуги»</span><ul><li><a href="finuslugi-1.html">Метрики риска и доходности</a></li><li><a href="finuslugi-2.html" aria-current=page>Программа долгосрочных сбережений</a></li><li><a href="finuslugi-3.html">Депозиты для бизнеса</a></li><li><a href="finuslugi-faq.html">FAQ для продуктовой страницы</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Программа долгосрочных сбережений: как работает ПДС и что даёт государство</h2>
+        
+        
+<p><strong>Программа долгосрочных сбережений (ПДС)</strong> — способ сформировать капитал на будущее при поддержке государства. Участие добровольное: гражданин заключает договор с выбранным негосударственным пенсионным фондом (НПФ), и его деньги копятся на индивидуальном счёте не меньше 15 лет или до наступления пенсионного возраста. Капитал растёт сразу из нескольких источников — личных взносов, государственного софинансирования и налогового вычета.</p>
+<blockquote>
+<p>Все суммы, лимиты и условия в статье приведены по состоянию на момент публикации (2025 год). Перед заключением договора сверьте актуальные параметры программы с фондом.</p>
+</blockquote>
+<h2>Что такое долгосрочные сбережения</h2>
+<p>Идея программы — стимулировать регулярные взносы на индивидуальный счёт в НПФ, где фонд инвестирует деньги. Капитал участника складывается из трёх частей:</p>
+<ul>
+<li><strong>личные взносы</strong> — в любом размере и с любой периодичностью;</li>
+<li><strong>софинансирование от государства</strong> — до 36 000 рублей в год в течение десяти лет;</li>
+<li><strong>налоговый вычет</strong> — до 52 000 рублей возврата НДФЛ в год при взносах до 400 000 рублей.</li>
+</ul>
+<p>Чтобы получить софинансирование, достаточно вносить от 2000 рублей в год. Верхнего предела для пополнения счёта нет.</p>
+<figure>
+<img alt="Из чего складывается капитал по ПДС и какая защита у него есть" height="1174" loading="lazy" src="img/finuslugi-2/01.png" width="1600"/>
+<figcaption aria-hidden="true">Из чего складывается капитал по ПДС и какая защита у него есть</figcaption>
+</figure>
+<p><strong>Деньги становятся доступны через 15 лет или по достижении 55 лет для женщин и 60 лет для мужчин.</strong> Досрочно забрать накопления можно в особых жизненных ситуациях — при дорогостоящем лечении или потере кормильца. Средства на счёте застрахованы на сумму до 2,8 млн рублей — вдвое больше, чем банковский вклад.</p>
+<h2>Как работает ПДС: основные положения</h2>
+<p>Программа построена на нескольких принципах:</p>
+<ul>
+<li>участие только добровольное;</li>
+<li>договор заключается с фондом, который человек выбирает сам, изучив условия и репутацию;</li>
+<li>взносы — любые, а для господдержки хватит 2000 рублей в год;</li>
+<li>можно получить налоговый вычет — до 52 000 рублей в год при взносах 400 000 рублей;</li>
+<li>государство доплачивает до 36 000 рублей в год в течение десяти лет;</li>
+<li>накопления застрахованы на сумму до 2,8 млн рублей.</li>
+</ul>
+<p>Выбирая НПФ, обращайте внимание на его инвестиционную политику, рейтинги и отзывы. Высокая доходность в прошлом не гарантирует такого же результата в будущем, но показывает, насколько грамотно фонд управляет активами.</p>
+<h2>Как оформить программу долгосрочных сбережений</h2>
+<p>Оформление проходит в пять шагов:</p>
+<ol type="1">
+<li><strong>Выбор фонда.</strong> Сверьте выбранный НПФ с перечнем фондов-операторов программы на официальных ресурсах.</li>
+<li><strong>Заключение договора.</strong> Понадобятся паспорт и СНИЛС. Договор можно подписать в офисе или онлайн.</li>
+<li><strong>Пополнение счёта.</strong> Взносы вносятся удобным способом — банковским переводом или через личный кабинет НПФ.</li>
+<li><strong>Право на господдержку.</strong> Чтобы получить софинансирование до 36 000 рублей, нужно внести за год хотя бы 2000 рублей.</li>
+<li><strong>Налоговый вычет.</strong> Документы подаются в ФНС. Максимальный возврат НДФЛ — 52 000 рублей в год при взносах 400 000 рублей.</li>
+</ol>
+<p>Размер комиссий зависит от политики фонда. До подписания договора уточните вознаграждение за управление и сопоставьте его с потенциальной доходностью.</p>
+<figure>
+<img alt="Путь участника ПДС: от договора до выплат и особые случаи, когда деньги можно забрать раньше" height="1110" loading="lazy" src="img/finuslugi-2/02.png" width="1600"/>
+<figcaption aria-hidden="true">Путь участника ПДС: от договора до выплат и особые случаи, когда деньги можно забрать раньше</figcaption>
+</figure>
+<p>Схема рассчитана на длинную дистанцию: первые десять лет на счёт, помимо личных взносов, поступает господдержка, а забрать деньги без потерь можно через 15 лет или по достижении пенсионного возраста.</p>
+<h2>Обязательна ли программа</h2>
+<p>Нет. <strong>ПДС — исключительно добровольный формат</strong>, и каждый сам решает, нужны ли ему дополнительные накопления. Возврат части налога и ежегодное софинансирование служат стимулом, а не обязанностью.</p>
+<p>Условия гибкие: размер и периодичность взносов зависят от возможностей участника. Фонды предлагают разные инвестиционные стратегии — от консервативных, с упором на облигации, до более рискованных. Агрессивная стратегия может принести больший доход, но стоимость активов при ней сильнее колеблется. Консервативная даёт умеренный, зато стабильный результат.</p>
+<h2>Можно ли досрочно забрать деньги из ПДС</h2>
+<p>Да, но только в определённых случаях. <strong>В особых жизненных ситуациях — при дорогостоящем лечении или потере кормильца — участник может забрать до 100% накоплений.</strong> Обстоятельства нужно подтвердить документами.</p>
+<p>Если выйти из программы досрочно без веской причины, можно потерять инвестиционный доход и часть преимуществ — софинансирование и налоговый вычет. Поэтому решение о расторжении договора стоит взвесить заранее: программа рассчитана на длительный срок и цель у неё одна — накопить резерв к пенсии или через 15 лет.</p>
+<h2>Перевод накопительной пенсии в ПДС</h2>
+<p>В программу можно перевести уже сформированные пенсионные накопления. Так участник объединяет их с новыми взносами и получает более крупный капитал.</p>
+<p>Порядок перевода:</p>
+<ol type="1">
+<li>Узнайте, где хранятся ваши пенсионные накопления — в Социальном фонде России или в НПФ.</li>
+<li>Обратитесь в выбранный фонд с заявлением о переводе.</li>
+<li>Оформите документы о зачислении средств.</li>
+<li>Следите за состоянием счёта и результатами инвестирования.</li>
+</ol>
+<p>Многие фонды дают онлайн-доступ к счёту: в личном кабинете видно, как поступают взносы и начисляется доход. Регулярная проверка баланса помогает вовремя скорректировать стратегию.</p>
+<h2>Сколько добавит государство: софинансирование в 2025 году</h2>
+<p>Господдержка действует для тех, кто заключил договор и регулярно вносит деньги. Максимум — 36 000 рублей в год, минимальный личный взнос для её получения — 2000 рублей. Сколько нужно внести самому, чтобы получить максимум, зависит от среднемесячного дохода:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Среднемесячный доход</th>
+<th>Соотношение</th>
+<th>Взнос для максимальной господдержки</th>
+<th>Доплата государства</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>до 80 000 ₽</td>
+<td>1 : 1</td>
+<td>36 000 ₽ в год</td>
+<td>36 000 ₽</td>
+</tr>
+<tr class="even">
+<td>80 001–150 000 ₽</td>
+<td>1 : 2</td>
+<td>72 000 ₽ в год</td>
+<td>36 000 ₽</td>
+</tr>
+<tr class="odd">
+<td>свыше 150 000 ₽</td>
+<td>1 : 4</td>
+<td>144 000 ₽ в год</td>
+<td>36 000 ₽</td>
+</tr>
+</tbody>
+</table></div>
+<p>Чем ниже доход, тем щедрее доплата: при зарплате до 80 000 рублей государство фактически удваивает каждый рубль взноса. Такая схема действует десять лет, а право на налоговый вычет можно использовать параллельно.</p>
+<figure>
+<img alt="Сколько нужно внести самому, чтобы получить максимальные 36 000 рублей господдержки, — при разном доходе" height="1446" loading="lazy" src="img/finuslugi-2/03.png" width="1600"/>
+<figcaption aria-hidden="true">Сколько нужно внести самому, чтобы получить максимальные 36 000 рублей господдержки, — при разном доходе</figcaption>
+</figure>
+<p>Если сложить софинансирование и вычет, при взносе 36 000 рублей в год человек с доходом до 80 000 рублей получает от государства 36 000 рублей доплаты и может вернуть 13% от взноса — ещё 4680 рублей.</p>
+<h2>Плюсы и минусы ПДС</h2>
+<p>Прежде чем подписывать договор, полезно взвесить сильные и слабые стороны программы.</p>
+<p><strong>Плюсы:</strong></p>
+<ul>
+<li><strong>Господдержка</strong> — софинансирование увеличивает накопления.</li>
+<li><strong>Налоговый вычет</strong> — ежегодный возврат части НДФЛ, до 52 000 рублей.</li>
+<li><strong>Страхование</strong> — накопления защищены на сумму до 2,8 млн рублей.</li>
+<li><strong>Свобода выбора</strong> — участие полностью добровольное.</li>
+</ul>
+<p><strong>Минусы:</strong></p>
+<ul>
+<li>Деньги «заморожены» на 15 лет или до пенсионного возраста.</li>
+<li>Досрочно забрать накопления без особых обстоятельств невыгодно.</li>
+<li>Комиссии НПФ и риск невысокой доходности.</li>
+<li>Для людей старшего возраста программа может быть менее интересна.</li>
+</ul>
+<p>Оценка личных финансов, целей и горизонта планирования поможет понять, насколько выгодно участие. Капитал, сформированный на долгий срок, обычно даёт хороший результат, но ответственность за выбор фонда и стратегии лежит на участнике.</p>
+<h2>ПДС для людей пенсионного возраста</h2>
+<p>Участвовать в программе можно и в старшем возрасте: формат по-прежнему добровольный. Гражданин оценивает объём накоплений, планы на работу и личные потребности. Иногда разумнее вложить свободные деньги в инструменты с более коротким сроком.</p>
+<p>Главный риск длинных накоплений — инфляция, которая снижает покупательную способность денег. Сравнивайте фактическую доходность фонда за несколько лет с официальными данными о росте цен: стратегия, которая стабильно обгоняет инфляцию, повышает шансы сохранить и приумножить капитал.</p>
+<h2>Кому подходит программа</h2>
+<p>ПДС подходит широкому кругу людей, но выгода у каждой группы своя.</p>
+<ul>
+<li><strong>Молодёжь и люди трудоспособного возраста.</strong> Чем раньше начать, тем сильнее эффект сложного процента. Регулярные взносы вместе с господдержкой формируют заметный резерв к пенсии.</li>
+<li><strong>Люди пенсионного возраста.</strong> Могут копить и получать господдержку, но деньги станут доступны через 15 лет или по достижении установленного возраста.</li>
+<li><strong>Работодатели.</strong> Корпоративные программы ПДС повышают лояльность сотрудников и помогают удерживать ценные кадры.</li>
+<li><strong>Родители.</strong> Могут заключить договор в пользу ребёнка и начать копить на его будущие крупные цели.</li>
+</ul>
+<p>Для всех групп работают одни и те же механизмы — личные взносы, господдержка, налоговый вычет и страхование накоплений. Разница в цели: у одних это прибавка к пенсии, у других — инструмент удержания сотрудников или капитал для ребёнка.</p>
+<figure>
+<img alt="Кому и чем выгодна программа долгосрочных сбережений" height="1016" loading="lazy" src="img/finuslugi-2/04.png" width="1600"/>
+<figcaption aria-hidden="true">Кому и чем выгодна программа долгосрочных сбережений</figcaption>
+</figure>
+<p><strong>Долгосрочные сбережения поддерживают уровень жизни в пожилом возрасте и служат страховкой на случай сложных обстоятельств.</strong> Главное — выбрать надёжный фонд, подходящую стратегию и не прерывать взносы.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

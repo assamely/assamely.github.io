@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейс ВДНХ: единый портал вместо 14 сайтов — «Энсайн» — Александра Самелюк</title>
+<meta name="description" content="Переписать технический хабровский материал о новом портале ВДНХ в кейс для корпоративного блога «Энсайна»: сохранить экспертность, но сделать акцент на бизнес-результатах — объединении 14 сайтов, ускорении в 15 раз, удобной админке и масштабируемости — и вписать SEO-ключи по разработке порталов.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 05</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Энсайн» · Кейс для блога · IT</p>
+      <h1>Кейс для IT-интегратора: как 14 сайтов ВДНХ объединили в единый портал</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>«Энсайн» (nsign.ru) — московский IT-интегратор, работает с 2004 года: разрабатывает сайты, корпоративные порталы и highload-сервисы на PHP и Python, делает CRM-интеграции и выступает генподрядчиком сложных цифровых проектов для органов власти, госкорпораций и бизнеса.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Энсайн», IT-интегратор (Москва)</dd></div><div><dt>Аудитория</dt><dd>CIO, IT-директора, руководители цифровых проектов</dd></div><div><dt>Формат</dt><dd>Рерайт хабровской статьи в кейс для блога компании</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Переписать технический хабровский материал о новом портале ВДНХ в кейс для корпоративного блога «Энсайна»: сохранить экспертность, но сделать акцент на бизнес-результатах — объединении 14 сайтов, ускорении в 15 раз, удобной админке и масштабируемости — и вписать SEO-ключи по разработке порталов.</p></section>
+        <section><h3>Решение</h3><p>Из длинного авторского текста с листингами кода собрала кейс по логике «проблема — архитектура — ключевые решения — цифры — отзыв»: каждое техническое решение (микросервисы на Docker Swarm, гибридный SSR, трёхуровневый кэш, Redis Sorted Sets, CI/CD на Gitea, Editor.js, локализация через Excel, PWA, экономия на API 2GIS) объяснила через пользу для заказчика. Сложные термины раскрыла во врезках, все десять скриншотов и схем из исходника снабдила подписями, которые объясняют смысл, ключи вписала в подзаголовки и текст без переспама.</p></section>
+        <section class="res"><h3>Результат</h3><p>Кейс для блога nsign.ru с врезкой «Коротко о проекте», сводной таблицей метрик и подтверждённым отзывом заказчика; в портфолио-версии к десяти исходным скриншотам добавлены две инфографики — «14 сайтов → одна платформа» и путь запроса через три уровня кэша.</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Энсайн»</span><ul><li><a href="ensign-vdnh.html" aria-current=page>Кейс: портал ВДНХ</a></li><li><a href="ensign-gisp.html">Кейс: миграция ГИСП</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Кейс ВДНХ: как мы объединили 14 сайтов в единый портал и ускорили отклик в 15 раз</h2>
+        
+        
+<p>ВДНХ — это 325 гектаров павильонов, парков, аллей и скульптур, 49 объектов культурного наследия, музеи, лектории, выставки и сотни событий. Только летом 2024 года выставку <a href="https://icmos.ru/news/sobyanin-vdnx-posetili-9-mln-gostei-letom-2024-goda"><strong>посетили 9 млн гостей</strong></a>. Это один из крупнейших музейно-выставочных и рекреационных комплексов в мире.</p>
+<p>При этом до 2025 года цифровая экосистема ВДНХ состояла из 14 разрозненных сайтов, и каждый жил своей жизнью. Посетителям было неудобно, сотрудникам — трудоёмко, а комплексу такая разобщённость мешала развиваться.</p>
+<p>Нашей задачей была разработка единого <a href="https://nsign.ru/service/web-portal"><strong>корпоративного портала</strong></a>, который объединит все ресурсы, ускорит работу и упростит управление контентом. Рассказываем, как мы собрали разрозненные сайты в современную платформу, ускорили отклик бэкенда в 15 раз и на 40% улучшили скорость отрисовки основного контента.</p>
+<blockquote>
+<p><strong>Коротко о проекте</strong></p>
+<ul>
+<li><strong>Заказчик:</strong> ВДНХ, Москва</li>
+<li><strong>Задача:</strong> объединить 14 сайтов в один портал с общей базой данных и афишей</li>
+<li><strong>Стек:</strong> Laravel, Nuxt.js, Docker Swarm, Redis, Memcached, Nginx</li>
+<li><strong>Срок:</strong> 6 месяцев, включая дизайн, согласования и документацию</li>
+<li><strong>Главный результат:</strong> время отклика бэкенда — 62 мс вместо 900 мс</li>
+</ul>
+</blockquote>
+<h2>Проблемы исходной системы</h2>
+<p>Заказчик хотел получить современную платформу с понятным интерфейсом, встроенными механизмами SEO-оптимизации, высокой производительностью и запасом для роста аудитории. Проект должен был не только решить текущие проблемы, но и стать основой для будущих цифровых инициатив.</p>
+<p>До старта проекта разделы ВДНХ — от музея космонавтики до лектория — <strong>существовали на отдельных сайтах</strong> на CMS «1С-Битрикс: Управление сайтом», каждый со своим дизайном и логикой работы. Пользователь переходил из одного раздела в другой и попадал в совершенно другой интерфейс.</p>
+<p>Контент-менеджеры тратили часы на то, чтобы продублировать одну и ту же новость или событие в нескольких системах. Не хватало и производительности: при пиковых нагрузках, например во время крупных выставок, время отклика бэкенда доходило до 900 мс, и пользователи чаще уходили с сайта.</p>
+<p>Единой базы данных и централизованной мультиязычности тоже не было: для каждого языка приходилось создавать отдельную версию сайта. <strong>Разрозненная инфраструктура тормозила развитие ВДНХ как цифрового бренда и снижала удобство для посетителей.</strong></p>
+<figure>
+<img alt="14 сайтов с разными интерфейсами и базами сошлись в одну платформу с общей базой данных и тремя независимыми сервисами" height="1163" loading="lazy" src="img/ensign-vdnh/01.png" width="1600"/>
+<figcaption aria-hidden="true">14 сайтов с разными интерфейсами и базами сошлись в одну платформу с общей базой данных и тремя независимыми сервисами</figcaption>
+</figure>
+<p>Чтобы решить эти проблемы, мы разработали единый интернет-портал, который объединил 14 сайтов в одну систему на связке Laravel (бэкенд) и Nuxt.js (фронтенд). Такой стек позволил уложить разработку в 6 месяцев и при этом получить высокую производительность и гибкость.</p>
+<h2>Почему Laravel и Nuxt.js</h2>
+<p>Связку предложила сама команда ВДНХ, и у этого выбора было три сильных аргумента.</p>
+<p><strong>Laravel</strong> дал надёжный бэкенд с API для внешних приложений: мобильного приложения и информационных стел ВДНХ. <strong>Nuxt.js</strong> с серверным рендерингом (SSR) ускорил загрузку страниц и помог SEO: поисковые системы сразу получают готовый HTML-код. Наконец, команда заказчика уже работала с Laravel и Vue.js, поэтому быстро освоилась в новой системе.</p>
+<figure>
+<img alt="Архитектура портала: Nginx на входе, фронтенд на Nuxt и API на Laravel с узлами масштабирования (пунктир), PostgreSQL с репликами, Memcached, Redis и отдельная админ-панель" height="1361" loading="lazy" src="img/ensign-vdnh/02.png" width="1121"/>
+<figcaption aria-hidden="true">Архитектура портала: Nginx на входе, фронтенд на Nuxt и API на Laravel с узлами масштабирования (пунктир), PostgreSQL с репликами, Memcached, Redis и отдельная админ-панель</figcaption>
+</figure>
+<p>На схеме видно главное: каждый слой можно наращивать отдельно, не трогая остальные. Пунктиром отмечены узлы, которые подключаются при росте нагрузки, — за счёт них портал и выдерживает пики посещаемости.</p>
+<h2>Микросервисная архитектура для масштабируемости</h2>
+<p>Мы разделили систему на <strong>три независимых микросервиса</strong>: API, фронтенд и админ-панель. Так каждый компонент масштабируется отдельно: например, во время массовых мероприятий можно добавить мощностей только API. Контейнерами управляет Docker Swarm — он распределяет нагрузку по алгоритму Round Robin, поэтому портал работает стабильно даже при резком росте трафика.</p>
+<blockquote>
+<p><strong>Админ-панель на Laravel Orchid</strong> получилась настолько удобной, что обучение контент-менеджеров заняло всего 2 часа, а разработчики заказчика начали сами дорабатывать её уже через неделю. Хотите так же? <a href="https://nsign.ru/service/web-portal?utm_source=blog&amp;utm_medium=case&amp;utm_campaign=vdnh"><strong>Оставьте заявку</strong></a> на разработку или модернизацию веб-портала.</p>
+</blockquote>
+<h2>Гибридный рендеринг и кэширование</h2>
+<p>Чтобы портал ВДНХ работал быстро, мы внедрили <strong>гибридный рендеринг</strong>: серверный рендеринг (SSR) в сочетании с клиентской подгрузкой. SSR сразу отдаёт ключевые элементы страницы, сокращает время загрузки и помогает поисковикам быстрее индексировать готовый HTML. Динамические элементы — фильтры и афиша — подгружаются асинхронно через REST API: интерфейс остаётся живым, как у SPA-приложения, а сервер не перегружается.</p>
+<blockquote>
+<p><strong>Почему гибридный рендеринг полезен для SEO?</strong> Сервер формирует HTML заранее, и поисковый робот сразу видит весь контент страницы — это повышает её релевантность в выдаче. Асинхронная подгрузка динамических данных снижает процент отказов и улучшает поведенческие метрики.</p>
+</blockquote>
+<p>Вторым шагом стало <strong>многоуровневое кэширование</strong>. Nginx хранит готовые SSR-страницы, Memcached кэширует запросы к базе данных, а Redis с сортированными множествами (Sorted Sets) ускоряет работу с динамическими данными. Тегированное кэширование в PHP-бэкенде обновляет только те данные, которые изменились, поэтому информация всегда актуальна.</p>
+<figure>
+<img alt="Запрос проходит через три уровня кэша, и до базы данных доходит только то, чего нет в памяти, — так отклик бэкенда сократился с 900 до 62 мс" height="1222" loading="lazy" src="img/ensign-vdnh/03.png" width="1600"/>
+<figcaption aria-hidden="true">Запрос проходит через три уровня кэша, и до базы данных доходит только то, чего нет в памяти, — так отклик бэкенда сократился с 900 до 62 мс</figcaption>
+</figure>
+<p>В результате портал остался на той же инфраструктуре, но выдерживает в разы больше посетителей. Время до первого байта (TTFB) снизилось, задержки при массовых запросах ушли, а показатель LCP (Largest Contentful Paint) — скорость отрисовки основного контента — улучшился на 40%.</p>
+<h2>Быстрые фильтры для поиска мероприятий</h2>
+<p>В информационном портале ВДНХ одновременно собрана информация о сотнях мероприятий, поэтому поиск по сложным фильтрам — категориям, датам, стоимости — должен работать мгновенно. Прямые запросы к базе данных с этим не справлялись: при большом числе параметров они становились слишком тяжёлыми.</p>
+<p>Мы перенесли фильтрацию в <strong>Redis Sorted Sets</strong>: в памяти хранятся упорядоченные ID событий для каждой категории и тега, и подборка собирается пересечением множеств. Запрос вроде «бесплатные концерты для детей в выходные» обрабатывается за <strong>3–5 мс</strong>. Отдельные записи мероприятий кэширует Memcached, и в итоге нагрузка на базу данных сократилась на 90%.</p>
+<p>Производительность мы проверили нагрузочным тестированием в JMeter: 100 параллельных потоков, каждый повторял запрос 100 раз, всего 10 000 обращений к главной странице.</p>
+<figure>
+<img alt="Сценарий нагрузочного теста в JMeter: 100 потоков, разгон за 1 секунду, по 100 повторов на поток" height="140" loading="lazy" src="img/ensign-vdnh/04.png" width="1316"/>
+<figcaption aria-hidden="true">Сценарий нагрузочного теста в JMeter: 100 потоков, разгон за 1 секунду, по 100 повторов на поток</figcaption>
+</figure>
+<p>Фронтенд на Nuxt выдержал этот поток со средним временем ответа 61 мс и пропускной способностью около 1380 запросов в секунду — без единой ошибки.</p>
+<figure>
+<img alt="Результаты Nuxt-приложения: 10 000 запросов, среднее время ответа 61 мс, 0% ошибок" height="94" loading="lazy" src="img/ensign-vdnh/05.png" width="1320"/>
+<figcaption aria-hidden="true">Результаты Nuxt-приложения: 10 000 запросов, среднее время ответа 61 мс, 0% ошибок</figcaption>
+</figure>
+<p>API, который обращается к данным, отвечал в среднем за 199 мс и обрабатывал около 470 запросов в секунду — тоже с нулевым процентом ошибок.</p>
+<figure>
+<img alt="Результаты API портала под той же нагрузкой: среднее время ответа 199 мс, 0% ошибок" height="92" loading="lazy" src="img/ensign-vdnh/06.png" width="1146"/>
+<figcaption aria-hidden="true">Результаты API портала под той же нагрузкой: среднее время ответа 199 мс, 0% ошибок</figcaption>
+</figure>
+<p>Эти цифры показывают запас прочности: даже при наплыве посетителей во время крупных событий портал отвечает быстро и не теряет запросы.</p>
+<h2>Автоматизация обновлений через CI/CD</h2>
+<p>Сборку, тестирование и развёртывание веб-сервиса важно автоматизировать с самого начала. Для портала мы настроили CI/CD на базе Gitea: система сама собирает код, запускает тесты с проверкой уязвимостей (Composer Audit и NPM Audit) и выкатывает изменения в продакшен. Если что-то идёт не так, Docker Swarm за несколько минут откатывает портал к стабильной версии.</p>
+<p><strong>Результат:</strong> путь от коммита до рабочего кода сократился до часа, а разработчики заняты новыми функциями, а не рутиной.</p>
+<h2>Единый стиль с гибкой настройкой</h2>
+<p>Одной из ключевых задач было объединить 14 сервисов в один портал и при этом сохранить характер каждого направления. Мы сделали систему динамических цветовых схем: сервер сразу генерирует HTML с оформлением нужного раздела. Например, «Космос» получает тёмно-синюю палитру с анимацией звёзд, а «Лекторий» — бежевые тона с книжными иконками.</p>
+<figure>
+<img alt="Тематические разделы портала: единая сетка и навигация, но у каждого направления своя палитра и характер" height="812" loading="lazy" src="img/ensign-vdnh/07.png" width="1217"/>
+<figcaption aria-hidden="true">Тематические разделы портала: единая сетка и навигация, но у каждого направления своя палитра и характер</figcaption>
+</figure>
+<p>CSS-переменные встраиваются в HTML-каркас ещё на этапе SSR, поэтому проблема «мерцания стилей» исчезла: страница сразу открывается в правильном оформлении. Контент-менеджеры настраивают стили через админ-панель, а Redis кэширует их и ускоряет загрузку.</p>
+<p>Модульная структура позволяет собирать страницы из готовых блоков и быстро добавлять новые события или баннеры. Подробнее о том, как мы <a href="https://nsign.ru/service/web-portal?utm_source=blog&amp;utm_medium=case&amp;utm_campaign=vdnh"><strong>создаём веб-порталы и сервисы под задачи бизнеса</strong></a>, — на нашем сайте.</p>
+<h2>Гибкий редактор для контент-менеджеров</h2>
+<p>Чтобы с контентом было удобно работать, мы внедрили конструктор страниц на базе Editor.js с drag-and-drop. Контент-менеджеры собирают страницу из блоков: текста, слайдеров, карт, афиш. Базовые элементы реализованы готовыми плагинами Editor.js, а для событий и мест мы разработали собственный блок под задачи ВДНХ.</p>
+<figure>
+<img alt="Редактор страниц: стандартные блоки Editor.js и собственный контент-блок в конце списка" height="435" loading="lazy" src="img/ensign-vdnh/08.png" width="871"/>
+<figcaption aria-hidden="true">Редактор страниц: стандартные блоки Editor.js и собственный контент-блок в конце списка</figcaption>
+</figure>
+<p>Единая база данных и настройки видимости решили давнюю проблему: новое событие автоматически появляется во всех связанных разделах. Дублировать ничего не нужно, а публикация занимает несколько минут.</p>
+<h2>Многоязычная поддержка</h2>
+<p>Для англоязычной и китайской версий портала мы отказались от стандартных систем локализации и сделали свой модуль с экспортом и импортом через Excel. Контент-менеджер выгружает элементы интерфейса — кнопки, пункты меню — в файл, вносит переводы и загружает обратно, а система сама расставляет их по местам.</p>
+<figure>
+<img alt="Модуль переводов: элементы интерфейса выгружаются в Excel и возвращаются в систему одной кнопкой" height="263" loading="lazy" src="img/ensign-vdnh/09.png" width="1088"/>
+<figcaption aria-hidden="true">Модуль переводов: элементы интерфейса выгружаются в Excel и возвращаются в систему одной кнопкой</figcaption>
+</figure>
+<p>Если перевода для раздела нет, он просто не показывается в соответствующей языковой версии. Так на английской или китайской странице не появляются полупустые блоки.</p>
+<p>Для самих материалов в карточке события есть три вкладки — русский, английский и китайский. Редактор может перевести текст сразу или вернуться к нему позже.</p>
+<figure>
+<img alt="Карточка события с вкладками для трёх языков: перевод можно добавить сразу или позже" height="377" loading="lazy" src="img/ensign-vdnh/10.png" width="1097"/>
+<figcaption aria-hidden="true">Карточка события с вкладками для трёх языков: перевод можно добавить сразу или позже</figcaption>
+</figure>
+<p>Такая схема даёт гибкость и точность локализации и делает портал удобнее для иностранных гостей.</p>
+<h2>Гибкое меню с обновлениями «на лету»</h2>
+<p>Навигационное меню мы вынесли в отдельный модуль, который работает через API. Контент-менеджеры в реальном времени меняют его структуру: добавляют временные разделы для акций или скрывают неактуальные пункты, не останавливая работу сайта. Благодаря SSR и кэшированию в Redis пользователи сразу видят изменения.</p>
+<figure>
+<img alt="Меню портала — отдельный модуль: структура меняется из админки без перезапуска сайта" height="510" loading="lazy" src="img/ensign-vdnh/11.png" width="1045"/>
+<figcaption aria-hidden="true">Меню портала — отдельный модуль: структура меняется из админки без перезапуска сайта</figcaption>
+</figure>
+<p>Временные разделы, например афиши отдельных мероприятий, автоматически исчезают из меню, когда истекает срок их действия.</p>
+<h2>Мобильная оптимизация для 85% трафика</h2>
+<p>С мобильных устройств на портал заходят 85% пользователей, поэтому мобильной производительности мы уделили особое внимание. Работали в трёх направлениях.</p>
+<ul>
+<li><strong>Ленивая загрузка</strong> (lazy-loading): изображения и компоненты подгружаются только при прокрутке.</li>
+<li><strong>Облегчённая версия для смартфонов:</strong> сервер заранее определяет тип устройства и отдаёт страницу без тяжёлых десктопных элементов.</li>
+<li><strong>Nuxt PWA:</strong> сервис-воркеры кэшируют ключевые данные, и афишу или карту можно посмотреть даже без интернета.</li>
+</ul>
+<p>Отдельно мы прогнали портал через PageSpeed Insights и убрали всё лишнее: неиспользуемые стили, скрипты и автоматическую загрузку компонентов.</p>
+<figure>
+<img alt="PageSpeed Insights: портал проходит оценку основных интернет-показателей, LCP — 2,1 с, TTFB — 0,5 с" height="448" loading="lazy" src="img/ensign-vdnh/12.png" width="997"/>
+<figcaption aria-hidden="true">PageSpeed Insights: портал проходит оценку основных интернет-показателей, LCP — 2,1 с, TTFB — 0,5 с</figcaption>
+</figure>
+<p>В итоге первый экран загружается менее чем за 2 секунды даже при слабом мобильном интернете.</p>
+<h2>Экономия на интеграции с 2GIS</h2>
+<p>Интерактивная карта портала работает на API 2GIS, где тарифицируется каждый запрос. Чтобы снизить затраты, мы пересчитываем данные о маршрутах не в реальном времени, а только после того, как контент-менеджер закончит редактирование. Базовая информация о локациях — ID, иконки, названия — кэшируется на бэкенде.</p>
+<p>Ещё одна оптимизация связана с ограничениями 2GIS на маршруты для удалённых точек. Если пользователь находится далеко от ВДНХ, система автоматически переключается на Яндекс Карты, и это дополнительно сокращает расходы.</p>
+<h2>Документация API через Swagger</h2>
+<p>Чтобы упростить сопровождение и онбординг разработчиков, мы внедрили Swagger: он автоматически генерирует интерактивную документацию API по аннотациям в Laravel. Это помогло бесшовно подключить к новому порталу существующие приложения ВДНХ — мобильное приложение и информационные стелы — без их доработки.</p>
+<h2>Результаты в цифрах</h2>
+<p>Консолидация 14 сайтов в единый портал решила не только технические, но и бизнес-задачи: посетителям стало удобнее, поддержка подешевела, а у комплекса появилась основа для роста. Вот как изменились ключевые показатели.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Показатель</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Время отклика бэкенда</td>
+<td><strong>62 мс</strong> вместо 900 мс — в 15 раз быстрее</td>
+</tr>
+<tr class="even">
+<td>LCP (отрисовка основного контента)</td>
+<td>улучшение на <strong>40%</strong></td>
+</tr>
+<tr class="odd">
+<td>Первый экран (Lighthouse)</td>
+<td>менее <strong>2 секунд</strong> даже при пиковой нагрузке</td>
+</tr>
+<tr class="even">
+<td>Поиск по фильтрам афиши</td>
+<td><strong>3–5 мс</strong></td>
+</tr>
+<tr class="odd">
+<td>Нагрузка на базу данных</td>
+<td>минус <strong>90%</strong></td>
+</tr>
+<tr class="even">
+<td>Обучение контент-менеджеров</td>
+<td><strong>2 часа</strong></td>
+</tr>
+<tr class="odd">
+<td>От коммита до продакшена</td>
+<td>до <strong>1 часа</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Портал стал устойчивым к пиковым нагрузкам и удобным как для посетителей, так и для команды, которая его ведёт.</p>
+<h2>Итоги</h2>
+<p>Единый портал объединил разрозненные ресурсы ВДНХ, упростил навигацию и работу с контентом. Масштабируемая архитектура позволяет выдерживать рост аудитории без апгрейда серверов, SEO-оптимизация повысила видимость в поиске, а удобная админ-панель сократила обучение сотрудников до двух часов.</p>
+<p>После запуска сайт окончательно переехал с бета-домена на основной. Контент-менеджеры и штатные разработчики ВДНХ полностью приняли его в работу и получают в основном позитивные отзывы пользователей.</p>
+<blockquote>
+<p>«Новая платформа стала мощным инструментом для оптимизации внутренних процессов и повышения качества взаимодействия с посетителями. Её производительность и гибкость полностью соответствуют нашим стратегическим целям».</p>
+<p>— <strong>Дмитрий Бухвалов</strong>, советник по цифровому развитию АО «ВДНХ»</p>
+</blockquote>
+<p>Проект ВДНХ показал, что <strong>разработка информационных порталов</strong> может радикально улучшить цифровую инфраструктуру и повысить эффективность бизнеса.</p>
+<p>Готовы вывести цифровую инфраструктуру компании на новый уровень? Мы разрабатываем надёжные веб-порталы и сервисы под ключ: с гарантией сроков, прозрачной архитектурой и поддержкой после запуска. <a href="https://nsign.ru/service/web-portal?utm_source=blog&amp;utm_medium=case&amp;utm_campaign=vdnh"><strong>Узнать больше о разработке веб-порталов</strong></a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

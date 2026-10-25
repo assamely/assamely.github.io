@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экспертная статья: что делать при DDoS-атаке на компанию — БИТ.CLOUD — Александра Самелюк</title>
+<meta name="description" content="Подготовить для блога ИТ-аутсорсера статью о том, как компании действовать при DDoS-атаке: как отличить атаку от сбоя, что сделать в первые часы и как выстроить защиту на будущее, — и подвести читателя к услугам мониторинга и защиты БИТ.CLOUD.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 12</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">БИТ.CLOUD · Экспертная статья · ИБ</p>
+      <h1>Экспертная статья для ИТ-аутсорсера: что делать при DDoS-атаке на компанию</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>БИТ.CLOUD (1bitcloud.ru) — облачный сервис компании «Первый Бит»: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг с поддержкой 24/7, информационная безопасность (аудит, аудит по 152-ФЗ, сканер уязвимостей) и Яндекс 360 для бизнеса. На рынке ИТ-услуг с 2006 года, данные хранит в российских дата-центрах уровня TIER III.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>БИТ.CLOUD (1bitcloud.ru), облачные и ИТ-услуги «Первого Бита»</dd></div><div><dt>Аудитория</dt><dd>Руководители и ИТ-специалисты компаний с онлайн-сервисами</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Подготовить для блога ИТ-аутсорсера статью о том, как компании действовать при DDoS-атаке: как отличить атаку от сбоя, что сделать в первые часы и как выстроить защиту на будущее, — и подвести читателя к услугам мониторинга и защиты БИТ.CLOUD.</p></section>
+        <section><h3>Решение</h3><p>Построила текст как инструкцию по хронологии инцидента: распознавание по логам (однотипные запросы к одному URL, соединения с одних IP, рост upstream_response_time), четыре экстренных шага, три слоя долгосрочной защиты (избыточность, мониторинг, «закаливание» систем), выбор между облачной, аппаратной и гибридной фильтрацией и профилактика с playbook. Технические детали — L4/L7, SYN-флуд, Always-On, WAF, CDN — объяснены на языке руководителя.</p></section>
+        <section class="res"><h3>Результат</h3><p>Практическая статья-план для бизнеса с тремя инфографиками: сбой или атака по логам, многослойная защита против многовекторной атаки, три модели очистки трафика. Текст ведёт к заявке на анализ рисков и стратегию защиты.</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для БИТ.CLOUD</span><ul><li><a href="bitcloud-1.html" aria-current=page>Что делать при DDoS-атаке</a></li><li><a href="bitcloud-2.html">Сетевое хранилище NAS</a></li><li><a href="bitcloud-3.html">Как работает виртуальная АТС</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Что делать при DDoS-атаке на компанию</h2>
+        
+        
+<p>DDoS-атака — не техническая неприятность, а прямая угроза бизнесу. Пока сайт или сервис недоступен, компания теряет выручку и доверие клиентов. В 2024 году число таких атак в России <strong><a href="https://ddos-guard.ru/blog/sposoby-zashity-ot-ddos-atak">заметно выросло</a></strong>, а сами они становятся сложнее и продолжительнее.</p>
+<p>Ниже — план действий на первые часы атаки и меры, которые снижают риск в будущем.</p>
+<h2>Как распознать атаку</h2>
+<p>Первые признаки DDoS легко принять за обычный сбой: сайт «зависает», пользователи жалуются на недоступность сервисов, растёт нагрузка на серверы. Поэтому первая задача — быстро подтвердить, что это именно атака, а не поломка.</p>
+<p>Ответ дают логи сервера. Тревожные сигналы — резкий всплеск однотипных запросов, особенно к одному URL, и аномальное число соединений с одних и тех же IP-адресов. Если время обработки запросов в Nginx (параметр upstream_response_time) выросло в 5–10 раз, это может указывать на HTTP-флуд.</p>
+<figure>
+<img alt="Сбой выглядит как случайная ошибка, атака — как закономерность: одинаковые запросы, одни и те же источники, лавинообразный рост задержки" height="1590" loading="lazy" src="img/bitcloud-1/01.png" width="1600"/>
+<figcaption aria-hidden="true">Сбой выглядит как случайная ошибка, атака — как закономерность: одинаковые запросы, одни и те же источники, лавинообразный рост задержки</figcaption>
+</figure>
+<p>Если признаки совпадают, не тратьте время на поиск ошибки в коде или оборудовании. Переходите к экстренным мерам: в первые часы важнее удержать сервис доступным, чем сразу найти источник атаки.</p>
+<h2>План экстренных мер</h2>
+<p>Четыре шага, которые стоит сделать в первую очередь:</p>
+<ol type="1">
+<li><strong>Переключите трафик на резервные каналы</strong> — запасные IP-адреса или CDN.</li>
+<li><strong>Подключите провайдера защиты.</strong> Если у вас сервис в режиме Always-On, центр очистки трафика автоматически отсекает вредоносные пакеты.</li>
+<li><strong>Временно ограничьте доступ.</strong> Настройте межсетевой экран так, чтобы он отклонял трафик из регионов, где нет вашей аудитории, или задайте лимит запросов с одного IP.</li>
+<li><strong>Предупредите клиентов.</strong> Разместите статус-страницу с информацией о работах.</li>
+</ol>
+<p>Эти шаги не останавливают атаку окончательно, но дают команде время разобраться, по какому вектору она идёт.</p>
+<h2>Стратегия долгосрочной защиты</h2>
+<p>Разовые меры не спасут от следующей атаки. Современные DDoS-атаки многовекторны: например, SYN-флуд на транспортном уровне (L4) может сочетаться с медленными HTTP-атаками на уровне приложений (L7).</p>
+<figure>
+<img alt="Атака бьёт сразу по нескольким уровням, поэтому и защита строится слоями — от резервной инфраструктуры до закрытых уязвимостей в приложениях" height="1203" loading="lazy" src="img/bitcloud-1/02.png" width="1600"/>
+<figcaption aria-hidden="true">Атака бьёт сразу по нескольким уровням, поэтому и защита строится слоями — от резервной инфраструктуры до закрытых уязвимостей в приложениях</figcaption>
+</figure>
+<p>Поэтому защита строится в несколько уровней: инфраструктура, которая выдерживает нагрузку, мониторинг, который вовремя замечает отклонения, и системы, в которых не осталось лёгких уязвимостей.</p>
+<h3>Инфраструктурная избыточность</h3>
+<p>Распределите серверы географически и используйте балансировщики нагрузки — тогда при атаке на один узел трафик можно перенаправить на другие. Для веб-ресурсов подключите CDN: сеть кэширует контент и принимает на себя часть трафика.</p>
+<h3>Проактивный мониторинг</h3>
+<p>Инструменты вроде Observium или SIEM-системы анализируют трафик в реальном времени. Настройте оповещения об отклонениях от базовых показателей — например, если число UDP-пакетов выросло на 200%.</p>
+<h3>Обновление и «закаливание» систем</h3>
+<p>Регулярно обновляйте операционные системы, программы и прошивки сетевых устройств: уязвимости в устаревших версиях Nginx или Apache — частая мишень L7-атак. Закройте неиспользуемые порты и отключите широковещательные рассылки (broadcast) там, где они не нужны.</p>
+<h2>Когда без профессионалов не обойтись</h2>
+<p>Самостоятельной защиты хватает лишь небольшим проектам. При атаках мощностью свыше 100 Гбит/с или сложных сценариях вроде SSL-истощения нужны специализированные решения:</p>
+<ul>
+<li><strong>облачные (On-Cloud)</strong> — трафик очищают в центрах фильтрации, например DDoS-Guard; подходят компаниям без собственных экспертов;</li>
+<li><strong>аппаратные (On-Premise)</strong> — фильтрующие устройства на границе сети; оптимальны для банков и госструктур, где критичен контроль над данными;</li>
+<li><strong>гибридные</strong> — сочетание облачной фильтрации и локальных межсетевых экранов.</li>
+</ul>
+<p>Выбор зависит от бюджета, масштаба инфраструктуры и допустимых задержек.</p>
+<figure>
+<img alt="Три модели профессиональной защиты: где очищается трафик и кому подходит каждая схема" height="1482" loading="lazy" src="img/bitcloud-1/03.png" width="1600"/>
+<figcaption aria-hidden="true">Три модели профессиональной защиты: где очищается трафик и кому подходит каждая схема</figcaption>
+</figure>
+<p>Например, интернет-магазину на время распродажи нужна защита в режиме Always-On с гарантиями в SLA: фильтрация работает постоянно, а не включается уже после начала атаки.</p>
+<h2>Профилактика как основа безопасности</h2>
+<p><strong>Проводите аудит безопасности раз в квартал.</strong> Тестируйте устойчивость к нагрузкам и ищите уязвимости в веб-приложениях.</p>
+<p><strong>Обучайте сотрудников.</strong> Даже администратор должен уметь отличить признаки атаки, например лавину запросов к API, от легитимного трафика.</p>
+<p><strong>Разработайте playbook</strong> — документ с ролями, действиями и контактами на случай инцидента. В нём заранее определяют, кто блокирует IP-адреса, кто общается с клиентами и как собирать цифровые улики.</p>
+<blockquote>
+<p>Когда роли распределены заранее, команда не тратит первые минуты атаки на выяснение, кто за что отвечает.</p>
+</blockquote>
+<h2>Как БИТ.CLOUD помогает сохранить бизнес онлайн</h2>
+<p>DDoS-атаку нельзя предотвратить на 100%, но её последствия можно сделать управляемыми. БИТ.CLOUD предлагает комплексный подход — от экстренного реагирования до построения защищённой инфраструктуры. Наши специалисты обеспечивают:</p>
+<ul>
+<li><strong>круглосуточный мониторинг</strong> сетевой активности с использованием ИИ для выявления аномалий;</li>
+<li><strong>настройку и администрирование</strong> WAF, CDN и систем балансировки;</li>
+<li><strong>экстренную помощь при атаке</strong> — удалённое подключение или выезд специалистов в течение часа, чтобы локализовать угрозу.</li>
+</ul>
+<p><strong>Свяжитесь с нами</strong> — проанализируем текущие риски и подготовим стратегию защиты.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

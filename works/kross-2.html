@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экспертная статья: изоляция для авиации и ОПК — «Кросс-Контакт» — Александра Самелюк</title>
+<meta name="description" content="Написать экспертную статью для B2B-аудитории авиации и ОПК о решениях для изоляции и герметизации критически важных бортовых систем, органично вписав ключи про термоусадку для БПЛА, изоляцию для авиации и кабельную архитектуру.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 13</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Кросс-Контакт» · Экспертная статья · авиация и ОПК</p>
+      <h1>Экспертная статья для поставщика изоляционных материалов: изоляция и герметизация бортовых систем авиации и ОПК</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>«Кросс-Контакт» (kross-kontakt.ru) — московская компания, работающая с 1995 года: кабельная арматура и изоляционные материалы — муфты, термоусаживаемые трубки и ленты, герметики, мастики, провода.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Кросс-Контакт», кабельная арматура и изоляционные материалы (Москва)</dd></div><div><dt>Аудитория</dt><dd>Разработчики и технологи авиационной техники и изделий ОПК</dd></div><div><dt>Формат</dt><dd>Экспертная статья в блог</dd></div><div><dt>Год</dt><dd>2026</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Написать экспертную статью для B2B-аудитории авиации и ОПК о решениях для изоляции и герметизации критически важных бортовых систем, органично вписав ключи про термоусадку для БПЛА, изоляцию для авиации и кабельную архитектуру.</p></section>
+        <section><h3>Решение</h3><p>Выстроила статью вокруг реальных механизмов отказа бортовой кабельной сети: где жгут изнашивается быстрее всего, какие среды разрушают оболочку, что фиксируют в спецификации термоусаживаемой трубки, как герметизируют вводы и разъёмы, какие решения закладывают в проект жгута и как проверить партию до монтажа. Отдельно показала специфику БПЛА — экономию массы за счёт тонкостенного материала с клеевым слоем. Финал — без рекламного пафоса: какие исходные данные дать поставщику, чтобы спецификация собралась за один цикл согласования.</p></section>
+        <section class="res"><h3>Результат</h3><p>Текст сдан в августе 2026 года. Для портфолио добавлены три инфографики-чертежа: карта уязвимых точек жгута со средами, разрез узла ввода «норма / дефект» и схема «исходные данные → спецификация → входной контроль».</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Кросс-Контакт»</span><ul><li><a href="kross-1.html">Изоляция шин 10 кВ</a></li><li><a href="kross-2.html" aria-current=page>Изоляция для авиации и ОПК</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Изоляция для авиации и ОПК: решения для критически важных систем</h2>
+        
+        
+<p>Отказ бортовой кабельной сети редко начинается с обрыва жилы. Чаще виновата микротрещина в оболочке: через неё проходит конденсат, а дальше идёт коррозия контактной группы.</p>
+<p>Поэтому в авиационной технике и изделиях оборонного назначения защитные материалы оценивают не по толщине стенки, а <strong>по поведению в конкретном режиме</strong>: при вибрации, перепадах давления, контакте с топливом и противообледенительными жидкостями.</p>
+<h2>Что выводит защитную оболочку из строя раньше срока</h2>
+<p>Ресурс кабельной сборки расходуется неравномерно. Основная нагрузка приходится на <strong><em>переходные участки</em></strong>: выход из соединителя, проход через переборку, зону крепления скобой. Здесь сходятся изгиб, вибрация и влага, поэтому именно эти точки задают срок службы всей трассы.</p>
+<figure>
+<img alt="Три точки, где жгут изнашивается быстрее всего, и среды, которые разрушают оболочку на всей длине трассы" height="1390" loading="lazy" src="img/kross-2/01.png" width="1600"/>
+<figcaption aria-hidden="true">Три точки, где жгут изнашивается быстрее всего, и среды, которые разрушают оболочку на всей длине трассы</figcaption>
+</figure>
+<p>Второй фактор — состав среды. Гидравлика на фосфатэфирной основе размягчает ПВХ, солевой туман ускоряет коррозию экранов, ультрафиолет старит резины без стабилизирующих присадок. Подбор оболочки начинается с перечня сред, а не с листания каталога.</p>
+<blockquote>
+<p>Материал, отработавший тысячу часов в термокамере, способен разрушиться за один сезон, если рядом проходит трасса с абразивным контактом о кромку лючка.</p>
+</blockquote>
+<h2>Термоусаживаемые материалы: настройка под конкретный узел</h2>
+<p>Универсальной трубки для бортового жгута не существует, а ошибка в выборе проявляется после первых термоциклов. Под каждый узел подбирают сочетание характеристик и фиксируют его в спецификации:</p>
+<ul>
+<li>коэффициент усадки 2:1, 3:1 или 4:1;</li>
+<li>наличие клеевого подслоя;</li>
+<li>рабочий диапазон температур;</li>
+<li>стойкость к топливу и гидравлике;</li>
+<li>пригодность к нанесению маркировки.</li>
+</ul>
+<p>Такое сочетание решает задачу точнее, чем запас по толщине стенки. Термоусадку для БПЛА подбирают с оглядкой на массу: там, где на пилотируемой технике ставят двухслойную манжету, на беспилотнике берут <strong><em>тонкостенный материал с внутренним клеевым слоем</em></strong>.</p>
+<h2>Герметизация вводов, переборок и разъёмов</h2>
+<p>Место входа жгута в корпус остаётся самым уязвимым звеном. Здесь работают концевые манжеты с адгезивным подслоем, вводы с эластомерным уплотнением и формованные детали по геометрии хвостовика соединителя. Задача у всех одна: перекрыть <strong><em>капиллярный путь для влаги</em></strong>.</p>
+<figure>
+<img alt="Узел ввода в разрезе: клеевой подслой манжеты перекрывает путь влаге, но не спасает, если оболочка повреждена под уплотнением" height="1282" loading="lazy" src="img/kross-2/02.png" width="1600"/>
+<figcaption aria-hidden="true">Узел ввода в разрезе: клеевой подслой манжеты перекрывает путь влаге, но не спасает, если оболочка повреждена под уплотнением</figcaption>
+</figure>
+<p>Отдельно проверяют чистоту поверхности: следы технологических смазок снижают прочность соединения в разы, поэтому детали обезжиривают непосредственно перед монтажом.</p>
+<blockquote>
+<p>Герметик не компенсирует повреждение оболочки. Если она нарушена под уплотнением, влага пройдёт между жилами и проявится в метре от места ввода, где искать причину заметно сложнее.</p>
+</blockquote>
+<h2>Проектирование жгута: что закладывают заранее</h2>
+<p>Кабельная архитектура определяет ремонтопригодность изделия на весь срок службы, а переделка после первых испытаний обходится дорого. На этапе проекта фиксируют четыре решения:</p>
+<ol type="1">
+<li><strong>Разделение по классам сигналов.</strong> Силовые, сигнальные и высокочастотные линии разводят разными трассами.</li>
+<li><strong>Защита переходов.</strong> На изгибах и в точках крепления предусматривают манжету, отвод или демпфирующую подмотку.</li>
+<li><strong>Ремонтная длина.</strong> Запас провода у соединителя позволяет переразделать контакт без замены всей ветви.</li>
+<li><strong>Читаемая маркировка.</strong> Обозначение должно сохранять разборчивость после термоциклов и контакта с ГСМ.</li>
+</ol>
+<p>Такой набор экономит время на доводке. Большинство замечаний по итогам стендовых испытаний касается не схемотехники, а <strong><em>физического исполнения трассы</em></strong>.</p>
+<h2>Как подтвердить характеристики до монтажа</h2>
+<p>Паспорт описывает типовую партию, а на изделие идёт конкретная. Разница проявляется на границе рабочего диапазона, поэтому входной контроль строят по четырём пунктам:</p>
+<ul>
+<li>Запросите протокол испытаний на поставляемую партию, а не сертификат серии.</li>
+<li>Проведите пробную усадку на образце тем же инструментом, что пойдёт в цех.</li>
+<li>Уточните срок хранения адгезивных материалов: после его истечения клей теряет свойства.</li>
+<li>Зафиксируйте режим нагрева в технологической карте — температуру и время выдержки.</li>
+</ul>
+<p>Проверка занимает часы работы технолога, тогда как <strong>переборка готового жгута отнимает недели</strong>.</p>
+<h2>Что это даёт на практике</h2>
+<p>Изоляция и герметизация в авиационных системах складываются из деталей, которые дешевле заложить в проект, чем исправлять после испытаний. Подобранная под режим трубка, чистая поверхность под герметиком и продуманная трасса дают предсказуемый ресурс без избыточных запасов «на всякий случай».</p>
+<figure>
+<img alt="От исходных данных к спецификации: четыре параметра, которые поставщику нужны с самого начала" height="1184" loading="lazy" src="img/kross-2/03.png" width="1600"/>
+<figcaption aria-hidden="true">От исходных данных к спецификации: четыре параметра, которые поставщику нужны с самого начала</figcaption>
+</figure>
+<p>Подбор идёт быстрее, когда поставщик сразу получает исходные данные: диапазон температур, перечень агрессивных сред, сечения проводов и ограничения по массе. По такому набору спецификация собирается за один цикл согласования.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

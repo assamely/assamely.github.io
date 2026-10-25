@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейс ГИСП: миграция с «Битрикса» на Python/Flask — «Энсайн» — Александра Самелюк</title>
+<meta name="description" content="Переписать техническую статью о миграции «Навигатора мер поддержки» ГИСП с «1С-Битрикса» на Python/Flask в кейс для корпоративного блога «Энсайна»: показать руководителям, зачем был нужен переезд, как его провели без остановки федерального сервиса и что он дал, сохранив инженерную конкретику.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 05</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Энсайн» · Кейс для блога · IT</p>
+      <h1>Кейс для IT-интегратора: миграция федерального портала ГИСП с «Битрикса» на Python/Flask</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>«Энсайн» (nsign.ru) — московский IT-интегратор, работает с 2004 года: разрабатывает сайты, корпоративные порталы и highload-сервисы на PHP и Python, делает CRM-интеграции и выступает генподрядчиком сложных цифровых проектов для органов власти, госкорпораций и бизнеса.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Энсайн», IT-интегратор (Москва)</dd></div><div><dt>Аудитория</dt><dd>CIO, IT-директора, руководители цифровых проектов</dd></div><div><dt>Формат</dt><dd>Рерайт хабровской статьи в кейс для блога компании</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Переписать техническую статью о миграции «Навигатора мер поддержки» ГИСП с «1С-Битрикса» на Python/Flask в кейс для корпоративного блога «Энсайна»: показать руководителям, зачем был нужен переезд, как его провели без остановки федерального сервиса и что он дал, сохранив инженерную конкретику.</p></section>
+        <section><h3>Решение</h3><p>Выстроила кейс «ограничения старой архитектуры — выбор стека — архитектура — миграция данных — интеграции — результаты»: объяснила, почему отказались от оптимизации «Битрикса» (шардинг, региональный доступ, справочники), почему Flask, а не Django, и MySQL; разобрала двухэтапную обработку запросов, ночную выгрузку через API, проблему обрезанных JSON и таблицу истории версий. Термины раскрыла во врезках, цифры вынесла в акценты, ключи по разработке порталов вписала в текст.</p></section>
+        <section class="res"><h3>Результат</h3><p>Кейс для блога nsign.ru: два скриншота «Навигатора» и три инфографики для портфолио — двухэтапная обработка запросов, схема миграции и дашборд метрик (100 запросов в секунду на 4 CPU и 8 ГБ, бэкенд 1 МБ, поиск ~20 мс).</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Энсайн»</span><ul><li><a href="ensign-vdnh.html">Кейс: портал ВДНХ</a></li><li><a href="ensign-gisp.html" aria-current=page>Кейс: миграция ГИСП</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Кейс ГИСП: миграция федерального портала с «Битрикса» на Python/Flask</h2>
+        
+        
+<p>Федеральный портал ГИСП помогает российским предприятиям получать государственную поддержку и ежедневно обслуживает тысячи пользователей. Его ключевой инструмент — «Навигатор мер поддержки»: в нём больше 3000 инициатив с привязкой к регионам и отраслям. Изначально система работала на PHP и «1С-Битриксе», но с ростом объёма данных и числа интеграций начались проблемы.</p>
+<p>Страницы загружались всё медленнее, добавление новой функции занимало недели, а поддержка требовала всё больше ресурсов. Перед нами стояла задача: перевести портал на современный стек, сохранить все данные и не прерывать работу сервиса.</p>
+<p>Мы провели <strong>миграцию с «Битрикса»</strong> и создали платформу, которая упростила доступ к информации и снизила операционные расходы. Рассказываем, как это было и каких результатов удалось добиться.</p>
+<blockquote>
+<p><strong>Коротко о проекте</strong></p>
+<ul>
+<li><strong>Заказчик:</strong> федеральный портал ГИСП, «Навигатор мер поддержки»</li>
+<li><strong>Было:</strong> PHP + «1С-Битрикс», более 3000 мер поддержки</li>
+<li><strong>Стало:</strong> Python 3.6 + Flask + MySQL</li>
+<li><strong>Результат:</strong> 100 запросов в секунду на 4 CPU и 8 ГБ ОЗУ, бэкенд — 1 МБ кода</li>
+</ul>
+</blockquote>
+<h2>Проблемы и ограничения старой архитектуры</h2>
+<p><strong>«Битрикс» не справлялся с растущим объёмом данных.</strong> Единая таблица для хранения сущностей вызывала конфликты при масштабировании, а при пиковых нагрузках время отклика резко росло. Когда число мер превысило несколько тысяч, система начала «разваливаться»: простые операции выполнялись слишком долго, а в часы пик случались длительные задержки и сбои.</p>
+<figure>
+<img alt="«Навигатор мер поддержки» на портале ГИСП: поиск и рекомендованные меры — интерфейс, за которым стоят тысячи записей" height="748" loading="lazy" src="img/ensign-gisp/01.png" width="1316"/>
+<figcaption aria-hidden="true">«Навигатор мер поддержки» на портале ГИСП: поиск и рекомендованные меры — интерфейс, за которым стоят тысячи записей</figcaption>
+</figure>
+<p>Мы рассматривали глубокую оптимизацию существующей платформы, но <strong>отказались от этой идеи по нескольким причинам</strong>. Главная — архитектура «Битрикса» не позволяла эффективно разделить данные или внедрить шардинг без полной перестройки.</p>
+<blockquote>
+<p><strong>Для справки:</strong> шардинг — способ разделить базу данных на несколько частей (шардов). Каждая хранит только часть данных и обрабатывается отдельно, за счёт чего растут скорость и масштабируемость.</p>
+</blockquote>
+<p>Кроме того, клиент хотел расширить доступ и дать региональным администрациям возможность самим редактировать локальные меры. Доработка ядра «Битрикса» под такую задачу была слишком сложной и рискованной при сжатых сроках — <strong>и могла обойтись дороже полного переезда</strong>.</p>
+<p>Ещё одна проблема — справочники. Отрасли, регионы и меры в «Битриксе» были устроены иначе, чем во внешних МДМ-справочниках, с которыми портал должен был синхронизироваться. В итоге старая система тормозила развитие и увеличивала затраты на поддержку.</p>
+<h2>Решение: переход на современный стек</h2>
+<p>Мы решили не латать старую систему, а перенести портал на новый стек. Ниже — по порядку: какие технологии выбрали, как выстроили архитектуру, перенесли данные и подключили интеграции.</p>
+<h3>Выбор технологий</h3>
+<p>Мы выбрали <strong>разработку на Python</strong> с фреймворком Flask. Python хорошо зарекомендовал себя в корпоративной разработке: он прост в поддержке и удобен для работы с большими массивами данных. Свою роль сыграли и ограничения заказчика: государственная организация обязана использовать сертифицированное программное обеспечение, а в его комплекте был Python 3.6. <strong>Всю систему мы адаптировали под эту версию.</strong></p>
+<blockquote>
+<p><strong>Почему Flask, а не Django?</strong> Django предлагает множество встроенных функций «из коробки», а Flask минималистичен: в проект попадают только нужные компоненты — например, WTForms для валидации форм и Flask-Login для авторизации — и ни строчки лишнего кода.</p>
+</blockquote>
+<p>В качестве <strong>СУБД</strong> выбрали <strong>MySQL</strong>: связи между мерами поддержки, регионами и отраслями жёстко структурированы, и реляционная модель подходит для них лучше всего. Развёртывание это тоже упростило — на сервере уже работала система веб-аналитики Matomo на той же СУБД.</p>
+<h3>Архитектурные подходы</h3>
+<p>Чтобы тяжёлые запросы не перегружали систему, мы разделили процессы и ввели <strong>двухэтапную обработку</strong>. Каждый тип запроса идёт своим путём.</p>
+<ol type="1">
+<li><strong>Обычные запросы</strong> обрабатываются с пагинацией по 10 элементов.</li>
+<li><strong>Полные выгрузки</strong> мер или справочников отдаются из статического JSON-файла, который cron-задача генерирует раз в час (около 150 МБ на 3000 мер).</li>
+</ol>
+<p>На запрос полной выгрузки система просто отдаёт готовый файл и не обращается к базе, а сама генерация занимает пару минут. Отдельно оптимизировали медиафайлы: логотипы проверяются по хэшу SHA-256, и дубликаты не сохраняются.</p>
+<figure>
+<img alt="Тяжёлые выгрузки идут в обход базы данных, а дубликаты логотипов отсекаются по хэшу ещё на входе" height="1280" loading="lazy" src="img/ensign-gisp/02.png" width="1600"/>
+<figcaption aria-hidden="true">Тяжёлые выгрузки идут в обход базы данных, а дубликаты логотипов отсекаются по хэшу ещё на входе</figcaption>
+</figure>
+<p><strong>Результат:</strong> объём медиафайлов сократился с 500 до 20 МБ, а тяжёлые выгрузки больше не нагружают базу данных и не мешают обычным запросам пользователей.</p>
+<h3>Процесс миграции данных</h3>
+<p>Выгрузку из «Битрикса» мы вынесли в <strong>ночной скрипт</strong>. Он последовательно обращался к API около 3000 раз и собирал данные в JSON-файл размером 100 МБ. Процесс занимал всю ночь — API часто сбоило на больших объёмах, — зато миграция не мешала работе портала и не вызывала блокировок.</p>
+<figure>
+<img alt="Перенос данных вынесли за пределы рабочего времени: ночью — выгрузка, затем проверка в предпродакшене и только потом чистая заливка в продакшен" height="1003" loading="lazy" src="img/ensign-gisp/03.png" width="1600"/>
+<figcaption aria-hidden="true">Перенос данных вынесли за пределы рабочего времени: ночью — выгрузка, затем проверка в предпродакшене и только потом чистая заливка в продакшен</figcaption>
+</figure>
+<p>Для заливки в продакшен написали отдельный скрипт: он полностью очищает таблицы и пересоздаёт их, поэтому данные всегда актуальны и без дубликатов. Прежде чем запускать его на боевом портале, всё прогнали в предпродакшене и добились штатной работы.</p>
+<h3>Работа с данными и интеграциями</h3>
+<p>Старые данные адаптировали вручную: перевели коды регионов на единый стандарт и объединили похожие записи в справочниках, где не совпадали уровни детализации — у одной и той же отрасли в двух системах могло быть разное число подразделов. Каждое расхождение обсуждали с клиентом и согласовывали изменения.</p>
+<figure>
+<img alt="Фильтры по регионам, отраслям и проблемам предприятия работают на согласованных справочниках" height="790" loading="lazy" src="img/ensign-gisp/04.png" width="1326"/>
+<figcaption aria-hidden="true">Фильтры по регионам, отраслям и проблемам предприятия работают на согласованных справочниках</figcaption>
+</figure>
+<p>Неожиданной проблемой стали JSON-структуры мер поддержки. В некоторых комплексных инициативах было до 1 МБ текста с множеством вложенных условий и документов. Стандартное текстовое поле с лимитом 65 КБ обрезало данные, ломало структуру JSON и вызывало ошибки интерфейса. Решение — тип поля MEDIUMTEXT с объёмом до 16 МБ: все 3000 мер сохранились без потерь.</p>
+<p>Для истории изменений мы отказались от десятков связанных таблиц в пользу простой схемы из двух шагов.</p>
+<ol type="1">
+<li>Отдельная таблица истории хранит полный JSON-снимок меры на момент каждой публикации.</li>
+<li>При запросе версий система фильтрует записи по идентификатору меры и возвращает только нужный фрагмент.</li>
+</ol>
+<p>Так проще отслеживать обновления, а доступ к версиям занимает <strong>до 50 миллисекунд</strong> даже для мер, которые меняются часто.</p>
+<p>Интеграции с другими системами сделали лаконичными: подключились к существующей авторизации заказчика через единый вход (SSO), отправку уведомлений построили на готовом брокере сообщений заказчика, а защиту от SQL-инъекций и XSS доверили его корпоративному WAF.</p>
+<h2>Результаты: рост производительности и экономия</h2>
+<p>Новая система показала отличные метрики. На скромных ресурсах — <strong>4 CPU и 8 ГБ ОЗУ</strong> — она стабильно обрабатывает <strong>100 запросов в секунду</strong>, а стресс-тесты подтвердили отказоустойчивость: портал часами работал под непрерывной нагрузкой без сбоев.</p>
+<figure>
+<img alt="Итоги переезда в цифрах: компактный код, быстрый поиск и выгрузки за минуты на скромном сервере" height="1158" loading="lazy" src="img/ensign-gisp/05.png" width="1600"/>
+<figcaption aria-hidden="true">Итоги переезда в цифрах: компактный код, быстрый поиск и выгрузки за минуты на скромном сервере</figcaption>
+</figure>
+<p>Весь код бэкенда уместился в <strong>1 МБ</strong>, а полный проект — в <strong>10 МБ</strong>, поэтому его легко передавать и поддерживать. Поиск по тексту теперь занимает <strong>около 20 мс</strong>, а полная выгрузка данных — <strong>минуты вместо часов</strong>. Отказ от лицензий «Битрикса» и оптимизация хостинга снизили расходы.</p>
+<p>Благодаря <strong>разработке на Flask</strong> клиент получил масштабируемую платформу, готовую к росту аудитории. Ключевые задачи — расширение доступа для регионов и синхронизация с внешними справочниками — решены.</p>
+<h2>Заключение</h2>
+<p>Наш опыт показывает: <strong>разработка корпоративных сервисов</strong> на минималистичном стеке способна решать задачи крупных государственных организаций. Мы не только повысили скорость и надёжность сервиса, но и заложили основу для дальнейшего развития портала ГИСП.</p>
+<p>Если вы планируете миграцию или <a href="https://nsign.ru/service/web-portal?utm_source=case&amp;utm_medium=gisp"><strong>разработку веб-портала</strong></a>, оставьте заявку на нашем сайте — поможем оптимизировать вашу систему.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

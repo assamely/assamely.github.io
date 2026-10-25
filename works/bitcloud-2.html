@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экспертная статья: сетевое хранилище NAS и его настройка — БИТ.CLOUD — Александра Самелюк</title>
+<meta name="description" content="Написать для блога БИТ.CLOUD экспертную статью о сетевом хранилище NAS: что это, зачем оно бизнесу, как настроить его своими силами и где без инженеров не обойтись, — с переходом к услуге ИТ-аутсорсинга.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 12</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">БИТ.CLOUD · Экспертная статья · IT-инфраструктура</p>
+      <h1>Экспертная статья для ИТ-аутсорсера: что такое сетевое хранилище NAS и как его настроить</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>БИТ.CLOUD (1bitcloud.ru) — облачный сервис компании «Первый Бит»: аренда и хостинг 1С, виртуальные серверы, ИТ-аутсорсинг с поддержкой 24/7, информационная безопасность (аудит, аудит по 152-ФЗ, сканер уязвимостей) и Яндекс 360 для бизнеса. На рынке ИТ-услуг с 2006 года, данные хранит в российских дата-центрах уровня TIER III.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>БИТ.CLOUD (1bitcloud.ru), облачные и ИТ-услуги «Первого Бита»</dd></div><div><dt>Аудитория</dt><dd>Руководители и ИТ-специалисты малого и среднего бизнеса</dd></div><div><dt>Формат</dt><dd>SEO-статья в блог</dd></div><div><dt>Год</dt><dd>2025</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Написать для блога БИТ.CLOUD экспертную статью о сетевом хранилище NAS: что это, зачем оно бизнесу, как настроить его своими силами и где без инженеров не обойтись, — с переходом к услуге ИТ-аутсорсинга.</p></section>
+        <section><h3>Решение</h3><p>Выстроила материал от понятия к практике: преимущества (централизация, безопасность, производительность), сценарии по типам компаний, пять шагов настройки с типичными ошибками (RAID 0, стандартные пароли, непроверенные бэкапы), тревожные симптомы, интеграция с облаком и учётными системами, трёхэтапная миграция с расчётом времени, задачи для профессионалов и обслуживание на аутсорсинге.</p></section>
+        <section class="res"><h3>Результат</h3><p>Статья опубликована в блоге 1bitcloud.ru 30 июля 2025 года. Для портфолио текст получил шесть инфографик: схема NAS в сети компании, что будет с данными при отказе диска в разных RAID, правило 3-2-1, четыре тревожных сигнала, миграция в три этапа и цикл обслуживания.</p></section>
+      </div>
+      <div class="pubs"><span class="eyebrow">Опубликовано</span><a class="pub" href="https://1bitcloud.ru/blog/it-autsorsing/chto-takoe-setevoe-khranilishche-nas-i-kak-ego-nastroit/" target="_blank" rel="noopener"><b>1bitcloud.ru</b> · Блог — ИТ-аутсорсинг<span aria-hidden="true">↗</span></a></div>
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для БИТ.CLOUD</span><ul><li><a href="bitcloud-1.html">Что делать при DDoS-атаке</a></li><li><a href="bitcloud-2.html" aria-current=page>Сетевое хранилище NAS</a></li><li><a href="bitcloud-3.html">Как работает виртуальная АТС</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Что такое сетевое хранилище NAS и как его настроить</h2>
+        
+        
+<p><strong>Сетевое хранилище NAS (Network Attached Storage)</strong> — специализированное устройство или сервер, которое подключается к локальной сети и даёт компании общее пространство для хранения данных. В отличие от обычного файлового сервера, NAS работает на облегчённой операционной системе, созданной только для управления файлами, резервного копирования и доступа пользователей. <strong><em>Главная его ценность — простота развёртывания и масштабируемость.</em></strong> Для бизнеса это возможность хранить терабайты документов, финансовых отчётов, медиафайлов и баз данных в одном защищённом месте с контролируемым доступом.</p>
+<figure>
+<img alt="NAS становится общей точкой хранения: отделы и филиалы подключаются к одному устройству, а доступ определяется правами в Active Directory" height="1171" loading="lazy" src="img/bitcloud-2/01.png" width="1600"/>
+<figcaption aria-hidden="true">NAS становится общей точкой хранения: отделы и филиалы подключаются к одному устройству, а доступ определяется правами в Active Directory</figcaption>
+</figure>
+<p>Технически NAS — самостоятельный узел сети с собственным IP-адресом. Хранилище объединяет жёсткие диски в RAID-массив, и это даёт отказоустойчивость: если один накопитель выходит из строя, данные сохраняются на других. Современные модели поддерживают SSD-кэширование для ускорения операций и оснащаются производительными процессорами, поэтому обслуживают десятки параллельных запросов.</p>
+<h2>Почему бизнесу нужен NAS</h2>
+<p><strong>Централизация данных</strong> убирает хаос. Когда каждый отдел хранит файлы на личных дисках или в разных облаках, поиск актуальной версии документа превращается в рутину. NAS становится единым источником истины для всей компании: архитектурное бюро хранит на нём чертежи CAD, бухгалтерия — финансовые архивы, и у каждого отдела свой доступ.</p>
+<p><strong>Безопасность</strong> — второй довод. NAS даёт для неё готовые инструменты:</p>
+<ul>
+<li>шифрование AES-256 при передаче и хранении;</li>
+<li>настраиваемые политики резервного копирования, например ежечасные снимки состояния;</li>
+<li>интеграцию с Active Directory для аутентификации сотрудников.</li>
+</ul>
+<p>Всё это снижает риск утечек и помогает выполнять требования 152-ФЗ «О персональных данных».</p>
+<p><strong>Производительность</strong> в локальной сети выше, чем при работе с облаком через интернет. Сотрудники открывают видео, CAD-модели или базы 1С прямо с хранилища без задержек. Протоколы SMB (Windows и macOS), NFS (Linux) и AFP (старые версии macOS) обеспечивают совместимость с разными системами.</p>
+<h2>Когда компании нужен NAS</h2>
+<p>Хранилище полезно не только крупным компаниям. Вот типичные сценарии, в которых NAS решает конкретную задачу бизнеса:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Кому</th>
+<th>Задача</th>
+<th>Что даёт NAS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Малому и среднему бизнесу от 10 сотрудников, например дизайн-студии</td>
+<td>Команда одновременно работает с крупными файлами в Photoshop и Figma</td>
+<td>Быстрая совместная работа и автоматическое резервное копирование проектов</td>
+</tr>
+<tr class="even">
+<td>Юридическим и финансовым организациям</td>
+<td>Хранение конфиденциальных данных</td>
+<td>Шифрование и разграничение доступа: бухгалтерия видит финансовые отчёты, отдел кадров — только трудовые договоры</td>
+</tr>
+<tr class="odd">
+<td>Производственным предприятиям</td>
+<td>Архив данных SCADA-систем, чертежей и записей камер</td>
+<td>Хранение видео через протокол ONVIF без покупки отдельного сервера</td>
+</tr>
+<tr class="even">
+<td>Распределённым командам</td>
+<td>Доступ к файлам из филиалов</td>
+<td>Подключение через VPN — сотрудник работает с NAS как с локальным диском</td>
+</tr>
+</tbody>
+</table></div>
+<p>Во всех этих сценариях хранилище работает надёжно только при правильной первичной настройке. О ней — дальше.</p>
+<h2>Самостоятельная настройка: шаги и подводные камни</h2>
+<p>Базовую настройку NAS можно выполнить своими силами. Она укладывается в пять шагов, и на каждом есть типичные ошибки.</p>
+<h3>Шаг 1. Выбор оборудования</h3>
+<p>Модель зависит от задач. Для архива документов хватит компактного устройства на 2–4 диска, например Synology DS223j. Для работы с базами данных или 4K-видео нужны производительные стоечные модели с сетевыми портами 10 Гбит/с, например QNAP TS-h1277XU-RP.</p>
+<h3>Шаг 2. Диски и RAID</h3>
+<p>Конфигурацию массива выбирают по объёму и требованиям к надёжности:</p>
+<ul>
+<li>RAID 1 (зеркалирование) — для массивов до 8 ТБ;</li>
+<li>RAID 5 или RAID 6 — для хранилищ от 12 ТБ, где критична отказоустойчивость.</li>
+</ul>
+<p>Используйте диски класса NAS, например WD Red Pro или Seagate IronWolf, с заявленной наработкой на отказ от 1 млн часов: они рассчитаны на круглосуточную работу.</p>
+<figure>
+<img alt="Как уровень RAID меняет цену отказа одного диска: от потери всего массива до работы без перерыва" height="1422" loading="lazy" src="img/bitcloud-2/02.png" width="1600"/>
+<figcaption aria-hidden="true">Как уровень RAID меняет цену отказа одного диска: от потери всего массива до работы без перерыва</figcaption>
+</figure>
+<p>Самая частая ошибка новичков — RAID 0 ради экономии места. Такой массив объединяет диски без избыточности, и выход из строя любого накопителя означает потерю всех данных.</p>
+<h3>Шаг 3. Настройка сети</h3>
+<p>Подключите устройство к роутеру или коммутатору через LAN-порт и назначьте ему статический IP-адрес, например 192.168.1.100. Затем включите протокол SMB/CIFS для совместимости с Windows: если пропустить этот шаг, NAS часто не виден в сетевом окружении.</p>
+<h3>Шаг 4. Пользователи и права доступа</h3>
+<p>В веб-интерфейсе администратора создают группы, например «Бухгалтерия» и «Маркетинг», задают квоты на дисковое пространство и включают историю версий файлов (в Synology это функция Snapshot). Так права внутри команды разграничены, конфиденциальная информация защищена, а использование ресурсов под контролем.</p>
+<h3>Шаг 5. Резервное копирование</h3>
+<p>Резервное копирование строят по правилу «3-2-1»: три копии данных, два разных типа носителей, например HDD и SSD, и одна копия вне офиса — в облаке или на географически удалённом NAS.</p>
+<figure>
+<img alt="Правило 3-2-1: даже если офис пострадает целиком, одна копия данных останется в безопасности" height="1160" loading="lazy" src="img/bitcloud-2/03.png" width="1600"/>
+<figcaption aria-hidden="true">Правило 3-2-1: даже если офис пострадает целиком, одна копия данных останется в безопасности</figcaption>
+</figure>
+<p>Пренебрегать этим правилом опасно: при пожаре, краже или затоплении офиса пропадут и рабочие данные, и резервные копии, если они хранились рядом.</p>
+<h3>Ошибки и тревожные сигналы</h3>
+<p>Кроме неудачного выбора RAID, при самостоятельной настройке часто встречаются ещё две ошибки:</p>
+<ul>
+<li><strong>стандартные учётные данные</strong> вроде admin/12345 и отключённое шифрование;</li>
+<li><strong>непроверенные бэкапы</strong> — копии создают, но восстановление из них ни разу не тестировали.</li>
+</ul>
+<p>Обе ошибки незаметны, пока всё работает, и проявляются только в момент сбоя.</p>
+<figure>
+<img alt="Четыре симптома, при которых хранилище нужно проверить немедленно" height="1379" loading="lazy" src="img/bitcloud-2/04.png" width="1600"/>
+<figcaption aria-hidden="true">Четыре симптома, при которых хранилище нужно проверить немедленно</figcaption>
+</figure>
+<p>Неполадки в работе NAS видны по конкретным симптомам. Тревожный сигнал — скорость доступа ниже 70 МБ/с при гигабитном подключении. Не менее опасны спонтанные перезагрузки и постоянная активность дисков без видимой нагрузки. В системных журналах обращайте внимание на ошибки «disk I/O error» и «bad sector»: они говорят о физических проблемах накопителей. Если эти признаки игнорировать, дело может закончиться потерей данных.</p>
+<h2>Интеграция NAS с облаком и бизнес-приложениями</h2>
+<p>Хранилище не обязательно работает изолированно — его можно сделать узлом гибридной инфраструктуры. Синхронизация папок NAS с Microsoft Azure или Yandex Cloud создаёт «тёплый» резерв на случай пожара или кражи. Для CRM-систем, например Битрикс24 или amoCRM, NAS служит хранилищем вложений — договоров, записей звонков, сканов паспортов: основная база разгружается, а поиск ускоряется.</p>
+<p>Особенно полезна интеграция с учётными системами:</p>
+<ol type="1">
+<li><strong>1С</strong> — рабочие базы размещают на SSD-кэше хранилища, архивы — на HDD.</li>
+<li><strong>Клиент-банки</strong> — журналы операций автоматически архивируются с шифрованием.</li>
+<li><strong>ЭДО (СБИС, Такском)</strong> — подписанные документы сохраняются в структурированные папки с метатегами.</li>
+</ol>
+<p>Такая связка сокращает рутину. Например, скрипт на Python может автоматически переносить закрытые финансовые отчёты из 1С в архивную зону хранилища и освобождать место.</p>
+<h2>Миграция данных на NAS</h2>
+<p>Перенос информации со старых серверов и рабочих станций — критичный этап внедрения. Ошибки здесь оборачиваются простоями, повреждёнными файлами и сбоями в бизнес-процессах, поэтому миграцию проводят по этапам.</p>
+<p><strong>Анализ и планирование.</strong> Сначала данные инвентаризируют: классифицируют по типам (документы, медиафайлы, базы данных), частоте обращения и уровню конфиденциальности. Параллельно рассчитывают время переноса: 10 ТБ по гигабитной сети копируются около суток непрерывной работы. Отдельно строят карту прав доступа, чтобы группы Active Directory или LDAP соответствовали новой структуре папок на NAS.</p>
+<figure>
+<img alt="Миграция в три этапа: от инвентаризации до сверки контрольных сумм" height="1376" loading="lazy" src="img/bitcloud-2/05.png" width="1600"/>
+<figcaption aria-hidden="true">Миграция в три этапа: от инвентаризации до сверки контрольных сумм</figcaption>
+</figure>
+<p><strong>Поэтапный перенос.</strong> Данные переносят в три приёма:</p>
+<ol type="1">
+<li>Редко используемые архивы копируют в нерабочее время.</li>
+<li>Изменённые файлы догружают инкрементно — инструментами вроде Robocopy или rsync.</li>
+<li>Для активных данных назначают «окно переноса» и заранее предупреждают сотрудников.</li>
+</ol>
+<p><strong>Проверка результата.</strong> Сверка контрольных сумм (MD5, SHA-256) подтверждает, что файлы перенесены без искажений. Выборочная проверка доступа пользователей из разных групп выявляет ошибки в правах, а мониторинг целостности RAID-массива после полной загрузки исключает скрытые повреждения.</p>
+<p><strong>Типичные ошибки миграции.</strong> Перенос без проверки совместимости файловых систем, например с NTFS на Btrfs, приводит к потере атрибутов и метаданных. Ещё опаснее игнорировать программные зависимости, особенно в 1С и бухгалтерских системах: абсолютные пути вроде D:\Reports нужно сохранить или корректно переназначить. Иначе приложения начнут сбоить, а компания — простаивать.</p>
+<blockquote>
+<p>Если миграция проведена по этим правилам, сотрудники с первого дня работают с хранилищем без потерянных файлов и сбоев в приложениях.</p>
+</blockquote>
+<h2>Когда самостоятельной настройки недостаточно</h2>
+<p>NAS только кажется простым устройством. Есть задачи, где без опыта легко потерять данные:</p>
+<ul>
+<li><strong>масштабирование</strong> — добавление дисков в работающий RAID-массив без потери данных, объединение нескольких NAS в кластер (например, Synology High Availability);</li>
+<li><strong>восстановление после сбоев</strong> — перестроение массива при одновременном отказе двух дисков, расшифровка данных после аппаратного сбоя контроллера;</li>
+<li><strong>тонкая оптимизация</strong> — настройка iSCSI-таргетов для нагруженных баз данных, балансировка между несколькими портами 10 Гбит/с, настройка SSD-кэширования с учётом соотношения операций чтения и записи.</li>
+</ul>
+<p>Это задачи для инженеров, которые понимают работу СУБД и сетевого стека и имеют сертификаты производителей оборудования.</p>
+<h2>Профессиональное обслуживание</h2>
+<p>NAS требует регулярного контроля, как любое серверное оборудование: для бизнеса перебои в доступе к данным означают прямые потери. Поэтому обслуживание хранилища выстраивают как непрерывный цикл, а не как вызов специалиста после аварии.</p>
+<figure>
+<img alt="Обслуживание NAS на аутсорсинге — замкнутый цикл: мониторинг, обновления, резервные копии и аудит работают постоянно, а экстренная помощь доступна круглосуточно" height="1349" loading="lazy" src="img/bitcloud-2/06.png" width="1600"/>
+<figcaption aria-hidden="true">Обслуживание NAS на аутсорсинге — замкнутый цикл: мониторинг, обновления, резервные копии и аудит работают постоянно, а экстренная помощь доступна круглосуточно</figcaption>
+</figure>
+<p>На аутсорсинге хранилище получает пять видов поддержки, которые закрывают и плановую работу, и аварийные ситуации:</p>
+<ol type="1">
+<li><strong>Проактивный мониторинг</strong> — круглосуточный контроль дискового пространства, температуры и ошибок.</li>
+<li><strong>Плановые обновления</strong> — установку патчей безопасности без остановки работы.</li>
+<li><strong>Многоуровневое резервное копирование</strong> — локально, на удалённый NAS и в облако.</li>
+<li><strong>Аудит безопасности</strong> — проверку брандмауэров, политик доступа и шифрования.</li>
+<li><strong>Экстренную поддержку 24/7</strong> — восстановление данных при аппаратных сбоях.</li>
+</ol>
+<p>Малому бизнесу держать в штате системного администратора только ради хранилища и пары серверов часто невыгодно. Аутсорсинг даёт команду инженеров по фиксированной цене и с гарантиями, закреплёнными в SLA.</p>
+<h2>Почему доверяют БИТ.CLOUD</h2>
+<p>Настройка и поддержка NAS входят в комплексный ИТ-аутсорсинг БИТ.CLOUD. Наши инженеры сертифицированы производителями — Synology, QNAP, NetApp — и решают задачи любой сложности. Мы обеспечиваем:</p>
+<ul>
+<li><strong>безопасность</strong> — помогаем выполнить требования 152-ФЗ: настраиваем шифрование и журналы аудита;</li>
+<li><strong>экономию</strong> — подбираем оборудование под реальные задачи, без переплаты за лишние функции;</li>
+<li><strong>фокус на бизнесе</strong> — рутину по хранилищу ведём мы, а вы развиваете компанию.</li>
+</ul>
+<p>Передайте управление ИТ-инфраструктурой профессионалам: состав услуг и тарифы — на странице <strong><a href="https://1bitcloud.ru/it-autsorsing/">ИТ-аутсорсинга БИТ.CLOUD</a></strong>. Мы гарантируем работоспособность хранилища и предсказуемую стоимость владения.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>

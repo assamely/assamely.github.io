@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Статья: как оценивать риски и доходность инвестиций — «Финуслуги» — Александра Самелюк</title>
+<meta name="description" content="Объяснить частному инвестору, по каким метрикам оценивать доходность и риск вложений, — так, чтобы формулы стали рабочим инструментом, а не теорией из учебника.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>:root{
+  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#16181d; --mute:#5d6168; --rule:#d7d9d2;
+  --pencil:#2b36e8; --pencil-soft:#e3e5ff; --marker:#fff06a; --marker-ink:#16181d; --tint:#f2f3ef;
+  --display:"Geologica","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --sheet:#171a21; --ink:#eceee8; --mute:#9aa0a8; --rule:#2c3039;
+  --pencil:#8f97ff; --pencil-soft:#252a52; --marker:#e9d94a; --marker-ink:#111318; --tint:#1d2029; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{display:block;background:var(--sheet);border:1px solid var(--rule);margin-block:28px 18px}
+.row{display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--rule)}
+.row:first-child{border-top:0}
+.margin{border-right:1px solid var(--rule);padding:28px 18px;font:400 12px/1.4 var(--mono);color:var(--pencil)}
+.margin .mark{font:600 26px/1 var(--mono);display:block;margin-bottom:8px}
+.margin a{text-decoration:none;border-bottom:1px solid currentColor}
+.main{padding:28px clamp(18px,4vw,56px) 36px;min-width:0}
+.eyebrow{font:600 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.home{font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.home:hover{color:var(--pencil)}
+
+h1{font:800 clamp(34px,5.4vw,68px)/1 var(--display);letter-spacing:-.04em;margin:14px 0 0;text-wrap:balance;max-width:20ch}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);margin:30px 0 0}
+.meta div{padding:14px 16px;border-left:1px solid var(--rule);min-width:0}
+.meta div:first-child{border-left:0}
+.meta dt{font:400 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.meta dd{margin:6px 0 0;font:600 16px/1.3 var(--body)}
+.tdr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px;margin-top:28px}
+.tdr h3{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:0 0 8px}
+.tdr p{margin:0;font-size:16px;line-height:1.5}
+.tdr .res p{font-weight:600}
+.sibs{margin-top:30px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:baseline}
+.sibs ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.sibs a{display:inline-block;font:500 14px/1 var(--body);padding:9px 13px;border:1px solid var(--rule);border-radius:999px;text-decoration:none}
+.sibs a:hover{border-color:var(--pencil);color:var(--pencil)}
+.sibs a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* Текст работы */
+.prose{max-width:72ch}
+.prose .title{font:700 clamp(26px,3.2vw,38px)/1.15 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.prose .sub{font:500 19px/1.45 var(--body);color:var(--mute);margin:0 0 26px}
+.prose h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 12px;text-wrap:balance}
+.prose h3{font:700 19px/1.3 var(--display);letter-spacing:-.01em;margin:26px 0 8px}
+.prose h4{font:600 17px/1.35 var(--body);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:1.3em}
+.prose li{margin:4px 0}
+.prose li::marker{color:var(--pencil)}
+.prose a{color:var(--pencil);text-underline-offset:3px}
+.prose figure{margin:26px 0 30px}
+.prose figure img{display:block;margin:0 auto;max-width:100%;height:auto;border:1px solid var(--rule);background:#fff}
+.prose figcaption{font:italic 700 15.7px/1.45 var(--body);color:var(--mute);margin-top:10px;text-align:center}
+.prose .note{background:var(--tint);border-left:3px solid var(--pencil);padding:16px 20px;margin:22px 0 26px}
+.prose .note p:last-child{margin-bottom:0}
+.prose .note-h{font:700 16px/1.35 var(--display);margin:0 0 8px}
+.prose .pull{margin:30px 0;padding:6px 0 6px 22px;border-left:4px solid var(--marker);font:500 21px/1.45 var(--display);letter-spacing:-.01em}
+.prose .pull p{margin:0}
+.tablewrap{overflow-x:auto;margin:20px 0 26px;border:1px solid var(--rule)}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.4}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.prose th{font:600 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--tint)}
+.prose tr:last-child td{border-bottom:0}
+.prose td p,.prose th p{margin:0}
+
+/* Финал */
+.end{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.cta{font:700 clamp(26px,3.4vw,42px)/1.12 var(--display);letter-spacing:-.03em;margin:10px 0 0;text-wrap:balance}
+.cta em{font-style:normal;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+.contacts{display:grid;gap:10px}
+.contacts a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--ink);text-decoration:none;font:600 16px/1.2 var(--body)}
+.contacts a:first-child{background:var(--ink);color:var(--sheet)}
+.contacts a:hover,.contacts a:focus-visible{background:var(--pencil);color:#fff;border-color:var(--pencil);outline:none}
+.contacts .back{border-color:var(--rule);font-weight:500}
+.files{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.files a{font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;background:var(--pencil-soft);border-radius:2px}
+.files a:hover{background:var(--marker);color:var(--marker-ink)}
+.colophon{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px/1.5 var(--mono);color:var(--mute);padding-block:0 32px;margin:0 auto}
+
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}
+  .margin{border-right:0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:center;padding:12px 18px}
+  .margin .mark{margin:0;font-size:20px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div{border-left:0;border-top:1px solid var(--rule)}
+  .meta div:nth-child(-n+2){border-top:0}
+  .meta div:nth-child(even){border-left:1px solid var(--rule)}
+  .tdr{grid-template-columns:1fr}
+  .end{grid-template-columns:1fr}
+  .prose .pull{font-size:19px}
+}
+@media print{body{background:#fff}.sheet{border:0}.margin{display:none}.row{grid-template-columns:1fr}}
+.prose figure.multi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.prose figure.multi figcaption{grid-column:1/-1}
+.prose h2.caps{font:700 19px/1.3 var(--display);letter-spacing:.02em;margin:40px 0 14px;padding-top:14px;border-top:2px solid var(--ink)}
+.prose h2.label{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pencil);margin:44px 0 16px;padding-top:14px;border-top:1px solid var(--rule)}.prose h2.label:first-of-type{margin-top:8px}
+.prose blockquote:not(.pull){margin:22px 0 26px;padding:14px 18px;background:var(--tint);border-left:3px solid var(--pencil)}.prose blockquote:not(.pull) p{margin:0;font-style:normal}.prose blockquote:not(.pull) em{font-style:normal}
+
+.about{margin:18px 0 0;max-width:70ch;font-size:16px;line-height:1.55;color:var(--ink)}
+.about .eyebrow{display:block;margin-bottom:6px}
+.pubs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pubs .eyebrow{width:100%}
+.pub{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--ink);text-decoration:none;font:500 14px/1.2 var(--body);background:var(--sheet)}
+.pub b{font:700 14px/1.2 var(--display)}
+.pub span{color:var(--pencil)}
+.pub:hover{background:var(--marker);color:var(--marker-ink)}
+.prose li>p{margin:0}
+.prose li{margin:6px 0}
+.prose a{overflow-wrap:anywhere}
+.prose p,.prose li{overflow-wrap:break-word}.prose em{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="sheet">
+  <header class="row">
+    <div class="margin"><span class="mark">←</span><a href="../#works">все работы</a></div>
+    <div class="main top">
+      <a class="home" href="../">Александра Самелюк</a>
+      <span class="eyebrow">Портфолио · 04</span>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="margin"><span class="mark">§</span>паспорт работы</div>
+    <div class="main">
+      <p class="eyebrow">«Финуслуги» · YMYL · финансы</p>
+      <h1>Статья для финансового маркетплейса: метрики риска и доходности инвестиций</h1>
+      <p class="about"><span class="eyebrow">О заказчике</span>«Финуслуги» — финансовая платформа, созданная Московской биржей в рамках проекта Банка России «Маркетплейс». На ней можно онлайн открыть вклад, оформить ОСАГО и другие страховки, купить народные облигации, паи фондов и подключиться к программе долгосрочных сбережений.</p>
+      <dl class="meta"><div><dt>Заказчик</dt><dd>«Финуслуги», финансовый маркетплейс Московской биржи</dd></div><div><dt>Аудитория</dt><dd>Частные инвесторы</dd></div><div><dt>Формат</dt><dd>Информационная статья в блог</dd></div><div><dt>Год</dt><dd>2024</dd></div></dl>
+      <div class="tdr">
+        <section><h3>Задача</h3><p>Объяснить частному инвестору, по каким метрикам оценивать доходность и риск вложений, — так, чтобы формулы стали рабочим инструментом, а не теорией из учебника.</p></section>
+        <section><h3>Решение</h3><p>Выстроила статью от понятий к расчётам: что съедает доходность (инфляция, налоги, комиссии), пять видов риска с реальными примерами (кризис 2008 года, банкротство Enron), затем шесть метрик — абсолютная и среднегодовая доходность, коэффициент Шарпа, VaR, бета, стандартное отклонение — с формулой и разобранным примером для каждой. Финал — восемь практических рекомендаций. Все расчёты в тексте и инфографике пересчитала вручную.</p></section>
+        <section class="res"><h3>Результат</h3><p>Сложная инвестиционная тема изложена на языке частного инвестора: каждая формула сопровождается расчётом на понятных суммах, а пять схем показывают реальную доходность, карту рисков, сложный процент, VaR на кривой распределения и стандартное отклонение по шагам.</p></section>
+      </div>
+      
+      <nav class="sibs" aria-label="Другие тексты для этого заказчика"><span class="eyebrow">Ещё для «Финуслуги»</span><ul><li><a href="finuslugi-1.html" aria-current=page>Метрики риска и доходности</a></li><li><a href="finuslugi-2.html">Программа долгосрочных сбережений</a></li><li><a href="finuslugi-3.html">Депозиты для бизнеса</a></li><li><a href="finuslugi-faq.html">FAQ для продуктовой страницы</a></li></ul></nav>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="margin"><span class="mark">¶</span>текст</div>
+    <div class="main">
+      <div class="prose">
+        <h2 class="title">Как оценивать риски и доходность инвестиций: основные метрики</h2>
+        
+        
+<p>Инвестиции — это всегда выбор между возможностью заработать и риском потерять часть вложений. Как понять, принесёт ли актив прибыль? Какие инструменты помогут держать риск под контролем? Разберём основные понятия и метрики, по которым инвестор оценивает эффективность вложений и защищает капитал.</p>
+<h2>Что такое доходность инвестиций</h2>
+<p>Доходность показывает, сколько вы заработали или можете заработать на вложениях. Без неё невозможно понять, оправдывает ли актив свои риски и стоит ли продолжать в него инвестировать.</p>
+<p>На практике чаще всего используют три показателя:</p>
+<ul>
+<li><strong>Абсолютная доходность</strong> — разница между тем, что вы вложили, и тем, что получили в итоге. Купили акцию за 100 рублей, продали за 120 — заработали 20 рублей, или 20%.</li>
+<li><strong>Среднегодовая доходность</strong> — сколько в среднем актив приносил за год. Она нужна, если вложение длится несколько лет.</li>
+<li><strong>Доходность к погашению (YTM)</strong> — метрика для облигаций. Показывает ожидаемую доходность, если держать бумагу до конца срока, с учётом купонов и разницы между ценой покупки и номиналом.</li>
+</ul>
+<p>Формулы и примеры расчёта для каждой метрики — ниже, в разделе об инструментах анализа.</p>
+<h3>Что влияет на итоговый результат</h3>
+<p>Номинальная доходность — ещё не те деньги, которые останутся у инвестора. Её снижают три фактора.</p>
+<p><strong>Инфляция уменьшает реальную стоимость прибыли.</strong> Если актив приносит 12% годовых, а инфляция составляет 10%, реальная доходность — всего около 2%. Для долгосрочных вложений этот фактор может оказаться решающим.</p>
+<p><strong>Налоги уменьшают чистый доход.</strong> Для разных активов и видов дохода действуют свои правила налогообложения. Уточняйте налоговые обязательства заранее, особенно если получаете дивиденды или купоны.</p>
+<figure>
+<img alt="Из 12% номинальной доходности при инфляции 10% реально остаётся около 2% — и это ещё до налогов и комиссий" height="1302" loading="lazy" src="img/finuslugi-1/01.png" width="1600"/>
+<figcaption aria-hidden="true">Из 12% номинальной доходности при инфляции 10% реально остаётся около 2% — и это ещё до налогов и комиссий</figcaption>
+</figure>
+<p><strong>Комиссии сокращают общий результат.</strong> Плата брокеру за сделки, вознаграждение управляющей компании или фонду напрямую уменьшают прибыль. Регулярные комиссии могут «съедать» заметную часть заработка, даже если активы растут.</p>
+<p>Учитывая все три фактора, вы оцениваете доходность реалистично и точнее планируете финансовые цели.</p>
+<h2>Что такое инвестиционные риски</h2>
+<p><strong>Риск — неизбежный спутник инвестиций.</strong> Он показывает вероятность того, что доходность окажется ниже ожидаемой, вплоть до прямых убытков. Чем выше риск, тем большую доходность должен обещать актив, чтобы его компенсировать. Чтобы принимать взвешенные решения, важно различать виды рисков.</p>
+<h3>Основные виды рисков</h3>
+<p><strong>Рыночный риск</strong> связан с изменением цен на рынке. Стоимость акций, облигаций и других активов зависит от экономической ситуации, настроений инвесторов и политических событий. В кризис 2008 года акции многих компаний резко подешевели, даже если их собственные показатели оставались стабильными.</p>
+<p><strong>Кредитный риск</strong> возникает, когда контрагент — например, эмитент облигаций — не выполняет обязательства. Если компания-эмитент обанкротится, инвесторы могут потерять вложения. Хрестоматийный пример — крах американской Enron в 2001 году, обернувшийся огромными убытками для её акционеров и кредиторов.</p>
+<p><strong>Риск ликвидности</strong> — это трудности с продажей актива по справедливой цене. Коммерческую недвижимость, например, бывает сложно быстро продать без существенной скидки.</p>
+<figure>
+<img alt="Пять видов риска, с которыми сталкивается инвестор, и откуда каждый из них берётся" height="1365" loading="lazy" src="img/finuslugi-1/02.png" width="1600"/>
+<figcaption aria-hidden="true">Пять видов риска, с которыми сталкивается инвестор, и откуда каждый из них берётся</figcaption>
+</figure>
+<p><strong>Операционный риск</strong> связан со сбоями внутри компании: ошибками управления, отказами IT-систем, мошенничеством. Утечка данных в крупной компании оборачивается убытками и падением стоимости её акций.</p>
+<p><strong>Геополитический риск</strong> возникает из-за изменений в политической и экономической обстановке. Санкции, торговые войны, новые пошлины и налоговые правила могут резко повлиять на стоимость активов, привести к заморозке вложений или потере доступа к зарубежным рынкам.</p>
+<h2>Метрики доходности и риска: инструменты анализа</h2>
+<p>Метрики помогают понять, насколько оправдано вложение, как оно повлияет на баланс портфеля и какую прибыль может принести. Разберём основные инструменты и посчитаем их на примерах.</p>
+<h3>Абсолютная доходность</h3>
+<p>Показывает, на сколько процентов изменилась стоимость вложения за период.</p>
+<p><strong>Формула:</strong> абсолютная доходность = (конечная стоимость − начальная стоимость) ÷ начальная стоимость × 100%.</p>
+<p><strong>Пример.</strong> Инвестор вложил в акции 100 000 рублей, через год они стоят 120 000 рублей: (120 000 − 100 000) ÷ 100 000 × 100% = <strong>20%</strong>.</p>
+<p>Метрика простая, но не учитывает время. Для долгосрочных вложений важнее понимать, сколько актив приносит в среднем за год.</p>
+<h3>Среднегодовая доходность</h3>
+<p>Показывает, какой процент актив приносил ежегодно на протяжении всего срока с учётом того, что прибыль каждого года работает дальше.</p>
+<p><strong>Формула:</strong> среднегодовая доходность = (конечная стоимость ÷ начальная стоимость)^(1/n) − 1, где n — количество лет.</p>
+<p><strong>Пример.</strong> Вложение выросло со 100 000 до 150 000 рублей за три года: (150 000 ÷ 100 000)^(1/3) − 1 ≈ 0,1447, то есть <strong>14,47% годовых</strong>.</p>
+<figure>
+<img alt="Как 100 000 рублей превращаются в 150 000 за три года при среднегодовой доходности 14,47%" height="1227" loading="lazy" src="img/finuslugi-1/03.png" width="1600"/>
+<figcaption aria-hidden="true">Как 100 000 рублей превращаются в 150 000 за три года при среднегодовой доходности 14,47%</figcaption>
+</figure>
+<p>Обратите внимание: общий прирост за три года — 50%, но в пересчёте на год это не 16,7%, а 14,47%. Метрика позволяет честно сравнивать активы с разными сроками инвестирования.</p>
+<h3>Коэффициент Шарпа</h3>
+<p>Измеряет, сколько доходности инвестор получает на каждую единицу принятого риска.</p>
+<p><strong>Формула:</strong> коэффициент Шарпа = (доходность портфеля − безрисковая ставка) ÷ стандартное отклонение доходности.</p>
+<p><strong>Пример.</strong> Портфель принёс за год 12%, безрисковая ставка — 6%, стандартное отклонение доходности — 8%: (12 − 6) ÷ 8 = <strong>0,75</strong>.</p>
+<p>Чем выше коэффициент, тем лучше соотношение риска и доходности: из двух портфелей с одинаковой доходностью выгоднее тот, у которого Шарп больше.</p>
+<h3>Value at Risk (VaR)</h3>
+<p>Показывает, какую сумму инвестор может потерять с заданной вероятностью за определённый период.</p>
+<p><strong>Формула:</strong> VaR = Z × σ × √t × сумма вложений, где:</p>
+<ul>
+<li>Z — значение стандартного нормального распределения для выбранного доверительного уровня;</li>
+<li>σ — стандартное отклонение доходности за единицу времени;</li>
+<li>t — период в тех же единицах (днях, неделях, месяцах).</li>
+</ul>
+<p><strong>Пример.</strong> Дневная волатильность актива — 2%, сумма вложений — 1 млн рублей, доверительный уровень — 95% (Z ≈ 1,65). Дневной VaR = 1,65 × 0,02 × 1 000 000 = <strong>33 000 рублей</strong>.</p>
+<figure>
+<img alt="VaR на графике распределения доходности: с вероятностью 95% дневной убыток не превысит 33 000 рублей" height="1112" loading="lazy" src="img/finuslugi-1/04.png" width="1600"/>
+<figcaption aria-hidden="true">VaR на графике распределения доходности: с вероятностью 95% дневной убыток не превысит 33 000 рублей</figcaption>
+</figure>
+<p>Иначе говоря, в 95 днях из 100 убыток не превысит 33 000 рублей. Но VaR ничего не говорит о том, насколько большими могут быть потери в оставшиеся 5% случаев, — поэтому его используют вместе с другими метриками.</p>
+<h3>Коэффициент бета</h3>
+<p>Измеряет, как актив реагирует на движения рынка.</p>
+<ul>
+<li><strong>Бета = 1</strong> — актив движется вместе с рынком.</li>
+<li><strong>Бета &gt; 1</strong> — актив волатильнее рынка.</li>
+<li><strong>Бета &lt; 1</strong> — актив менее чувствителен к рыночным колебаниям.</li>
+</ul>
+<p><strong>Пример.</strong> Бета акции равна 1,2. Значит, при росте рынка на 10% её цена в среднем вырастет примерно на 12%, а при падении рынка на 10% — снизится примерно на 12%.</p>
+<h3>Стандартное отклонение</h3>
+<p>Оценивает, насколько сильно доходность актива отклоняется от среднего значения, — то есть измеряет волатильность.</p>
+<p><strong>Формула:</strong> σ = √( Σ(Rᵢ − R̄)² ÷ N ), где Rᵢ — доходность за период, R̄ — средняя доходность, N — количество периодов.</p>
+<p><strong>Пример.</strong> Доходность актива за три года — 10%, 15% и 20%. Средняя доходность: (10 + 15 + 20) ÷ 3 = 15%. Стандартное отклонение: √(((10 − 15)² + (15 − 15)² + (20 − 15)²) ÷ 3) = √(50 ÷ 3) ≈ <strong>4,1%</strong>.</p>
+<figure>
+<img alt="Стандартное отклонение по шагам: от средней доходности к разбросу около 4,1 п. п." height="986" loading="lazy" src="img/finuslugi-1/05.png" width="1600"/>
+<figcaption aria-hidden="true">Стандартное отклонение по шагам: от средней доходности к разбросу около 4,1 п. п.</figcaption>
+</figure>
+<p>Чем выше стандартное отклонение, тем сильнее колеблется доходность и тем менее предсказуем результат. Этот же показатель стоит в знаменателе коэффициента Шарпа и в формуле VaR — поэтому волатильность влияет сразу на несколько метрик риска.</p>
+<h2>Баланс между доходностью и безопасностью</h2>
+<p>Метрики помогают найти баланс между прибылью и риском. Актив с высокой доходностью может не подойти консервативному инвестору, если у него слишком большие стандартное отклонение и VaR. Коэффициент Шарпа помогает выбрать инструменты с лучшим соотношением риска и доходности, а бета — понять, как портфель поведёт себя при резком движении рынка.</p>
+<blockquote>
+<p><strong>Главное правило:</strong> анализируйте метрики в комплексе. Ни одна из них по отдельности не даёт полной картины — вместе они показывают, подходит ли портфель вашим целям и допустимому уровню риска.</p>
+</blockquote>
+<h2>Практические рекомендации для инвесторов</h2>
+<p>Успешное инвестирование требует чётких целей, системного подхода и контроля. Восемь советов, которые помогут снизить риски и улучшить результат:</p>
+<ol type="1">
+<li><strong>Определите цель вложений.</strong> Пассивный доход, крупная покупка или капитал к пенсии — цель задаёт срок инвестирования и допустимый уровень риска.</li>
+<li><strong>Оцените свой риск-профиль.</strong> Если просадки вызывают сильное беспокойство, выбирайте менее рискованные инструменты — облигации надёжных эмитентов, дивидендные акции. Тем, кто готов к волатильности ради большей прибыли, подойдут акции быстрорастущих компаний и венчурные инвестиции.</li>
+<li><strong>Соберите диверсифицированный портфель.</strong> Распределите капитал между акциями, облигациями, недвижимостью и металлами: если один актив подешевеет, другие смягчат потери.</li>
+<li><strong>Пользуйтесь аналитическими инструментами.</strong> Коэффициент Шарпа показывает баланс риска и доходности, VaR — возможные потери, бета — чувствительность к рынку.</li>
+<li><strong>Регулярно пересматривайте портфель.</strong> Экономическая ситуация меняется, поэтому проверяйте стратегию хотя бы раз в год.</li>
+<li><strong>Создайте резервный фонд.</strong> Держите сумму, равную расходам за 3–6 месяцев, в низкорисковых инструментах или на счёте, чтобы в кризис не продавать активы по невыгодной цене.</li>
+<li><strong>Управляйте рисками.</strong> Используйте стоп-лоссы, хеджирование и перераспределение активов.</li>
+<li><strong>Учитесь и консультируйтесь.</strong> Читайте финансовую литературу, следите за новостями рынков, а если знаний не хватает — обратитесь к финансовому консультанту.</li>
+</ol>
+<p>Доходность и риск неразделимы: успешное инвестирование — это баланс между возможной прибылью и разумным уровнем риска. <strong>Инвестиции — марафон, а не спринт.</strong> Не гонитесь за быстрой прибылью, держитесь стратегии — и тщательно спланированные действия приведут к финансовым целям без лишних потрясений.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="margin"><span class="mark">✓</span>в печать</div>
+    <div class="main end">
+      <div>
+        <p class="eyebrow">Нужен такой текст?</p>
+        <p class="cta">Расскажите про вашу задачу — <em>покажу работы под вашу нишу</em></p>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/assamely" target="_blank" rel="noopener">Telegram @assamely <span aria-hidden="true">→</span></a>
+        <a href="mailto:assamely@gmail.com">assamely@gmail.com <span aria-hidden="true">→</span></a>
+        <a class="back" href="../#works">← Все работы</a>
+      </div>
+      
+    </div>
+  </footer>
+</article>
+<p class="colophon wrap"><span>Набрано шрифтами Geologica, Golos Text и JetBrains Mono</span><span>assamely.github.io</span></p>
+</div>
+</body>
+</html>
