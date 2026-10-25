@@ -201,7 +201,7 @@ h2{font:700 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.035em;margin:
   </div>
 
   <div class="row" id="umeyu">
-    <div class="margin"><span class="mark">→</span>предметный указатель: номера ведут к работам</div>
+    <div class="margin"><span class="mark">→</span>предметный указатель: номера ведут к статьям</div>
     <div class="main">
       <h2>Умею</h2>
       <ul class="index" id="index"></ul>
@@ -333,11 +333,23 @@ document.getElementById("toc").innerHTML=W.map((w,i)=>`
 </details></li>`).join("");
 
 const IDX=[
-["Гайды и инструкции",[2,10,12]],["GEO и AEO",[9,10]],["Интервью",[6]],["Инфостиль",[1,9]],
- ["Кейсы",[5,7,8]],["Коммерческие тексты",[2,11]],["Контент-планы",[14]],["Лонгриды",[5,11,15]],
- ["Редактура",[6]],["SEO-тексты",[2,11,12,15]],["Технический автор",[1,5,12,13]],["Фактчекинг",[4,6,16]],["Экспертные статьи",[3,4,9,13]],["YMYL-контент",[4,8,16]]
+["Гайды и инструкции",[[2,"mts-info"],[10,"enes-zima"],[12,"bitcloud-2"]]],
+["GEO и AEO",[[9,"luis-server"],[10,"enes-rashod"]]],
+["Интервью",[[6,"kompak"]]],
+["Инфостиль",[[1,"sber"],[9,"luis-antivandal"]]],
+["Кейсы",[[5,"ensign-vdnh"],[7,"simplepro-gpn"],[8,"360-mrt"]]],
+["Коммерческие тексты",[[2,"mts-shop"],[11,"qwent-pool"]]],
+["Контент-планы",[[14,"medpromex"]]],
+["Лонгриды",[[1,"sber"],[11,"qwent-dzen"],[15,"jockey"]]],
+["Редактура",[[6,"kompak"]]],
+["SEO-тексты",[[2,"mts-shop"],[11,"qwent-industrial"],[12,"bitcloud-1"]]],
+["Технический автор",[[5,"ensign-gisp"],[12,"bitcloud-3"],[13,"kross-1"]]],
+["Фактчекинг",[[4,"finuslugi-3"],[6,"kompak"],[16,"ymyl-bankrotstvo-rabota"]]],
+["Экспертные статьи",[[3,"VC"],[4,"finuslugi-1"],[13,"kross-2"]]],
+["YMYL-контент",[[4,"finuslugi-2"],[16,"ymyl-bronhoskopiya-kt"]]]
 ];
-document.getElementById("index").innerHTML=IDX.map(([n,r])=>`<li><span>${esc(n)}</span><span class="dots" aria-hidden="true"></span><span class="refs">${r.map(x=>`<a href="#w${String(x).padStart(2,"0")}" data-open="w${String(x).padStart(2,"0")}">${String(x).padStart(2,"0")}</a>`).join(", ")}</span></li>`).join("");
+const VC="https://vc.ru/marketing/1093497-novyi-trend-geimifikaciya-kak-biznes-s-pomoshyu-razrabotki-igr-vzaimodeistvuyut-s-auditoriei";
+document.getElementById("index").innerHTML=IDX.map(([n,r])=>`<li><span>${esc(n)}</span><span class="dots" aria-hidden="true"></span><span class="refs">${r.map(([x,sl])=>{const ext=sl==="VC";const h=ext?VC:`works/${sl}.html`;return `<a href="${h}"${ext?' target="_blank" rel="noopener"':''}>${String(x).padStart(2,"0")}</a>`}).join(", ")}</span></li>`).join("");
 document.getElementById("index").addEventListener("click",e=>{const a=e.target.closest("a[data-open]");if(!a)return;const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.closest("li").hidden=false}});
 
 const btns=[...document.querySelectorAll(".filters button")];
